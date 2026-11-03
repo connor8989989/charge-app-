@@ -1,0 +1,17 @@
+{
+  "name": "Charge: plan by energy",
+  "short_name": "Charge",
+  "description": "Plan your school day by energy, not just time. Tests, homework, study time and routines in one place.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAF8",
+  "theme_color": "#FAFAF8",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

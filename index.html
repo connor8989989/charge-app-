@@ -45,6 +45,8 @@ button{cursor:pointer}
 /* Header */
 .top{display:flex;flex-direction:column;align-items:stretch;gap:24px}
 .brand{display:flex;align-items:center;gap:10px}
+.brand[role=button]{cursor:pointer;border-radius:10px;-webkit-tap-highlight-color:transparent}
+.brand[role=button]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .brand h1{font-size:17px;font-weight:700;letter-spacing:-.02em}
 .bolt{width:32px;height:32px;display:grid;place-items:center;flex:none}
 .bolt svg{width:32px;height:32px;display:block}
@@ -57,7 +59,7 @@ button{cursor:pointer}
 .btn{border:1px solid var(--ink);background:var(--surface);border-radius:10px;padding:7px 14px;font-weight:700;font-size:13px}
 .btn:hover{background:var(--surface-2)}
 .btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--y-line);font-weight:600}
-.btn.primary:hover{background:#FFD21F}
+.btn.primary:hover{background:color-mix(in srgb,var(--accent) 82%,#fff)}
 
 .warn{display:flex;gap:12px;align-items:flex-start;background:var(--tint);border:1px solid var(--y-line);border-left:4px solid var(--y);color:var(--ink);border-radius:12px;padding:12px 14px}
 .warn svg path{fill:var(--on-y)}
@@ -163,7 +165,7 @@ form.add .full{grid-column:1/-1}
 .tabs button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .tabs button:hover{color:var(--ink);background:var(--surface-2)}
 .tabs button[aria-current="page"]{background:var(--accent);color:var(--on-accent);font-weight:600}
-.tabs button[aria-current="page"] svg{stroke:var(--y)}
+.tabs button[aria-current="page"] svg{stroke:currentColor}
 .view{display:flex;flex-direction:column;gap:20px}
 .home-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
 .greet{font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.025em}
@@ -550,6 +552,46 @@ form.add .full{grid-column:1/-1}
 .appbanner{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--y-line);border-left:4px solid var(--y);border-radius:12px;padding:12px 14px}
 .appbanner img{width:40px;height:40px;border-radius:10px;flex:none}
 .appbanner div{flex:1;min-width:0;font-size:14px}.appbanner b{display:block}.appbanner span{color:var(--muted);font-size:13px}
+.fcbox{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:10px;margin-top:6px;text-align:left}
+.fc-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.fc-head span{font-size:12px;color:var(--muted)}
+.fc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:220px;overflow:auto}
+.fc-list li{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.fc-list li div{flex:1;min-width:0;display:flex;flex-direction:column}.fc-list li b{font-size:13px}.fc-list li span{font-size:12px;color:var(--muted)}
+.fc-add{display:grid;grid-template-columns:1fr 1fr auto;gap:6px}
+.fc-add input{border:1px solid var(--line);border-radius:10px;padding:7px 9px;background:var(--surface-2);font:inherit;font-size:13px;min-width:0}
+@media (max-width:520px){.fc-add{grid-template-columns:1fr}}
+.fc-card{border:1px solid var(--y-line);background:var(--tint);border-radius:12px;padding:14px;min-height:80px}
+.fc-card .qq{margin:0;font-weight:600;color:var(--ink);font-size:16px}.fc-card .qa{margin:8px 0 0;color:var(--ink)}
+.tp .fc-open{align-self:flex-start;font-size:12px}
+.wk7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:4px}
+.wk7 button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 6px;font:inherit;text-align:left;display:flex;flex-direction:column;gap:3px;min-width:0;min-height:86px}
+.wk7 button:hover{border-color:var(--ink)}
+.wk7 .dn{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.wk7 .ti{font-size:12px;font-weight:600;line-height:1.25;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.wk7 .mi{font-size:11px;color:var(--muted);margin-top:auto}
+.wk7 button.heavy{border-color:var(--y-line);background:var(--tint)}
+.wk7 .hv{font-size:10px;font-weight:700;color:var(--on-y);background:var(--y);border-radius:6px;padding:0 5px;align-self:flex-start}
+.wk7 button.today{box-shadow:inset 0 0 0 2px var(--y)}
+@media (max-width:640px){.wk7{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tp.nb ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.tp.nb label{display:flex;gap:8px;align-items:flex-start;font-size:13px;cursor:pointer}
+.tp.nb input{width:16px;height:16px;margin-top:1px;accent-color:var(--y-line)}
+.tp.nb label.ok span{text-decoration:line-through;color:var(--muted)}
+.grades{display:flex;flex-direction:column;gap:10px}
+.gr{display:grid;grid-template-columns:minmax(90px,160px) 1fr auto;gap:12px;align-items:center}
+.gr b{font-size:14px;display:flex;align-items:center;gap:6px}.gr b i{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.gr .gbar{height:10px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}.gr .gbar span{display:block;height:100%;background:var(--y)}
+.gr .gv{font-size:13px;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}.gr .gv em{font-style:normal;color:var(--muted);font-size:12px}
+.gr.low .gbar span{background:var(--low)}
+.ph-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:320px;overflow:auto}
+.ph-list li{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.ph-list li div{display:flex;flex-direction:column;min-width:0}.ph-list li b{font-size:14px}.ph-list li span{font-size:12px;color:var(--muted)}
+.ph-list input[type=date]{border:1px solid var(--line);border-radius:8px;padding:4px 6px;background:var(--surface-2);font:inherit;font-size:12px}
+.scorein{width:64px;border:1px solid var(--line);border-radius:8px;padding:3px 6px;background:var(--surface-2);font:inherit;font-size:12px}
+.holb{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;background:var(--tint);border:1px solid var(--y-line);border-radius:8px;padding:2px 8px}
+.wk7 .ho{font-size:10px;font-weight:600;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:0 5px;align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.doff{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}.doff li{display:flex;gap:8px;align-items:center;font-size:13px}.doff li span{flex:1}
+.doff-add{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.doff-add input{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--surface-2);font:inherit;font-size:13px;min-width:0}
 .scard.add{border-style:dashed;border-top-style:dashed;align-items:center;justify-content:center;color:var(--muted);min-height:120px}
 .shead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .shead .dot{width:16px;height:16px;border-radius:50%;background:var(--c);flex:none}
@@ -769,6 +811,77 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
 @media (prefers-reduced-motion:no-preference){
   .cell{transition:background .25s}
 }
+/* ---- Customise ---- */
+:root[data-accent]:not([data-accent="yellow"]){--tint:color-mix(in srgb,var(--accent) 13%,#fff);--mid:color-mix(in srgb,var(--accent) 38%,#fff)}
+:root[data-bg="warm"]{--bg:#FBF5E4}
+:root[data-bg="cool"]{--bg:#F1F5FA}
+:root[data-bg="mint"]{--bg:#EFF8F3}
+:root[data-theme="dark"],:root[data-theme="dark"][data-accent]:not([data-accent="yellow"]){color-scheme:dark;--bg:#111113;--surface:#1B1B1F;--surface-2:#25252A;--ink:#F3F3F1;--muted:#A6A6AE;--line:#33333A;--debt:#D4D4D8;--charge:#9090A0;--scrim:rgba(0,0,0,.62);--tint:color-mix(in srgb,var(--accent) 16%,#1B1B1F);--mid:color-mix(in srgb,var(--accent) 42%,#1B1B1F)}
+:root[data-theme="dark"][data-bg="warm"]{--bg:#17140D}
+:root[data-theme="dark"][data-bg="cool"]{--bg:#0E121A}
+:root[data-theme="dark"][data-bg="mint"]{--bg:#0D1612}
+:root[data-bg="dots"] body{background-image:radial-gradient(var(--line) 1.2px,transparent 1.3px);background-size:18px 18px;background-attachment:fixed}
+:root[data-theme="dark"] .panel,:root[data-theme="dark"] .kpi,:root[data-theme="dark"] .tp,:root[data-theme="dark"] .gs{box-shadow:none}
+body{zoom:var(--zoom,1)}
+:root[data-density="compact"] .panel{padding:12px;gap:10px}
+:root[data-density="compact"] .kpi{padding:11px}
+:root[data-density="compact"] .setrow{padding:6px 0}
+:root[data-density="roomy"] .panel{padding:24px;gap:18px}
+:root[data-density="roomy"] .kpi{padding:20px}
+.cz-off{display:none!important}
+/* Settings: fill the page. Cards flow into balanced columns instead of one long right-hand column. */
+#viewSettings .sgrid{display:block;columns:2 400px;column-gap:20px}
+@media (min-width:1500px){#viewSettings .sgrid{columns:3 380px}}
+#viewSettings .sgrid>.view{display:contents}
+#viewSettings .sgrid>.panel,#viewSettings .sgrid>.view>.panel{break-inside:avoid;margin:0 0 20px;width:100%}
+#viewSettings .setrow .ctl{min-width:0}
+#viewSettings .setrow .ctl input[type=password],#viewSettings .setrow .ctl input[type=text],#viewSettings .setrow .ctl input:not([type]){width:100%;box-sizing:border-box}
+#viewSettings .setrow .ctl input:not([type=range]):not([type=color]),#viewSettings .setrow .ctl select{max-width:100%;min-width:0}
+.lookwrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:8px 28px;align-items:start}
+@media (max-width:1000px){.lookwrap{grid-template-columns:1fr}}
+.lookgrid{align-items:start}
+.looktoday{display:flex;flex-direction:column;gap:6px}
+.looktoday .czrow{padding:4px 6px 4px 10px}
+/* Subject colour backgrounds */
+:root:not([data-subjtint="off"]) .scard:not(.add){background:color-mix(in srgb,var(--c) 16%,var(--surface))}
+:root:not([data-subjtint="off"]) .scard:not(.add):hover{background:color-mix(in srgb,var(--c) 24%,var(--surface))}
+:root:not([data-subjtint="off"]) .tp[style*="--c"]{background:color-mix(in srgb,var(--c) 13%,var(--surface))}
+:root:not([data-subjtint="off"]) .ev.has-subj{background:color-mix(in srgb,var(--sc) 18%,var(--surface))}
+:root:not([data-subjtint="off"]) .subj{background:color-mix(in srgb,var(--c) 14%,var(--surface))}
+:root:not([data-subjtint="off"]) .gr{background:color-mix(in srgb,var(--c) 10%,transparent);border-radius:10px;padding:6px 8px}
+:root:not([data-subjtint="off"]) #subjDetail .shead{background:color-mix(in srgb,var(--c) 16%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 35%,var(--line));border-radius:12px;padding:12px 14px}
+@keyframes vIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.v-enter{animation:vIn .32s cubic-bezier(.2,.8,.2,1) both}
+.brand[role=button] .bolt{transition:transform .18s cubic-bezier(.2,.8,.2,1)}
+.brand[role=button]:hover .bolt{transform:scale(1.06) rotate(-4deg)}
+.brand[role=button]:active .bolt{transform:scale(.9)}
+.sr{opacity:0;transform:translateY(70px) scale(.92)}
+.sr.sr-in{opacity:1;transform:none;transition:opacity .6s ease-out var(--srd,0ms),transform .8s cubic-bezier(.34,1.45,.64,1) var(--srd,0ms)}
+@media (prefers-reduced-motion:reduce){.sr{opacity:1;transform:none}.v-enter{animation:none}.brand[role=button] .bolt{transition:none}}
+.kpis:has(.kpi-energy.cz-off) .kpi-next{grid-column:1/-1}
+.swatches{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.swatches button{width:30px;height:30px;border-radius:50%;border:2px solid var(--surface);outline:1px solid var(--line);background:var(--sw);cursor:pointer}
+.swatches button[aria-pressed="true"]{outline:3px solid var(--ink)}
+.swatches input[type=color]{width:30px;height:30px;border:0;padding:0;background:transparent;cursor:pointer}
+.swatches input[type=color]::-webkit-color-swatch-wrapper{padding:0}
+.swatches input[type=color]::-webkit-color-swatch{border-radius:50%;border:2px dashed var(--muted)}
+.swatches input[type=color]::-moz-color-swatch{border-radius:50%;border:2px dashed var(--muted)}
+.lookgrid{columns:2 230px;column-gap:24px}
+.lookgrid>.setrow{break-inside:avoid;display:grid}
+.lookgrid .setrow{grid-template-columns:1fr;gap:6px}
+.lookgrid .seg{flex-wrap:wrap}
+.lookgrid input[type=text]{border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:var(--surface-2);color:var(--ink);font:inherit;width:100%}
+.wordgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wordgrid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.czlist{display:flex;flex-direction:column;gap:6px}
+.czrow{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:6px 8px 6px 12px;background:var(--surface)}
+.czrow.sub{margin-left:22px}
+.czrow b{flex:1;font-weight:500;font-size:14px}
+.czrow .mini{padding:3px 8px}
+.czrow .mini:disabled{opacity:.3}
+.subj select.sic{border:0;background:transparent;font-size:15px;padding:0;width:34px;cursor:pointer;color:var(--c)}
+.lookprev{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.lookprev .btn{pointer-events:none}
 </style>
 </head>
 <body>
@@ -801,12 +914,13 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
   <main class="view" id="viewSettings" hidden>
     <div class="home-head"><div><div class="label">Settings</div><h2 class="greet">Controls</h2></div></div>
     <section class="panel" aria-labelledby="glTitle"><div class="panel-head"><h2 id="glTitle">Everything at a glance</h2><span class="label">Updates as you change settings</span></div><dl class="glance" id="glance"></dl></section>
+    <section class="panel" id="setLook" aria-labelledby="lookTitle"><div class="panel-head"><h2 id="lookTitle">Make it yours</h2><button class="mini" id="lookReset">Reset look</button></div><div id="lookRows"></div></section>
     <datalist id="schoolList"></datalist>
     <div class="sgrid">
       <section class="panel" id="setEnergy"><div class="panel-head"><h2>Energy budget</h2><button class="mini" id="setReset">Reset to defaults</button></div><div id="setEnergyRows"></div></section>
       <div class="view">
         <section class="panel"><div class="panel-head"><h2>Planner and alerts</h2></div><div id="setAiRows"></div></section>
-        <section class="panel" id="setSubjects" hidden><div class="panel-head"><h2>My subjects</h2><span class="label" id="subjCount"></span></div>
+        <section class="panel" id="setSubjects" hidden><div class="panel-head"><h2>My subjects</h2><span class="inline" style="gap:8px;align-items:center"><span class="label" id="subjCount"></span><button class="mini" id="subjDefaults" type="button" title="Math blue, Chemistry purple, English red and so on">Use default colours</button></span></div>
                     <div class="subj-list" id="subjList"></div>
           <form class="subj-add" id="subjForm" autocomplete="off"><div class="field"><label class="label" for="subjName">Add a subject</label><input id="subjName" maxlength="40" placeholder="e.g. AP Chemistry"></div><button class="btn primary" type="submit">Add</button></form>
           <div class="sugg" id="subjSugg"></div></section>
@@ -843,7 +957,8 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
 
   <main class="view" id="viewHome">
   <div class="home-head">
-    <div><div class="label" id="greetDate"></div><h2 class="greet" id="hello">Welcome</h2></div>
+    <div><div class="label" id="greetDate"></div><h2 class="greet" id="hello">Welcome</h2><span class="holb" id="holBadge" hidden></span></div>
+    <button class="mini" id="czGo" title="Change colours, layout and more" style="margin-left:auto;margin-right:8px">Customise</button>
     <div class="daynav" role="group" aria-label="Choose day">
       <button id="prev" aria-label="Previous day">&lsaquo;</button>
       <div class="d" id="dayLabel">Today</div>
@@ -858,11 +973,12 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
   <div class="appbanner" id="appBanner" hidden></div>
   <div class="gs" id="gsCard" hidden><div class="panel-head"><h2>Get started</h2><button class="mini" id="gsHide">Hide</button></div><ol id="gsList"></ol></div>
 
+  <div class="warn" id="ctlsWarn" hidden role="status"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><div style="flex:1"><strong>The CTLS check didn't work</strong><p id="ctlsWarnText" style="margin:2px 0 8px"></p><button class="btn" id="ctlsWarnOk">Got it</button></div></div>
   <div class="warn" id="rescue" hidden role="status"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 11h-2V6h2v7zm0 4h-2v-2h2v2z"/></svg><div style="flex:1"><strong id="rsTitle"></strong><p id="rsText" style="margin:2px 0 8px"></p><div class="inline"><button class="btn primary" id="rsMove">Move them</button><button class="btn" id="rsSkip">Not now</button></div></div></div>
-  <section class="tprep" id="tprep" hidden aria-labelledby="tpTitle"><div class="tprep-head"><h2 id="tpTitle">Tests and quizzes</h2><span class="label" id="tpCount"></span></div><div class="tps" id="tpList"></div></section>
+  <section class="tprep" id="tprep" hidden aria-labelledby="tpTitle"><div class="tprep-head"><h2 id="tpTitle">Coming up</h2><span class="label" id="tpCount"></span></div><div class="wk7" id="wk7"></div><div class="tps" id="tpList"></div></section>
   <div class="kpis" aria-label="Today at a glance">
     <section class="kpi kpi-energy" aria-label="Energy">
-      <div class="label">Energy left</div>
+      <div class="label" id="eLeftL">Energy left</div>
       <div class="kv"><span class="big" id="bal">0<small>pts</small></span><span class="debt-tag" id="debtTag" hidden>In debt</span></div>
       <div class="cells" id="cells" aria-hidden="true"></div>
       <div class="ks" id="eWord"></div>
@@ -965,9 +1081,10 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
   </main>
 
   <main class="view" id="viewSubj" hidden>
-    <div class="home-head" id="subjListHead"><div><div class="label" id="subjPageLabel">Subjects</div><h2 class="greet" id="subjPageTitle">Your subjects</h2></div><div class="inline"><button class="btn primary" id="subjAddTest">+ Test</button><button class="btn primary" id="subjAddQuiz">+ Quiz</button><button class="btn" id="subjManage">Add or edit subjects</button></div></div>
+    <div class="home-head" id="subjListHead"><div><div class="label" id="subjPageLabel">Subjects</div><h2 class="greet" id="subjPageTitle">Your subjects</h2></div><div class="inline"><button class="btn primary" id="subjAddTest">+ Test</button><button class="btn primary" id="subjAddQuiz">+ Quiz</button><button class="btn" id="subjPhoto" hidden>Add from photo</button><input type="file" id="photoIn" accept="image/*" hidden><button class="btn" id="subjManage">Add or edit subjects</button></div></div>
     <div id="wqWrap"><form class="qadd" id="wqForm" autocomplete="off"><input id="wqText" maxlength="100" placeholder="Type it: chem test friday, english quiz tomorrow" aria-label="Add a test, quiz or homework"><button class="btn primary" type="submit">Add</button></form><div class="wq-hint" id="wqHint">Say the subject, what it is and when. Charge fills in the rest.</div></div>
     <div class="scards" id="subjCards"></div>
+    <section class="panel" id="gradesPanel" hidden><div class="panel-head"><h2>Grades</h2><span class="label" id="grLabel"></span></div><div class="grades" id="grList"></div><p class="ai-note" id="grNote"></p></section>
     <section class="view" id="asWrap">
     <div class="home-head">
       <div><h2 id="asTitle" style="font-size:20px">All work</h2></div>
@@ -998,7 +1115,7 @@ input[type=time]::-webkit-datetime-edit-hour-field,input[type=time]::-webkit-dat
           <section class="panel"><div class="panel-head"><h2>Scheduled blocks</h2><span class="label">Last 7 and next 7 days</span></div><ul class="blocks" id="sdBlocks"></ul></section>
         </div>
         <div class="side">
-          <section class="panel"><div class="panel-head"><h2>Notes</h2><span class="label" id="sdSaved"></span></div><div class="field"><textarea id="sdNotes" maxlength="4000" placeholder="Room, what to study, links&hellip;" style="min-height:160px"></textarea></div></section>
+          
           <section class="panel"><div class="panel-head"><h2>Energy</h2></div><p class="ai-note" id="sdEnergy"></p></section>
         </div>
       </div>
@@ -1038,6 +1155,80 @@ const SKEY="charge-settings-v1";
 const DEF_SET={budget:100,great:10,bad:20,lowAt:30,streak:3,intensity:"Balanced",aiCount:8,popups:true,warnDays:3,reminders:true,notify:false,remind:10,rateAfter:true};
 let settings=Object.assign({},DEF_SET);
 try{Object.assign(settings,JSON.parse(localStorage.getItem(SKEY))||{})}catch(e){}
+setTimeout(()=>{try{applyLook()}catch(e){}},0);
+// ---------- Customise (look) ----------
+const ACCENTS={yellow:["#F5C400","#1A1500","#C79C00","Yellow"],orange:["#F97316","#1F0A00","#C2570C","Orange"],red:["#EF4444","#FFFFFF","#B91C1C","Red"],pink:["#EC4899","#FFFFFF","#BE185D","Pink"],purple:["#8B5CF6","#FFFFFF","#6D28D9","Purple"],blue:["#3B82F6","#FFFFFF","#1D4ED8","Blue"],teal:["#14B8A6","#04201C","#0F766E","Teal"],green:["#22C55E","#052E13","#15803D","Green"]};
+const FONTS={plex:["IBM Plex Sans","Plex (default)",""],system:["","Phone's own font",""],rounded:["Nunito","Rounded","Nunito:wght@400;500;600;700"],easy:["Atkinson Hyperlegible","Easy to read","Atkinson+Hyperlegible:wght@400;700"],serif:["Lora","Classic","Lora:wght@400;500;600;700"],mono:["IBM Plex Mono","Typewriter",""]};
+const ZOOM={s:.9,m:1,l:1.12,xl:1.25};
+const DEF_LOOK={theme:"light",accent:"yellow",custom:"",bg:"plain",text:"m",font:"plex",density:"comfy",words:{energy:"Energy",drain:"Drains me",charge:"Recharges me",unit:"pts"},order:["tests","glance","main"],side:["plan","routines","homework","suggest"],off:[]};
+function look(){const l=settings.look||{};return Object.assign({},DEF_LOOK,l,{words:Object.assign({},DEF_LOOK.words,l.words||{})})}
+function lookWord(k){const w=look().words[k];return (w&&String(w).trim())||DEF_LOOK.words[k]}
+function setLook(patch){settings.look=Object.assign({},settings.look||{},patch);saveSettings();applyLook()}
+function inkOn(hex){const h=hex.replace("#","");if(h.length<6)return "#1A1500";const [r,g,b]=[0,2,4].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return (0.2126*r+0.7152*g+0.0722*b)>.36?"#161616":"#FFFFFF"}
+const darkMQ=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+const fontLoaded={};
+function applyLook(){const L=look(),R=document.documentElement,st=R.style;
+  const dark=L.theme==="dark"||(L.theme==="auto"&&darkMQ&&darkMQ.matches);R.dataset.theme=dark?"dark":"light";
+  let a=ACCENTS[L.accent];if(L.accent==="custom"&&/^#[0-9a-f]{6}$/i.test(L.custom||""))a=[L.custom,inkOn(L.custom),"color-mix(in srgb,"+L.custom+" 75%,#000)"];if(!a)a=ACCENTS.yellow;
+  R.dataset.accent=L.accent==="custom"?"custom":(ACCENTS[L.accent]?L.accent:"yellow");
+  [["--accent",a[0]],["--y",a[0]],["--ok",a[0]],["--on-accent",a[1]],["--on-y",a[1]],["--y-line",a[2]]].forEach(([k,v])=>st.setProperty(k,v));
+  R.dataset.bg=L.bg;R.dataset.subjtint=L.subjTint===false?"off":"on";R.dataset.density=L.density;st.setProperty("--zoom",ZOOM[L.text]||1);
+  const f=FONTS[L.font]||FONTS.plex;if(f[2]&&!fontLoaded[L.font]){fontLoaded[L.font]=1;const ln=document.createElement("link");ln.rel="stylesheet";ln.href="https://fonts.googleapis.com/css2?family="+f[2]+"&display=swap";document.head.appendChild(ln)}
+  const stack=(f[0]?'"'+f[0]+'", ':"")+'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';st.setProperty("--f-body",stack);st.setProperty("--f-display",stack);
+  const tm=document.querySelector('meta[name="theme-color"]');if(tm)tm.content=dark?"#111113":"#FAFAF8";
+  const w=k=>lookWord(k);if($("eLeftL"))$("eLeftL").textContent=w("energy")+" left";
+  const ts=$("typeSeg");if(ts){const d=ts.querySelector('[data-t="drain"]'),c=ts.querySelector('[data-t="charge"]');if(d)d.textContent="\u2212 "+w("drain");if(c)c.textContent="+ "+w("charge")}
+  applyLayout()}
+if(darkMQ&&darkMQ.addEventListener)darkMQ.addEventListener("change",()=>{if(look().theme==="auto")applyLook()});
+const CZ=[{k:"tests",label:"Coming up (tests & homework)",top:1,el:()=>$("tprep")},{k:"week",label:"Week strip",sub:"tests",el:()=>$("wk7")},
+  {k:"glance",label:"Energy & Up next",top:1,el:()=>document.querySelector("#viewHome .kpis")},{k:"energy",label:"Energy card",sub:"glance",el:()=>document.querySelector("#viewHome .kpi-energy")},{k:"next",label:"Up next card",sub:"glance",el:()=>document.querySelector("#viewHome .kpi-next")},
+  {k:"main",label:"Schedule",top:1,fixed:1,el:()=>document.querySelector("#viewHome .today")},
+  {k:"plan",label:"Plan (AI)",side:1,el:()=>$("aiTitle")&&$("aiTitle").closest("section")},{k:"routines",label:"Routines",side:1,el:()=>$("rtHomePanel")},{k:"homework",label:"Homework due soon",side:1,el:()=>$("dueSoonPanel")},{k:"suggest",label:"Suggestions",side:1,el:()=>$("sugPanel")}];
+const czOf=k=>CZ.find(c=>c.k===k);
+function fullOrder(list,group){const all=CZ.filter(c=>c[group]).map(c=>c.k),o=(list||[]).filter(k=>all.includes(k));all.forEach(k=>{if(!o.includes(k))o.push(k)});return o}
+function applyLayout(){const L=look(),off=new Set(L.off||[]);
+  CZ.forEach(c=>{const el=c.el();if(el)el.classList.toggle("cz-off",!c.fixed&&off.has(c.k))});
+  const g=czOf("glance").el();if(g&&off.has("energy")&&off.has("next"))g.classList.add("cz-off");
+  let anchor=$("rescue");if(anchor)fullOrder(L.order,"top").forEach(k=>{const el=czOf(k).el();if(el&&anchor.parentNode===el.parentNode){anchor.after(el);anchor=el}});
+  const side=document.querySelector("#viewHome .side");if(side)fullOrder(L.side,"side").forEach(k=>{const el=czOf(k).el();if(el&&el.parentNode===side)side.appendChild(el)});
+  const sd=side&&[...side.children].some(x=>!x.classList.contains("cz-off"));if(side)side.classList.toggle("cz-off",!sd)}
+const SUBJ_ICONS=["","\u{1F4D6}","\u{1F4D8}","\u{1F4D7}","\u{1F4D5}","\u{1F4D9}","\u{1F4DA}","\u270F\uFE0F","\u{1F4DD}","\u{1F9EA}","\u2697\uFE0F","\u{1F9EC}","\u{1F52C}","\u{1F52D}","\u2797","\u{1F4D0}","\u{1F4CA}","\u{1F4BB}","\u{1F30E}","\u{1F3DB}\uFE0F","\u{1F5F3}\uFE0F","\u{1F5E3}\uFE0F","\u{1F3A8}","\u{1F3B5}","\u{1F3AD}","\u{1F3AC}","\u26BD","\u{1F3C0}","\u{1F3C3}","\u{1F4BC}","\u{1F9E0}","\u{1F4B0}","\u2B50","\u{1F525}","\u26A1"];
+function subjIcon(name){const x=subjects().find(c=>c.name===name);return x&&x.icon?x.icon:""}
+function subjLabel(name){const i=subjIcon(name);return (i?i+" ":"")+name}
+function renderLook(){const box=$("lookRows");if(!box)return;const L=look();
+  const seg=(id,opts,val)=>`<div class="seg" id="${id}" role="group">${opts.map(([v,t])=>`<button type="button" data-v="${v}" aria-pressed="${val===v}">${t}</button>`).join("")}</div>`;
+  const row=(t,sub,ctl)=>`<div class="setrow"><div class="lab"><b>${t}</b>${sub?`<span>${sub}</span>`:""}</div><div>${ctl}</div></div>`;
+  const off=new Set(L.off||[]),top=fullOrder(L.order,"top"),side=fullOrder(L.side,"side");
+  const czRow=(k,i,n,grp)=>{const c=czOf(k);return `<div class="czrow${c.sub?" sub":""}" data-k="${k}"><b>${c.label}</b>${grp?`<button class="mini" data-mv="-1" data-g="${grp}" aria-label="Move ${c.label} up"${i===0?" disabled":""}>\u2191</button><button class="mini" data-mv="1" data-g="${grp}" aria-label="Move ${c.label} down"${i===n-1?" disabled":""}>\u2193</button>`:""}${c.fixed?`<span class="label">Always on</span>`:`<button class="switch" role="switch" data-sw="${k}" aria-checked="${!off.has(k)}" aria-label="Show ${c.label}"></button>`}</div>`};
+  const topRows=top.map((k,i)=>czRow(k,i,top.length,"order")+CZ.filter(c=>c.sub===k).map(c=>czRow(c.k)).join("")).join("");
+  box.innerHTML=`<div class="lookwrap"><div class="lookgrid">
+   ${row("Theme","",seg("lkTheme",[["light","Light"],["dark","Dark"],["auto","Match phone"]],L.theme))}
+   ${row("Colour","Buttons, highlights and your energy bar",`<div class="swatches" id="lkAccent">${Object.entries(ACCENTS).map(([k,v])=>`<button type="button" data-v="${k}" style="--sw:${v[0]}" aria-label="${v[3]}" title="${v[3]}" aria-pressed="${L.accent===k}"></button>`).join("")}<input type="color" id="lkCustom" value="${/^#[0-9a-f]{6}$/i.test(L.custom||"")?L.custom:"#F5C400"}" aria-label="Pick any colour" title="Pick any colour"></div>`)}
+   ${row("Background","",seg("lkBg",[["plain","Plain"],["warm","Warm"],["cool","Cool"],["mint","Mint"],["dots","Dots"]],L.bg))}
+   ${row("Text size","",seg("lkText",[["s","Small"],["m","Normal"],["l","Large"],["xl","Extra large"]],L.text))}
+   ${row("Font","",`<select id="lkFont">${Object.entries(FONTS).map(([k,v])=>`<option value="${k}"${L.font===k?" selected":""}>${v[1]}</option>`).join("")}</select>`)}
+   ${row("Spacing","",seg("lkDensity",[["compact","Compact"],["comfy","Normal"],["roomy","Roomy"]],L.density))}
+   ${row("Slide-in when scrolling","Cards slide up into view as you scroll down",`<button class="switch" id="lkScroll" role="switch" aria-checked="${L.scrollAnim!==false}" aria-label="Slide-in when scrolling"></button>`)}
+   ${row("Subject colour backgrounds","Subject cards, tests and schedule blocks are filled with the subject's colour",`<button class="switch" id="lkTint" role="switch" aria-checked="${L.subjTint!==false}" aria-label="Subject colour backgrounds"></button>`)}
+   ${row("Your words","Call things whatever you like",`<div class="wordgrid">${[["energy","Energy is called","Energy"],["unit","Points are called","pts"],["drain","Tiring things","Drains me"],["charge","Restful things","Recharges me"]].map(([k,t,ph])=>`<label>${t}<input type="text" data-w="${k}" maxlength="16" placeholder="${ph}" value="${esc(L.words[k]===DEF_LOOK.words[k]?"":L.words[k]||"")}"></label>`).join("")}</div>`)}
+   ${row("Preview","",`<div class="lookprev"><span class="btn primary">Button</span><span>${esc(lookWord("energy"))} left: <b class="mono">72 ${esc(lookWord("unit"))}</b></span></div>`)}
+  </div>
+  <div class="looktoday"><div class="lab" style="padding-top:10px"><b style="display:block;font-weight:600;font-size:14px">Today screen</b><span style="font-size:12px;color:var(--muted)">Turn cards on or off and move them up or down</span></div>
+   <div class="czlist">${topRows}</div>
+   <div class="lab" style="margin-top:6px"><span style="font-size:12px;color:var(--muted)">Cards next to the schedule</span></div>
+   <div class="czlist">${side.map((k,i)=>czRow(k,i,side.length,"side")).join("")}</div></div></div>`;
+  const segBind=(id,key)=>box.querySelectorAll("#"+id+" button").forEach(b=>b.onclick=()=>{setLook({[key]:b.dataset.v});renderLook()});
+  segBind("lkTheme","theme");segBind("lkBg","bg");segBind("lkText","text");segBind("lkDensity","density");
+  box.querySelectorAll("#lkAccent button").forEach(b=>b.onclick=()=>{setLook({accent:b.dataset.v});renderLook()});
+  $("lkCustom").oninput=e=>{settings.look=Object.assign({},settings.look||{},{accent:"custom",custom:e.target.value});applyLook()};
+  $("lkCustom").onchange=e=>{setLook({accent:"custom",custom:e.target.value});renderLook()};
+  $("lkScroll").onclick=()=>{setLook({scrollAnim:look().scrollAnim===false});renderLook();toast(look().scrollAnim===false?"Slide-in turned off":"Slide-in turned on")};
+  $("lkTint").onclick=()=>{setLook({subjTint:look().subjTint===false});renderLook()};
+  $("lkFont").onchange=e=>setLook({font:e.target.value});
+  box.querySelectorAll("[data-w]").forEach(inp=>inp.onchange=()=>{const w=Object.assign({},look().words,{[inp.dataset.w]:inp.value.trim().slice(0,16)||DEF_LOOK.words[inp.dataset.w]});setLook({words:w});try{render()}catch(e){}renderLook()});
+  box.querySelectorAll("[data-sw]").forEach(b=>b.onclick=()=>{const o=new Set(look().off||[]),k=b.dataset.sw;o.has(k)?o.delete(k):o.add(k);setLook({off:[...o]});renderLook()});
+  box.querySelectorAll("[data-mv]").forEach(b=>b.onclick=()=>{const g=b.dataset.g,list=fullOrder(look()[g],g==="order"?"top":"side"),k=b.closest(".czrow").dataset.k,i=list.indexOf(k),j=i+ +b.dataset.mv;if(j<0||j>=list.length)return;[list[i],list[j]]=[list[j],list[i]];setLook({[g]:list});renderLook();const nb=box.querySelector(`.czrow[data-k="${k}"] [data-mv="${b.dataset.mv}"]`);if(nb&&!nb.disabled)nb.focus()});
+  $("lookReset").onclick=()=>{delete settings.look;saveSettings();applyLook();try{render()}catch(e){}renderLook();toast("Look reset")}}
 const saveSettings=()=>{try{localStorage.setItem(SKEY,JSON.stringify(settings))}catch(e){}queueSync()};
 // [name, category, points, minutes]
 const DRAINS=[["Test","School",35,60],["Quiz","School",20,30],["Homework","School",20,60],["Study for a test","Study",25,60],["Essay or project","School",25,90],["Lab report","School",20,60],["SAT/ACT prep","Study",20,60],["Practice","Sports",25,120],["Game or meet","Sports",35,180],["Work shift","Chores",30,240],["Chores","Chores",10,30],["Late night on phone","Fun",10,60]];
@@ -1100,8 +1291,9 @@ function render(){
   const hr=new Date().getHours(),part=hr<12?"Good morning":hr<17?"Good afternoon":"Good evening";
   $("hello").textContent=part+(profile&&profile.name?", "+profile.name:"");
   $("greetDate").textContent=cur.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+  {const off=dayOff(cur),hb=$("holBadge");if(hb){hb.hidden=!off;if(off)hb.textContent=off.name+(off.kind==="holiday"?" \u00b7 public holiday":"")+((cur.getDay()>=1&&cur.getDay()<=5)?(off.open?" \u00b7 school usually open":" \u00b7 no school"):"")}}
 
-  $("bal").innerHTML=(c.left<0?"\u2212":"")+Math.abs(c.left)+"<small>pts</small>";
+  $("bal").innerHTML=(c.left<0?"\u2212":"")+Math.abs(c.left)+"<small>"+esc(lookWord("unit"))+"</small>";
   $("debtTag").hidden=c.left>=0;
 
   const t=tone(c.left),pct=c.left<0?100:Math.max(0,Math.min(100,c.left/c.budget*100));
@@ -1121,6 +1313,7 @@ function render(){
   renderDueSoon();
   renderTestPrep();
   renderAppBanner();
+  renderCtlsWarn();
   nativeSchedule();
 
   renderWeek();
@@ -1185,7 +1378,8 @@ function parseJsonLoose(t){t=String(t||"").trim();try{return JSON.parse(t)}catch
   const a=Math.min(...["{","["].map(c=>{const i=t.indexOf(c);return i<0?1e9:i})),z=Math.max(t.lastIndexOf("}"),t.lastIndexOf("]"));
   if(a<z){try{return JSON.parse(t.slice(a,z+1))}catch(e){}}const err=new Error("invalid_json");err.code="invalid_json";err.text=t;throw err}
 function keySample(){
-  const call=async(input,opts)=>{const msgs=typeof input==="string"?[{role:"user",content:input}]:input;
+  const call=async(input,opts)=>{let msgs=typeof input==="string"?[{role:"user",content:input}]:input;
+    if(opts&&opts.images&&opts.images.length&&typeof input==="string"){const parts=[];for(const b of opts.images){parts.push({type:"image",source:{type:"base64",media_type:b.type||"image/jpeg",data:await blobB64(b)}})}parts.push({type:"text",text:input});msgs=[{role:"user",content:parts}]}
     let r;try{r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",signal:opts&&opts.signal,headers:{"content-type":"application/json","x-api-key":aiKey(),"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:AI_MODEL,max_tokens:4000,messages:msgs})})}
     catch(e){if(e&&e.name==="AbortError")throw e;const er=new Error("offline");er.code="unavailable";throw er}
     if(!r.ok){const er=new Error("AI error "+r.status);er.code=r.status===401||r.status===403?"not_granted":r.status===429||r.status===529?"rate_limited":"unavailable";er.status=r.status;throw er}
@@ -1193,8 +1387,30 @@ function keySample(){
   const f=(i,o)=>call(i,o);
   f.json=async(i,o)=>{const p=typeof i==="string"?i+"\n\nReply with only the JSON, no other words.":i;const {text}=await call(p,o);return parseJsonLoose(text)};
   return f}
-function hasAI(){return IN_CLAUDE||!!aiKey()}
-function getSample(){if(!IN_CLAUDE)return Promise.resolve(aiKey()?keySample():null);if(!samplePromise)samplePromise=window.claude.use("sample").catch(()=>null);return samplePromise}
+// Shared Charge AI server (a small Cloudflare Worker that holds the API key). Empty = not set up yet.
+const AI_PROXY="https://throbbing-wildflower-6a4f.clarkconnor307.workers.dev";
+let chromeAI=null;
+// Free on-device AI built into some desktop Chrome computers. Only used when the model is already on the computer.
+let chromeAIState="none";
+(async()=>{try{if(!IN_CLAUDE&&typeof LanguageModel!=="undefined"){chromeAIState=await LanguageModel.availability();if(chromeAIState==="available")chromeAI=true}}catch(e){}})();
+// Started from a button tap: Chrome downloads its small AI once (a few GB), then Charge can use it for free.
+async function enableChromeAI(note,btn){if(typeof LanguageModel==="undefined"){note.textContent="This browser doesn't have built-in AI. It only works in Chrome on some computers.";return}
+  btn.disabled=true;note.textContent="Starting the download\u2026";
+  try{const ses=await LanguageModel.create({monitor(m){m.addEventListener("downloadprogress",e=>{note.textContent=`Downloading Chrome's free AI: ${Math.round((e.loaded||0)*100)}%. Keep this tab open.`})}});
+    try{ses.destroy()}catch(e){}chromeAI=true;chromeAIState="available";note.textContent="On, using the free AI built into Chrome on this computer.";btn.hidden=true;toast("Free AI is on")}
+  catch(e){btn.disabled=false;note.textContent="Chrome couldn't turn on its AI on this computer. It needs more free space or memory, or a newer Chrome."}}
+function wrapSample(call){const f=(i,o)=>call(i,o);f.json=async(i,o)=>{const p=typeof i==="string"?i+"\n\nReply with only the JSON, no other words.":i;const {text}=await call(p,o);return parseJsonLoose(text)};return f}
+function proxySample(){return wrapSample(async(input,opts)=>{const msgs=typeof input==="string"?[{role:"user",content:input}]:input;let r;
+  try{r=await fetch(AI_PROXY,{method:"POST",signal:opts&&opts.signal,headers:{"content-type":"application/json"},body:JSON.stringify({messages:msgs})})}
+  catch(e){if(e&&e.name==="AbortError")throw e;const er=new Error("offline");er.code="unavailable";throw er}
+  if(!r.ok){const er=new Error("AI "+r.status);er.code=r.status===429?"rate_limited":"unavailable";throw er}
+  const j=await r.json();return {text:String(j.text||""),truncated:j.stop_reason==="max_tokens"}})}
+function chromeSample(){return wrapSample(async(input)=>{const text=typeof input==="string"?input:input.map(m=>m.content).join("\n\n");
+  const ses=await LanguageModel.create();try{return {text:await ses.prompt(text),truncated:false}}finally{try{ses.destroy()}catch(e){}}})}
+function blobB64(b){return new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(String(fr.result).split(",")[1]);fr.onerror=rej;fr.readAsDataURL(b)})}
+function hasVision(){return IN_CLAUDE||!!aiKey()}
+function hasAI(){return IN_CLAUDE||!!aiKey()||!!AI_PROXY||!!chromeAI}
+function getSample(){if(!IN_CLAUDE)return Promise.resolve(aiKey()?keySample():AI_PROXY?proxySample():chromeAI?chromeSample():null);if(!samplePromise)samplePromise=window.claude.use("sample").catch(()=>null);return samplePromise}
 let aiPlan=[];
 function historyText(){
   const lines=[];
@@ -1267,7 +1483,7 @@ function renderTimeline(k,d,c){
     requestAnimationFrame(()=>{box.scrollTop=Math.max(0,target-140)});
   }
   const used=[...new Set(d.items.filter(i=>i.subj&&subjColor(i.subj)).map(i=>i.subj))],cats=[...new Set(d.items.filter(i=>!i.subj||!subjColor(i.subj)).map(i=>i.cat))];
-  $("catLegend").innerHTML=used.map(n2=>`<span style="--c:${subjColor(n2)}"><i></i>${esc(n2)}</span>`).join("")+cats.map(c2=>`<span class="cat-${c2}"><i></i>${c2}</span>`).join("");
+  $("catLegend").innerHTML=used.map(n2=>`<span style="--c:${subjColor(n2)}"><i></i>${esc(subjLabel(n2))}</span>`).join("")+cats.map(c2=>`<span class="cat-${c2}"><i></i>${c2}</span>`).join("");
   // anytime items
   const any=d.items.filter(i=>toMin(i.start)==null),ul=$("ledger");ul.innerHTML="";$("anytimeBox").hidden=!any.length;
   any.forEach(it=>{
@@ -1309,13 +1525,29 @@ const SUBJ_COLORS=["#F5C400","#2DA44E","#0969DA","#8250DF","#D4537E","#E3A008","
 const SUBJ_SUGG_HS=["English","Algebra","Geometry","Precalculus","Biology","Chemistry","Physics","World History","US History","Government","Spanish","French","Computer Science","Art","Band","PE","Economics","Psychology"];
 const SUBJ_SUGG_AD=["Work project","Side business","Studying","Fitness","Home","Finances","Writing","Learning a language"];
 function subjects(){return (profile&&Array.isArray(profile.classes)?profile.classes:[])}
-function addSubject(list,name){name=name.trim().slice(0,40);if(!name||list.some(x=>x.name.toLowerCase()===name.toLowerCase()))return;list.push({name,color:SUBJ_COLORS[list.length%SUBJ_COLORS.length]})}
+// Default colour and icon for common subjects, so every Math class is blue, every Chemistry class is purple, and so on.
+const SUBJ_DEFAULTS=[
+  [/chem/i,"#8B5CF6","\u{1F9EA}"],[/bio|anatomy|life sci/i,"#22C55E","\u{1F9EC}"],[/physic/i,"#6366F1","\u{1F52D}"],[/earth|environment|geo(logy|sci)|astronom|science/i,"#14B8A6","\u{1F52C}"],
+  [/math|algebra|geometry|calc|trig|statistic|stats|number/i,"#3B82F6","\u{1F4D0}"],
+  [/english|literature|\blit\b|writing|language arts|\bela\b|reading|journalism|speech|debate/i,"#EF4444","\u{1F4D6}"],
+  [/spanish|espa/i,"#F97316","\u{1F5E3}\uFE0F"],[/french|german|latin|chinese|mandarin|japanese|italian|asl|language/i,"#0EA5E9","\u{1F5E3}\uFE0F"],
+  [/history|world|social|civics/i,"#CA8A04","\u{1F30E}"],[/gov|politic|law/i,"#B45309","\u{1F3DB}\uFE0F"],[/econ|finance|business|account|marketing/i,"#059669","\u{1F4B0}"],[/psych|socio|philosoph/i,"#DB2777","\u{1F9E0}"],
+  [/computer|coding|programming|\bcs\b|tech|robotic|engineer/i,"#06B6D4","\u{1F4BB}"],
+  [/\bart\b|drawing|paint|design|photo|ceramic/i,"#D946EF","\u{1F3A8}"],[/band|music|orchestra|chorus|choir|guitar|piano/i,"#A855F7","\u{1F3B5}"],[/drama|theat|film|video/i,"#E11D48","\u{1F3AC}"],
+  [/\bpe\b|p\.e\.|gym|health|fitness|sport|weight/i,"#84CC16","\u{1F3C3}"]];
+function subjDefault(name){const m=SUBJ_DEFAULTS.find(([re])=>re.test(name));return m?{color:m[1],icon:m[2]}:null}
+function addSubject(list,name){name=name.trim().slice(0,40);if(!name||list.some(x=>x.name.toLowerCase()===name.toLowerCase()))return;const d=subjDefault(name);
+  const used=new Set(list.map(x=>x.color));const free=SUBJ_COLORS.find(c=>!used.has(c))||SUBJ_COLORS[list.length%SUBJ_COLORS.length];
+  list.push(d?{name,color:d.color,icon:d.icon}:{name,color:free})}
+function useDefaultColours(list){let n=0;const used=new Set();list.forEach(c=>{const d=subjDefault(c.name);if(d){c.color=d.color;if(!c.icon)c.icon=d.icon;n++}used.add(c.color)});
+  list.forEach(c=>{if(!subjDefault(c.name)){const f=SUBJ_COLORS.find(x=>!used.has(x));if(f&&[...list].filter(o=>o.color===c.color).length>1){c.color=f;used.add(f)}}});return n}
 function subjColor(name){const x=subjects().find(c=>c.name===name);return x?x.color:""}
 function renderSubjList(el,list,redraw){
   el.innerHTML=list.length?"":`<span class="ai-note">No subjects yet.</span>`;
   list.forEach((c,i)=>{const sp=document.createElement("span");sp.className="subj";sp.style.setProperty("--c",c.color);
-    sp.innerHTML=`<i></i><span></span><input type="color" value="${c.color}" aria-label="Colour for ${esc(c.name)}"><button type="button" aria-label="Remove ${esc(c.name)}">\u00d7</button>`;
+    sp.innerHTML=`<select class="sic" aria-label="Icon for ${esc(c.name)}">${SUBJ_ICONS.map(ic=>`<option value="${ic}"${(c.icon||"")===ic?" selected":""}>${ic||"\u25CF"}</option>`).join("")}</select><span></span><input type="color" value="${c.color}" aria-label="Colour for ${esc(c.name)}"><button type="button" aria-label="Remove ${esc(c.name)}">\u00d7</button>`;
     sp.querySelector("span").textContent=c.name;
+    sp.querySelector(".sic").onchange=e=>{c.icon=e.target.value;redraw()};
     sp.querySelector("input").oninput=e=>{c.color=e.target.value;sp.style.setProperty("--c",c.color)};sp.querySelector("input").onchange=()=>redraw();
     sp.querySelector("button").onclick=()=>{list.splice(i,1);redraw()};el.appendChild(sp)});
 }
@@ -1328,6 +1560,7 @@ function renderSubjectsSettings(){
   if(!profile.classes)profile.classes=[];
   const draw=()=>{renderSubjList($("subjList"),profile.classes,()=>{saveProfile();draw()});renderSubjSugg($("subjSugg"),profile.classes,()=>{saveProfile();draw()});$("subjCount").textContent=profile.classes.length+(profile.classes.length===1?" subject":" subjects")};
   draw();
+  if($("subjDefaults"))$("subjDefaults").onclick=()=>{const n=useDefaultColours(profile.classes);saveProfile();draw();try{render()}catch(e){}toast(n?"Default colours added":"No common subjects to colour. Pick colours with the dots.")};
   $("subjForm").onsubmit=e=>{e.preventDefault();const v=$("subjName").value.trim();if(!v)return;addSubject(profile.classes,v);saveProfile();$("subjName").value="";draw()};
 }
 function renderSubjectControls(){
@@ -1363,7 +1596,7 @@ function routines(){
 }
 function mergeSetupIntoRoutines(){
   if(!profile||profile.routinesMerged||isTeacher())return;const R=routines();
-  const add=(name,start,mins,days,steps)=>{if(R.some(x=>x.name.toLowerCase()===name.toLowerCase()))return;R.push({id:uid()+uid(),name,start,days,steps:steps||[{id:uid(),name:name,mins}]})};
+  const add=(name,start,mins,days,steps)=>{const ex=R.find(x=>x.name.toLowerCase()===name.toLowerCase());if(ex){if(ex.steps.length<=1){ex.start=start;ex.days=days;if(ex.steps[0])ex.steps[0].mins=mins;else ex.steps=steps||[{id:uid(),name:name,mins}]}return}R.push({id:uid()+uid(),name,start,days,steps:steps||[{id:uid(),name:name,mins}]})};
   if(!profile.noHours&&profile.schoolStart&&profile.schoolEnd){const m=toMin(profile.schoolEnd)-toMin(profile.schoolStart);if(m>0)add(isAdult()?"Work":"School",profile.schoolStart,m,[1,2,3,4,5],[{id:uid(),name:isAdult()?"Work day":"Classes",mins:m}])}
   Object.entries(profile.regular||{}).forEach(([d,rr])=>{const g=REGULAR[d];if(!g||!rr.days||!rr.days.length)return;add(g.label,rr.start||g.start,rr.mins||g.mins,[...rr.days].sort())});
   profile.routinesMerged=true;saveProfile();
@@ -1375,7 +1608,7 @@ function rStepDone(k,rt,st){const d=state.days[k];return !!(d&&d.rtSteps&&d.rtSt
 function setStep(k,rt,st,v){const d=day(k);d.rtSteps=d.rtSteps||{};const arr=d.rtSteps[rt.id]=d.rtSteps[rt.id]||[];const i=arr.indexOf(st.id);if(v&&i<0)arr.push(st.id);if(!v&&i>=0)arr.splice(i,1);save()}
 function rWindow(rt){const m=toMin(rt.start);return m==null?"any":partOf(m)}
 function rIsNow(rt){const n=new Date(),now=n.getHours()*60+n.getMinutes(),m=toMin(rt.start);if(m==null)return false;return now>=m-30&&now<=m+180}
-function rForDay(dt){return routines().filter(rt=>rt.days.includes(dt.getDay())).sort((a,b)=>(toMin(a.start)??1e9)-(toMin(b.start)??1e9))}
+function rForDay(dt){const off=noSchool(dt);return routines().filter(rt=>rt.days.includes(dt.getDay())&&!(off&&isSchoolRoutine(rt))).sort((a,b)=>(toMin(a.start)??1e9)-(toMin(b.start)??1e9))}
 function ring(pct,size){const r2=(size/2)-4,c=2*Math.PI*r2;return `<svg class="ring" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle class="bg" cx="${size/2}" cy="${size/2}" r="${r2}"/><circle class="fg" cx="${size/2}" cy="${size/2}" r="${r2}" stroke-dasharray="${c*pct} ${c}" transform="rotate(-90 ${size/2} ${size/2})"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle">${Math.round(pct*100)}%</text></svg>`}
 function dots7(rt){let h="";for(let i=6;i>=0;i--){const d=addDays(today,-i),on=rt.days.includes(d.getDay()),k=key(d),full=rt.steps.length&&rDone(k,rt)===rt.steps.length;h+=`<i class="${full?"on":""}${i===0?" today":""}" title="${SH[d.getDay()]}" style="${on?"":"opacity:.3"}"></i>`}return `<span class="dots">${h}</span>`}
 let rSel="",rRun=null;
@@ -1474,6 +1707,43 @@ function routineBlocks(dt){return rForDay(dt).filter(rt=>rt.start).map(rt=>({nam
 function tickRoutine(k,f,v){const rt=routines().find(x=>x.id===f.rid);if(!rt)return;rt.steps.forEach(st=>setStep(k,rt,st,v));render();toast(v?rt.name+" done":"Unchecked "+rt.name)}
 function rtIsDone(k,f){const rt=routines().find(x=>x.id===f.rid);return !!(rt&&rt.steps.length&&rDone(k,rt)===rt.steps.length)}
 
+// ---------- Public holidays and days off ----------
+const HOLIDAY_COUNTRIES=[["US","United States"],["CA","Canada"],["GB","United Kingdom"],["IE","Ireland"],["AU","Australia"],["NZ","New Zealand"],["DE","Germany"],["FR","France"],["ES","Spain"],["IT","Italy"],["NL","Netherlands"],["MX","Mexico"]];
+function guessCountry(){try{const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
+  const m=[[/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|St_Johns|Regina|Moncton)/,"CA"],[/^America\/(Mexico_City|Monterrey|Cancun|Tijuana|Merida|Chihuahua)/,"MX"],[/^(America\/|US\/|Pacific\/Honolulu)/,"US"],[/^Europe\/London/,"GB"],[/^Europe\/Dublin/,"IE"],[/^Australia\//,"AU"],[/^Pacific\/Auckland/,"NZ"],[/^Europe\/Berlin/,"DE"],[/^Europe\/Paris/,"FR"],[/^Europe\/Madrid/,"ES"],[/^Europe\/Rome/,"IT"],[/^Europe\/Amsterdam/,"NL"]];
+  for(const [re,c] of m)if(re.test(tz))return c}catch(e){}return ""}
+function country(){return profile&&profile.country!==undefined?profile.country:guessCountry()}
+function easterDate(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da,12)}
+const hd=(y,m,d)=>new Date(y,m-1,d,12);
+function nthWd(y,m,wd,n){const d=hd(y,m,1);d.setDate(1+((wd-d.getDay()+7)%7)+(n-1)*7);return d}
+function lastWd(y,m,wd){const d=hd(y,m+1,0);d.setDate(d.getDate()-((d.getDay()-wd+7)%7));return d}
+const plusD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const usObs=d=>d.getDay()===6?plusD(d,-1):d.getDay()===0?plusD(d,1):d;
+const monSub=d=>d.getDay()===6?plusD(d,2):d.getDay()===0?plusD(d,1):d;
+const HCACHE={};
+// Christmas + Boxing Day with weekend substitutes (UK, Canada, Australia, New Zealand)
+function xmasBox(y,A,xn,bn){const wd=hd(y,12,25).getDay();let x=25,b=26;if(wd===6){x=27;b=28}else if(wd===0){x=27;b=26}else if(wd===5){b=28}A(hd(y,12,x),xn);A(hd(y,12,b),bn)}
+function holidaysFor(cc,y){const ck=cc+y;if(HCACHE[ck])return HCACHE[ck];const E=easterDate(y),L=[];const A=(d,n,open)=>L.push([key(d),n,!!open]);
+  if(cc==="US"){A(usObs(hd(y,1,1)),"New Year's Day");A(nthWd(y,1,1,3),"Martin Luther King Jr. Day");A(nthWd(y,2,1,3),"Presidents' Day");A(lastWd(y,5,1),"Memorial Day");A(usObs(hd(y,6,19)),"Juneteenth");A(usObs(hd(y,7,4)),"Independence Day");A(nthWd(y,9,1,1),"Labor Day");A(nthWd(y,10,1,2),"Columbus / Indigenous Peoples' Day",true);A(usObs(hd(y,11,11)),"Veterans Day",true);const tg=nthWd(y,11,4,4);A(tg,"Thanksgiving");A(plusD(tg,1),"Day after Thanksgiving");A(usObs(hd(y,12,25)),"Christmas Day")}
+  else if(cc==="CA"){A(monSub(hd(y,1,1)),"New Year's Day");A(plusD(E,-2),"Good Friday");const v=hd(y,5,24);v.setDate(24-((v.getDay()+6)%7));A(v,"Victoria Day");A(hd(y,7,1).getDay()===0?hd(y,7,2):hd(y,7,1),"Canada Day");A(nthWd(y,9,1,1),"Labour Day");A(hd(y,9,30),"Truth and Reconciliation Day");A(nthWd(y,10,1,2),"Thanksgiving");A(hd(y,11,11),"Remembrance Day");xmasBox(y,A,"Christmas Day","Boxing Day")}
+  else if(cc==="GB"){A(monSub(hd(y,1,1)),"New Year's Day");A(plusD(E,-2),"Good Friday");A(plusD(E,1),"Easter Monday");A(nthWd(y,5,1,1),"Early May bank holiday");A(lastWd(y,5,1),"Spring bank holiday");A(lastWd(y,8,1),"Summer bank holiday");xmasBox(y,A,"Christmas Day","Boxing Day")}
+  else if(cc==="IE"){A(hd(y,1,1),"New Year's Day");const f1=hd(y,2,1);A(f1.getDay()===5?f1:nthWd(y,2,1,1),"St Brigid's Day");A(hd(y,3,17),"St Patrick's Day");A(plusD(E,1),"Easter Monday");A(nthWd(y,5,1,1),"May bank holiday");A(nthWd(y,6,1,1),"June bank holiday");A(nthWd(y,8,1,1),"August bank holiday");A(lastWd(y,10,1),"October bank holiday");A(hd(y,12,25),"Christmas Day");A(hd(y,12,26),"St Stephen's Day")}
+  else if(cc==="AU"){A(monSub(hd(y,1,1)),"New Year's Day");A(monSub(hd(y,1,26)),"Australia Day");A(plusD(E,-2),"Good Friday");A(plusD(E,1),"Easter Monday");A(hd(y,4,25),"Anzac Day");A(nthWd(y,6,1,2),"King's Birthday");xmasBox(y,A,"Christmas Day","Boxing Day")}
+  else if(cc==="NZ"){A(monSub(hd(y,1,1)),"New Year's Day");A(hd(y,1,2).getDay()===6||hd(y,1,2).getDay()===0||hd(y,1,1).getDay()===0?plusD(monSub(hd(y,1,1)),1):hd(y,1,2),"Day after New Year's");A(monSub(hd(y,2,6)),"Waitangi Day");A(plusD(E,-2),"Good Friday");A(plusD(E,1),"Easter Monday");A(monSub(hd(y,4,25)),"Anzac Day");A(nthWd(y,6,1,1),"King's Birthday");A(nthWd(y,10,1,4),"Labour Day");xmasBox(y,A,"Christmas Day","Boxing Day")}
+  else if(cc==="DE"){A(hd(y,1,1),"Neujahr");A(plusD(E,-2),"Karfreitag");A(plusD(E,1),"Ostermontag");A(hd(y,5,1),"Tag der Arbeit");A(plusD(E,39),"Christi Himmelfahrt");A(plusD(E,50),"Pfingstmontag");A(hd(y,10,3),"Tag der Deutschen Einheit");A(hd(y,12,25),"1. Weihnachtstag");A(hd(y,12,26),"2. Weihnachtstag")}
+  else if(cc==="FR"){A(hd(y,1,1),"Jour de l'an");A(plusD(E,1),"Lundi de P\u00e2ques");A(hd(y,5,1),"F\u00eate du Travail");A(hd(y,5,8),"Victoire 1945");A(plusD(E,39),"Ascension");A(plusD(E,50),"Lundi de Pentec\u00f4te");A(hd(y,7,14),"F\u00eate nationale");A(hd(y,8,15),"Assomption");A(hd(y,11,1),"Toussaint");A(hd(y,11,11),"Armistice");A(hd(y,12,25),"No\u00ebl")}
+  else if(cc==="ES"){A(hd(y,1,1),"A\u00f1o Nuevo");A(hd(y,1,6),"Reyes");A(plusD(E,-2),"Viernes Santo");A(hd(y,5,1),"D\u00eda del Trabajo");A(hd(y,8,15),"Asunci\u00f3n");A(hd(y,10,12),"Fiesta Nacional");A(hd(y,11,1),"Todos los Santos");A(hd(y,12,6),"D\u00eda de la Constituci\u00f3n");A(hd(y,12,8),"Inmaculada Concepci\u00f3n");A(hd(y,12,25),"Navidad")}
+  else if(cc==="IT"){A(hd(y,1,1),"Capodanno");A(hd(y,1,6),"Epifania");A(plusD(E,1),"Luned\u00ec dell'Angelo");A(hd(y,4,25),"Festa della Liberazione");A(hd(y,5,1),"Festa del Lavoro");A(hd(y,6,2),"Festa della Repubblica");A(hd(y,8,15),"Ferragosto");A(hd(y,11,1),"Ognissanti");A(hd(y,12,8),"Immacolata");A(hd(y,12,25),"Natale");A(hd(y,12,26),"Santo Stefano")}
+  else if(cc==="NL"){A(hd(y,1,1),"Nieuwjaarsdag");A(plusD(E,1),"Tweede Paasdag");const kd=hd(y,4,27);A(kd.getDay()===0?hd(y,4,26):kd,"Koningsdag");A(hd(y,5,5),"Bevrijdingsdag");A(plusD(E,39),"Hemelvaartsdag");A(plusD(E,50),"Tweede Pinksterdag");A(hd(y,12,25),"Eerste Kerstdag");A(hd(y,12,26),"Tweede Kerstdag")}
+  else if(cc==="MX"){A(hd(y,1,1),"A\u00f1o Nuevo");A(nthWd(y,2,1,1),"D\u00eda de la Constituci\u00f3n");A(nthWd(y,3,1,3),"Natalicio de Benito Ju\u00e1rez");A(hd(y,5,1),"D\u00eda del Trabajo");A(hd(y,9,16),"D\u00eda de la Independencia");A(nthWd(y,11,1,3),"D\u00eda de la Revoluci\u00f3n");A(hd(y,12,25),"Navidad")}
+  return HCACHE[ck]=L}
+// Returns {name, kind} when this date is a public holiday or one of your own days off (school breaks, teacher work days).
+function dayOff(dt){const k=key(dt),cc=country();
+  const own=((profile&&profile.daysOff)||[]).find(o=>k>=o.from&&k<=(o.to||o.from));if(own)return {name:own.name||"Day off",kind:"break"};
+  if(cc){const h=holidaysFor(cc,dt.getFullYear()).find(x=>x[0]===k);if(h)return {name:h[1],kind:"holiday",open:h[2]}}return null}
+function noSchool(dt){const o=dayOff(dt);return !!(o&&!o.open)}
+const isSchoolRoutine=rt=>/^(school|classes|work|work day)$/i.test(rt.name||"")||(rt.steps&&rt.steps.length===1&&/^(classes|work day)$/i.test(rt.steps[0].name||""));
+
 // ---------- Subjects page ----------
 let selSubj="";
 function itemSubject(it){if(it.subj)return it.subj;const n=it.name.toLowerCase();const m=subjects().find(c=>n.startsWith(c.name.toLowerCase()+":")||n.startsWith("study: "+c.name.toLowerCase())||n.includes(c.name.toLowerCase()));return m?m.name:""}
@@ -1485,6 +1755,7 @@ function renderSubjects(){
   if(selSubj&&!list.some(c=>c.name===selSubj))selSubj="";
   $("subjListHead").hidden=!!selSubj;cards.hidden=!!selSubj;det.hidden=!selSubj;$("asWrap").hidden=!!selSubj||!isStudent();$("wqWrap").hidden=!!selSubj||!isStudent();$("subjAddTest").hidden=$("subjAddQuiz").hidden=!isStudent();
   if(!selSubj&&isStudent())renderAssignPage();
+  renderGrades();if($("subjPhoto"))$("subjPhoto").hidden=!isStudent()||!hasVision();
   if(selSubj){renderSubjDetail(list.find(c=>c.name===selSubj));return}
   cards.innerHTML="";
   const wkA=key(addDays(today,-((today.getDay()+6)%7))),wkB=key(addDays(new Date(wkA+"T12:00:00"),6)),tk=key(today);
@@ -1496,14 +1767,14 @@ function renderSubjects(){
     b.innerHTML=`<b></b><div class="srow"><span>Due soon</span><em>${due.length}</em></div><div class="srow"><span>This week</span><em>${fmt(mins)} \u00b7 ${done}/${wk.length} done</em></div>${scoreAvg(c.name)!=null?`<div class="srow"><span>Test average</span><em>${scoreAvg(c.name)}%</em></div>`:""}${big?`<div class="nexttest"><b style="font-size:12px"></b> ${dueLabel(big.due).toLowerCase()}</div>`:""}${adult?"":`<div class="sq"><button class="mini" data-k="Test">+ Test</button><button class="mini" data-k="Quiz">+ Quiz</button><button class="mini" data-k="Homework">+ HW</button></div>`}`;
     b.querySelectorAll(".sq .mini").forEach(x=>x.onclick=e=>{e.stopPropagation();openAddWork({kind:x.dataset.k,subj:c.name})});
     b.onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target===b){e.preventDefault();b.click()}};
-    b.querySelector("b").textContent=c.name;if(big)b.querySelector(".nexttest b").textContent=big.kind+": "+big.title;
+    b.querySelector("b").textContent=subjLabel(c.name);if(big)b.querySelector(".nexttest b").textContent=big.kind+": "+big.title;
     b.onclick=()=>{selSubj=c.name;renderSubjects();window.scrollTo(0,0)};cards.appendChild(b);
   });
   const add=document.createElement("button");add.className="scard add";add.innerHTML=`<span>+ Add ${adult?"a project":"a subject"}</span>`;add.onclick=()=>show("settings");cards.appendChild(add);
 }
 function renderSubjDetail(c){
   const tk=key(today),past=key(addDays(today,-7)),next=key(addDays(today,7));
-  $("sdName").textContent=c.name;document.querySelector("#subjDetail .dot").style.setProperty("--c",c.color);
+  $("sdName").textContent=subjLabel(c.name);$("subjDetail").style.setProperty("--c",c.color);document.querySelector("#subjDetail .dot").style.setProperty("--c",c.color);
   const due=assignments.filter(a=>assignSubject(a)===c.name).sort((a,b)=>a.due.localeCompare(b.due)),up=due.filter(a=>a.due>=tk);
   const blocks=subjBlocks(c.name,past,next),wk=blocks.filter(x=>x.k>=tk),pastB=blocks.filter(x=>x.k<tk);
   const spent=pastB.filter(x=>x.it.done).reduce((t,x)=>t+(x.it.mins||0),0),planned=wk.reduce((t,x)=>t+(x.it.mins||0),0);
@@ -1520,8 +1791,6 @@ function renderSubjDetail(c){
   const L=lrn(),kk="d:"+c.name.toLowerCase(),byN=Object.entries(L.n).filter(([k2])=>k2.startsWith("d:")&&k2.includes(c.name.toLowerCase()));
   const avg=byN.length?byN.reduce((t,[,o])=>t+o.v,0)/byN.length:null;
   $("sdEnergy").textContent=avg!=null?`From your ratings, ${c.name} work costs you about ${Math.round(avg)} energy points per hour${avg>=25?", which is on the heavy side. Plan it earlier in the evening and keep blocks under an hour.":avg<=12?", which is light for you. Good to schedule after harder work.":"."}`:`Rate how drained you feel after ${c.name} work a few times and Charge will show your real energy cost here.`;
-  if(!profile.subjNotes)profile.subjNotes={};const ta=$("sdNotes");ta.value=profile.subjNotes[c.name]||"";$("sdSaved").textContent="";
-  ta.oninput=()=>{profile.subjNotes[c.name]=ta.value;clearTimeout(ta._t);ta._t=setTimeout(()=>{saveProfile();$("sdSaved").textContent="Saved"},600)};
   const addNow=(kind,cat,pts)=>{cur=new Date(today);day(tk).items.push({id:uid(),name:`${c.name}: ${kind}`,subj:c.name,cat,pts,type:"drain",mins:60,start:"",done:false});save();show("home");toast(`Added ${c.name} ${kind} to today`)};
   $("sdHw").onclick=()=>openAddWork({kind:"Homework",subj:c.name});$("sdTest").onclick=()=>openAddWork({kind:"Test",subj:c.name});$("sdQuiz").onclick=()=>openAddWork({kind:"Quiz",subj:c.name});$("sdStudy").onclick=()=>addNow("study","Study",25);
   $("sdPlan").onclick=()=>{cur=new Date(today);show("home");setTimeout(()=>$("aiBtn").click(),100)};
@@ -1562,6 +1831,7 @@ function drawFocus(){
     ${focusNote(it)}<div class="hint" id="fHint">Phone away. When the timer ends, you'll be asked how drained you feel.</div>
     <div class="acts"><button class="btn primary" id="fDone">Finished</button><button class="btn" id="fPause">Pause</button><button class="btn" id="fMore">+10 min</button><button class="btn" id="fStop" style="grid-column:1/-1">Stop without finishing</button></div></div>`;
   pc.querySelector(".stepname").textContent=it.name;
+  if($("fCards"))cardsUI($("fCards"),it.aid);
   if($("qzGo")){const a=workById(it.aid);$("qzGo").onclick=()=>runQuizMe(a);$("qzTopic").onkeydown=e=>{if(e.key==="Enter")runQuizMe(a)}}
   const tick=()=>{if(f.paused)return;const left=Math.round((f.end-Date.now())/1000),a=Math.abs(left);$("fTimer").textContent=(left<0?"\u2212":"")+pad(Math.floor(a/60))+":"+pad(a%60);$("fTimer").classList.toggle("over",left<0);$("fProg").style.width=Math.min(100,(1-left*1000/f.total)*100)+"%";if(left===0){chime();$("fHint").textContent="Time's up. Finished? Or add 10 minutes."}};
   tick();focusTimer=setInterval(tick,1000);
@@ -1652,7 +1922,7 @@ $("aExport").onclick=async()=>{setLS("ch-backup",key(today));
 $("aImport").onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const d=JSON.parse(rd.result);if((d.app!=="Watt"&&d.app!=="Charge")||!d.state)throw 0;
     const pc=$("popCard");pc.innerHTML=`<div class="label">Restore backup</div><h2 id="popTitle">Replace everything with this backup?</h2><p class="ai-note">From ${new Date(d.exported).toLocaleString()} \u00b7 ${Object.keys(d.state.days||{}).length} days of plans. Your current data in this browser will be replaced.</p><div class="row2"><button class="btn primary" id="rsYes">Restore</button><button class="btn" id="rsNo">Cancel</button></div>`;
     $("pop").hidden=false;$("rsNo").onclick=()=>$("pop").hidden=true;
-    $("rsYes").onclick=()=>{state=d.state;profile=d.profile||profile;settings=Object.assign({},DEF_SET,d.settings||{});ctlsItems=Array.isArray(d.ctls)?d.ctls:[];save();saveProfile();saveSettings();saveCtls();$("pop").hidden=true;buildAssignments();refreshAccess();show(homeView());toast("Backup restored")}}
+    $("rsYes").onclick=()=>{state=d.state;profile=d.profile||profile;settings=Object.assign({},DEF_SET,d.settings||{});try{applyLook()}catch(e){};ctlsItems=Array.isArray(d.ctls)?d.ctls:[];save();saveProfile();saveSettings();saveCtls();$("pop").hidden=true;buildAssignments();refreshAccess();show(homeView());toast("Backup restored")}}
   catch(err){toast("That file isn't a Charge backup")}e.target.value=""};rd.readAsText(f)};
 }
 
@@ -2074,7 +2344,8 @@ const STEPS=[
      $("obSubjAdd").onclick=add;$("obSubjName").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();e.stopPropagation();add()}}},
    read:()=>{const v=$("obSubjName")&&$("obSubjName").value.trim();if(v)addSubject(draft.classes,v)}},
   {nav:"Your week",t:()=>"What does your week include?",sub:()=>isAdult()?"Select everything you do regularly.":"Select everything you do besides your regular classes.",
-   body:()=>`<div class="opts" data-multi="does">${doesList().map(d=>optBtn(d,draft.does.includes(d))).join("")}</div>`},
+   body:()=>`<div class="opts" data-multi="does">${doesList().map(d=>optBtn(d,draft.does.includes(d))).join("")}</div>${actForms()}`,
+   read:()=>readActs()},
   {nav:"Sleep schedule",t:()=>"When do you usually wake up and go to bed?",sub:"Your plan will stay inside these hours.",
    body:()=>`<div class="ob-row"><div class="field"><label class="label" for="obWake">Wake up</label><input type="time" id="obWake" value="${draft.wake}"></div>
    <div class="field"><label class="label" for="obBed">Bedtime</label><input type="time" id="obBed" value="${draft.bed}"></div></div>`,
@@ -2085,7 +2356,7 @@ const STEPS=[
    <label class="check"><input type="checkbox" id="obNoHours"${draft.noHours?" checked":""}> I don't have set ${isAdult()?"work":"school"} hours</label>`,
    after:()=>{$("obNoHours").onchange=e=>{$("obSs").disabled=$("obSe").disabled=e.target.checked}},
    read:()=>{draft.noHours=$("obNoHours").checked;draft.schoolStart=$("obSs").value||draft.schoolStart;draft.schoolEnd=$("obSe").value||draft.schoolEnd}},
-  {nav:"Regular activities",t:()=>draft.does.some(d=>REGULAR[d])?"When do your regular activities happen?":"Which days are usually your busiest?",
+  {nav:"Regular activities",t:()=>draft.does.some(d=>REGULAR[d])?"Check your activity times":"Which days are usually your busiest?",
    sub:"Select the days and the usual start time.",
    body:()=>{const acts=draft.does.filter(d=>REGULAR[d]);
      if(!acts.length)return `<div class="days" data-busy>${SH.map((n,i)=>`<button type="button" class="opt" data-day="${i}" aria-pressed="${draft.busyDays.includes(i)}">${n}</button>`).join("")}</div>`;
@@ -2140,7 +2411,8 @@ function drawStep(err){
   <div class="ob-body">${st.body()}</div>${err?`<p class="ob-err" role="alert">${err}</p>`:""}
   <div class="ob-foot"><div><button class="btn" id="obBack">Back</button></div>
   <div class="inline"><button class="btn primary" id="obNext">${quick?"Start using Charge":last?"Finish and go to my planner":"Continue"}</button></div></div>`;
-  c.querySelectorAll("[data-multi] .opt").forEach(b=>b.onclick=()=>{const f=b.parentElement.dataset.multi,v=b.dataset.v,a=draft[f];const i=a.indexOf(v);i<0?a.push(v):a.splice(i,1);b.setAttribute("aria-pressed",String(i<0))});
+  c.querySelectorAll("[data-multi] .opt").forEach(b=>b.onclick=()=>{const f=b.parentElement.dataset.multi,v=b.dataset.v,a=draft[f];const i=a.indexOf(v);i<0?a.push(v):a.splice(i,1);b.setAttribute("aria-pressed",String(i<0));
+    if(f==="does"&&REGULAR[v]){readActs();const y=window.scrollY;drawStep();window.scrollTo(0,y);if(i<0){const el=c.querySelector(`.ob-act[data-act="${CSS.escape(v)}"] .actStart`);if(el)el.focus()}}});
   c.querySelectorAll("[data-single] .opt").forEach(b=>b.onclick=()=>{draft.goal=b.dataset.v;b.parentElement.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",String(x===b)))});
   c.querySelectorAll("[data-pickstr] .opt").forEach(b=>b.onclick=()=>{draft[b.parentElement.dataset.pickstr]=b.dataset.s;b.parentElement.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",String(x===b)))});
   c.querySelectorAll("[data-pick] .opt").forEach(b=>b.onclick=()=>{draft.study=+b.dataset.n;b.parentElement.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",String(x===b)))});
@@ -2153,6 +2425,14 @@ function drawStep(err){
   $("obNext").onclick=()=>{st.read&&st.read();const e=st.check&&st.check();if(e){drawStep(e);return}if(quick){finishSetup(false);return}if(!last){step++;drawStep();return}finishSetup(true)};
 
 }
+// When someone picks Clubs, Sports, a job and so on, ask right there which days, what time and how long.
+function actForms(){const acts=draft.does.filter(d=>REGULAR[d]);if(!acts.length)return "";
+  return `<div class="ob-acts"><div class="label" style="margin-top:14px">When are they?</div>`+acts.map(d=>{const g=REGULAR[d],r=draft.regular[d]||(draft.regular[d]={days:[],start:g.start,mins:g.mins});
+    return `<div class="ob-act" data-act="${esc(d)}"><h3>${esc(d)}</h3>
+     <div class="days">${SH.map((n,i)=>`<button type="button" class="opt" data-day="${i}" aria-pressed="${r.days.includes(i)}">${n}</button>`).join("")}</div>
+     <div class="ob-row"><div class="field"><label class="label">Starts at</label><input type="time" class="actStart" value="${r.start}"></div>
+     <div class="field"><label class="label">How long (minutes)</label><input type="number" class="actMins" min="5" max="720" step="5" value="${r.mins}"></div></div></div>`}).join("")+`</div>`}
+function readActs(){document.querySelectorAll(".ob-act").forEach(el=>{const r=draft.regular[el.dataset.act];if(!r)return;r.start=el.querySelector(".actStart").value||r.start;r.mins=Math.max(5,Math.min(720,+el.querySelector(".actMins").value||r.mins))})}
 function finishSetup(full){
   if(full!==false)draft.setupDone=true;
   if(profile&&(profile.schoolStart!==draft.schoolStart||profile.schoolEnd!==draft.schoolEnd||profile.noHours!==draft.noHours||JSON.stringify(profile.regular||{})!==JSON.stringify(draft.regular||{})))draft.routinesMerged=false;
@@ -2170,7 +2450,7 @@ function profileSuggestions(dt){
   if(!profile||profile.skipped)return [];
   const wd=dt.getDay(),out=[],weekday=wd>=1&&wd<=5;
   const merged=!!profile.routinesMerged;
-  if(!merged&&!isAdult()&&weekday&&!profile.noHours){
+  if(!merged&&!isAdult()&&weekday&&!profile.noHours&&!noSchool(dt)){
     const [sh,sm]=profile.schoolStart.split(":").map(Number),[eh,em]=profile.schoolEnd.split(":").map(Number);
     out.push({name:"School",cat:"School",type:"drain",pts:35,mins:Math.max(60,(eh*60+em)-(sh*60+sm)),start:profile.schoolStart,why:"School day, from your answers",score:20});
   }
@@ -2427,6 +2707,7 @@ function mergeRemote(d){
     const ld=state.days[k];
     ritems.forEach(i=>{const li=ld&&ld.items.find(x=>x.id===i.id);if(!li){if(!known.has(i.id)){day(k).items.push(JSON.parse(JSON.stringify(i)));changed++}}else if(i.done&&!li.done){li.done=true;changed++}});
     if(ld&&ld.items)ld.items=ld.items.filter(i=>{if(!rim.has(i.id)&&known.has(i.id)){changed++;return false}return true})});
+  if(d.profile&&profile){["country","daysOff"].forEach(f=>{if(d.profile[f]!==undefined&&profile[f]===undefined){profile[f]=JSON.parse(JSON.stringify(d.profile[f]));changed++}})}
   if(d.profile&&profile&&Array.isArray(d.profile.classes)){profile.classes=profile.classes||[];d.profile.classes.forEach(c=>{if(!profile.classes.some(x=>x.name===c.name)){profile.classes.push(c);changed++}})}
   if(d.profile&&profile&&Array.isArray(d.profile.routines)&&Array.isArray(profile.routines)){d.profile.routines.forEach(rt=>{if(!profile.routines.some(x=>x.id===rt.id)&&!known.has("rt:"+rt.id)){profile.routines.push(rt);changed++}})}
   setLS(KEY,JSON.stringify(state));setLS(PKEY,JSON.stringify(profile));setLS(CKEY,JSON.stringify(ctlsItems));
@@ -2434,7 +2715,7 @@ function mergeRemote(d){
 function replaceFromRemote(d){
   if(d.state&&d.state.days){state={example:false,v:3,days:JSON.parse(JSON.stringify(d.state.days)),learn:d.state.learn?JSON.parse(JSON.stringify(d.state.learn)):undefined};setLS(KEY,JSON.stringify(state))}
   if(d.profile){profile=JSON.parse(JSON.stringify(d.profile));setLS(PKEY,JSON.stringify(profile))}
-  if(d.settings){settings=Object.assign({},DEF_SET,d.settings);setLS(SKEY,JSON.stringify(settings))}
+  if(d.settings){settings=Object.assign({},DEF_SET,d.settings);setLS(SKEY,JSON.stringify(settings));try{applyLook()}catch(e){}}
   if(Array.isArray(d.ctls)){ctlsItems=JSON.parse(JSON.stringify(d.ctls));setLS(CKEY,JSON.stringify(ctlsItems))}
   markSynced(String(d.updatedAt||""))}
 let pushing=false;
@@ -2442,17 +2723,19 @@ async function pushSync(){
   syncTimer=null;const ref=syncRef();if(!ref)return;if(pushing){queueSync();return}pushing=true;
   try{
     const sn=await ref.get();const d=sn.exists?sn.data():null;
+    if(d&&d.ctlsStatus)ctlsStatus=d.ctlsStatus;
     if(d&&String(d.updatedAt||"")!==getLS("eb-synced")&&mergeRemote(d)){buildAssignments();try{show(currentView||homeView(),true)}catch(e){}}
     const cutoff=key(addDays(today,-120)),days={};
     Object.entries(state.days).forEach(([k,v])=>{if(k>=cutoff&&v.items&&v.items.length)days[k]=v});
     const stamp=new Date().toISOString();
-    await ref.set({v:1,updatedAt:stamp,state:{example:false,v:3,days,learn:state.learn||null},profile:profile||null,settings,ctls:ctlsItems.filter(c=>c.due>=cutoff)});
+    await ref.set({v:1,ctlsStatus:ctlsStatus||null,updatedAt:stamp,state:{example:false,v:3,days,learn:state.learn||null},profile:profile||null,settings,ctls:ctlsItems.filter(c=>c.due>=cutoff)});
     markSynced(stamp);setFoot("Saved to your account \u00b7 works on all your devices")}
   catch(e){dbErr(e);setFoot("Saved on this device")}
   finally{pushing=false}
 }
 // Apply a newer copy from the account: merge if this device has unsaved changes, otherwise take it as is.
 function applyRemote(d){
+  if(d&&d.ctlsStatus){ctlsStatus=d.ctlsStatus;try{renderCtlsWarn()}catch(e){}}
   if(!d||String(d.updatedAt||"")===getLS("eb-synced"))return false;
   const dirty=localStamp()>getLS("eb-synced");
   if(dirty||!getLS("eb-synced")&&localStamp()){mergeRemote(d);setLS("eb-synced",String(d.updatedAt||""));queueSync()}
@@ -2470,6 +2753,37 @@ async function pullSync(){
 }
 document.addEventListener("visibilitychange",async()=>{if(document.visibilityState==="visible"&&syncReady&&!syncTimer){if(await pullSync()){buildAssignments();refreshAccess();show(currentView||homeView(),true)}}});
 
+// ---------- Email sign-in for the public app (Supabase). Off until SUPA_URL and SUPA_KEY are filled in. ----------
+// Safety: sign-in is by an emailed link (no passwords to steal), each person can only read their own row
+// (row-level security in the database), the email is shown masked, and it only runs over https.
+const SUPA_URL="",SUPA_KEY="";
+let supa=null,cloudMsg="";
+const cloudOn=()=>!IN_CLAUDE&&!!SUPA_URL&&!!SUPA_KEY;
+const maskEmail=e=>{const [u,d]=String(e||"").split("@");if(!d)return "";const [h,...t]=d.split(".");return (u.length<=2?u[0]+"*":u.slice(0,2)+"*".repeat(Math.min(6,u.length-2)))+"@"+h[0]+"*".repeat(Math.min(6,Math.max(1,h.length-1)))+(t.length?"."+t.join("."):"")};
+function cloudDoc(uid){return {
+  get:async()=>{const {data,error}=await supa.from("planners").select("data").eq("user_id",uid).maybeSingle();if(error)throw error;return {exists:!!data,data:()=>data&&data.data}},
+  set:async doc=>{const {error}=await supa.from("planners").upsert({user_id:uid,data:doc,updated_at:new Date().toISOString()});if(error)throw error},
+  onSnapshot:cb=>{try{const ch=supa.channel("planner-"+uid).on("postgres_changes",{event:"*",schema:"public",table:"planners",filter:"user_id=eq."+uid},p=>{if(p&&p.new&&p.new.data)cb({exists:true,data:()=>p.new.data})}).subscribe();return()=>{try{supa.removeChannel(ch)}catch(e){}}}catch(e){return()=>{}}}}}
+async function useCloud(user){acct.id=user.id;acct.email=user.email||"";acct.db={doc:()=>cloudDoc(user.id)};
+  await pullSync();syncReady=true;
+  try{syncRef().onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(!d||pushing)return;if(applyRemote(d)){buildAssignments();show(currentView||homeView(),true);toast("Updated from your account")}})}catch(e){}
+  if(localStamp()>getLS("eb-synced"))queueSync();buildAssignments();show(currentView||homeView(),true)}
+async function initCloud(){if(!cloudOn()||!/^https:/.test(location.protocol))return;
+  try{const m=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm");supa=m.createClient(SUPA_URL,SUPA_KEY,{auth:{persistSession:true,detectSessionInUrl:true,flowType:"pkce",autoRefreshToken:true}})}catch(e){cloudMsg="Couldn't reach the sign-in service. Your plans are still saved on this device.";return}
+  try{const {data}=await supa.auth.getSession();if(data&&data.session&&data.session.user)await useCloud(data.session.user)}catch(e){}
+  supa.auth.onAuthStateChange((ev,sess)=>{if(ev==="SIGNED_IN"&&sess&&sess.user&&acct.id!==sess.user.id){useCloud(sess.user).then(()=>{toast("Signed in. Your plans are saved to your account.");if(currentView==="settings")renderSettings()})}
+    if(ev==="SIGNED_OUT"){acct.db=null;acct.id=null;acct.email="";syncReady=false;if(currentView==="settings")renderSettings()}});
+  if(currentView==="settings")renderSettings()}
+async function sendSignInLink(email,note,btn){email=String(email||"").trim().toLowerCase();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)||email.length>120){note.textContent="That doesn't look like an email address.";return}
+  if(!/^https:/.test(location.protocol)){note.textContent="Open Charge from its web link to sign in.";return}
+  const last=+getLS("ch-link-at")||0;if(Date.now()-last<60000){note.textContent="A link was just sent. Wait a minute before asking for another.";return}
+  if(!supa){note.textContent=cloudMsg||"Sign-in isn't ready yet. Try again in a moment.";return}
+  btn.disabled=true;note.textContent="Sending\u2026";
+  try{const {error}=await supa.auth.signInWithOtp({email,options:{emailRedirectTo:location.href.split("#")[0].split("?")[0],shouldCreateUser:true}});if(error)throw error;
+    setLS("ch-link-at",String(Date.now()));note.textContent=`Check ${maskEmail(email)} for a sign-in link. No password needed. Open the link on this device.`}
+  catch(e){note.textContent=e&&/rate/i.test(String(e.message))?"Too many tries. Wait a few minutes and try again.":"Couldn't send the link. Check the address and your internet, then try again."}
+  finally{btn.disabled=false}}
 async function initAccounts(){
   if(window.claude&&window.claude.use){
     const [db,user]=await Promise.all([window.claude.use("db").catch(()=>null),window.claude.use("user").catch(()=>null)]);
@@ -2489,6 +2803,7 @@ async function initAccounts(){
     try{syncRef().onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(!d||pushing)return;if(applyRemote(d)){buildAssignments();refreshAccess();show(currentView||homeView(),true);toast("Updated from your account")}},dbErr)}catch(e){}}
   acct.ready=true;buildAssignments();refreshAccess();
   route();
+  if(cloudOn())initCloud();
 }
 function refreshAccess(){access={ok:true};return;
   if(!acct.ready){access={ok:false,reason:"loading"};return}
@@ -2541,6 +2856,10 @@ function assignRow(a,opts){
   li.querySelector(".why").textContent=(opts&&opts.noClass?"":a.cls+" \u00b7 ")+new Date(a.due+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"})+" \u00b7 about "+fmt(a.mins)+(a.notes?" \u00b7 "+a.notes:"");
   const ad=li.querySelector(".add");if(ad)ad.onclick=()=>{planAssignment(a,opts&&opts.today?today:cur);ad.textContent="Added";ad.disabled=true;render()};
   const x=li.querySelector(".x");if(x)x.onclick=()=>{removeWork(a.id)};
+  if(dd<0&&BIG.includes(a.kind)){const src=ctlsItems.find(c=>c.id===a.id);const box=li.lastElementChild;
+    if(src&&src.score!=null){const sp=document.createElement("span");sp.className="src";sp.textContent=src.score+"%";box.insertBefore(sp,box.firstChild)}
+    else if(src){const inp=document.createElement("input");inp.type="number";inp.min=0;inp.max=120;inp.placeholder="Score %";inp.className="scorein";inp.setAttribute("aria-label","Score percent");
+      inp.onkeydown=e=>{if(e.key==="Enter"){const v=parseFloat(inp.value);if(v>=0&&v<=120){src.score=Math.round(v);saveCtls();buildAssignments();show(currentView,true);toast(`Saved ${src.score}%`)}}};box.insertBefore(inp,box.firstChild)}}
   return li;
 }
 // ---------- Test prep, missed sessions, scores ----------
@@ -2555,6 +2874,7 @@ function nativeSchedule(){if(!IS_NATIVE)return;clearTimeout(nativeSchedT);native
   const out=[],now=Date.now(),lead=(settings.remind||10)*60000;
   if(settings.notify){for(let i=0;i<7;i++){const d=addDays(today,i),k=key(d),dd=state.days[k];if(!dd||!dd.items)continue;
     dd.items.forEach(it=>{const s0=toMin(it.start);if(it.done||s0==null)return;const at=new Date(k+"T00:00:00").getTime()+s0*60000-lead;if(at>now+30000)out.push({id:"b-"+it.id,at,title:it.name,body:`Starts at ${to12(it.start)} \u00b7 ${fmt(it.mins||30)}`})})}
+    ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due>=key(today)).forEach(a=>{const w=toMin((profile&&profile.wake)||"06:30");const am=new Date(a.due+"T00:00:00").getTime()+((w||390)+20)*60000;if(am>now+30000&&am<now+8*864e5)out.push({id:"m-"+a.id,at:am,title:`${a.kind} today: ${a.title}`,body:"5-minute warm-up before class. You've got this."})});
     ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due>key(today)).forEach(a=>{const at=new Date(addDays(new Date(a.due+"T12:00:00"),-1).setHours(19,30,0,0)).getTime();if(at>now+30000&&at<now+8*864e5)out.push({id:"t-"+a.id,at,title:`${a.kind} tomorrow: ${a.title}`,body:"Quick review tonight, then get some sleep."})})}
   const sig=JSON.stringify(out);if(sig===nativeLast)return;nativeLast=sig;nativePost({type:"schedule",items:out.slice(0,60)})},1500)}
 window.__chargeNative=function(m){try{if(m&&m.perm){const note=$("nfNote"),b=$("s_notify");if(m.perm==="granted"){settings.notify=true;saveSettings();nativeLast="";nativeSchedule();if(note)note.textContent="On. Charge will remind you before each block and the night before tests, even when the app is closed.";if(b)b.setAttribute("aria-checked","true")}else{settings.notify=false;saveSettings();if(note)note.textContent="Notifications are off for Charge. Turn them on in your phone's Settings app.";if(b)b.setAttribute("aria-checked","false")}}}catch(e){}}; // the public app build sets this to true
@@ -2570,6 +2890,12 @@ function renderAppBanner(){const el=$("appBanner");if(!el)return;el.hidden=true;
   const old=!last||(today-new Date(last+"T12:00:00"))/864e5>30,snoozed=hid&&(today-new Date(hid+"T12:00:00"))/864e5<14;
   if(days>=7&&old&&!snoozed){el.innerHTML=`<img src="data:image/png;base64,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" alt=""><div><b>Back up your planner</b><span>Your plans are only on this device. A backup lets you move them to a new phone.</span></div><button class="btn primary" id="abGo">Back up</button><button class="mini" id="abNo">Later</button>`;
     el.hidden=false;$("abNo").onclick=()=>dismiss("ch-bk-hide");$("abGo").onclick=()=>{show("settings");setTimeout(()=>{const b=$("aExport");if(b){b.scrollIntoView({block:"center"});b.click()}},150)}}}
+let ctlsStatus=null;
+function renderCtlsWarn(){const el=$("ctlsWarn");if(!el)return;const st=ctlsStatus;
+  const show_=IN_CLAUDE&&st&&st.ok===false&&st.at&&(Date.now()-new Date(st.at).getTime())<3*864e5&&getLS("ch-ctls-ack")!==st.at;
+  el.hidden=!show_;if(!show_)return;
+  $("ctlsWarnText").textContent=`${st.reason||"It couldn't read CTLS."} (${new Date(st.at).toLocaleString(undefined,{weekday:"short",hour:"numeric",minute:"2-digit"})}). Sign in to CTLS in Claude's browser, close CTLS in other tabs, then ask Claude to "check CTLS".`;
+  $("ctlsWarnOk").onclick=()=>{setLS("ch-ctls-ack",st.at);el.hidden=true}}
 const workById=id=>ctlsItems.find(c=>c.id===id);
 function blocksFor(id){const out=[];Object.entries(state.days).forEach(([k,d])=>(d.items||[]).forEach(it=>{if(it.aid===id)out.push({k,it})}));return out.sort((a,b)=>(a.k+(a.it.start||"99")).localeCompare(b.k+(b.it.start||"99")))}
 const nowMin=()=>{const n=new Date();return n.getHours()*60+n.getMinutes()};
@@ -2591,7 +2917,7 @@ function focusNote(it){if(!it||!it.aid)return "";const a=workById(it.aid);if(!a)
   let tip="";const m=(it.name||"").match(/\((\d+)\/(\d+)\)/);const T=STUDY_TIPS[a.kind];
   if(T){const i=m?+m[1]:1,n=m?+m[2]:1;tip=i>=n?T[T.length-1]:i===1?T[0]:T[Math.min(1,T.length-1)]}
   else tip="Start with the hardest part while you're fresh. Phone in another room.";
-  return `<div class="fnote"><b>${esc(a.kind)} \u00b7 ${esc(shortDate(a.due))}</b><span>${esc(a.title)}${a.notes?" \u2014 "+esc(a.notes):""}</span><span><b style="text-transform:none;letter-spacing:0;color:var(--ink)">Try this:</b> ${esc(tip)}</span>${hasAI()&&BIG.includes(a.kind)?`<div class="qz" id="fQuiz"><div class="inline"><input id="qzTopic" maxlength="120" placeholder="What's on it? e.g. ionic compounds, chapters 4\u20136" aria-label="Topics"><button class="mini" id="qzGo" type="button">Quiz me</button></div></div>`:""}</div>`}
+  return `<div class="fnote"><b>${esc(a.kind)} \u00b7 ${esc(shortDate(a.due))}</b><span>${esc(a.title)}${a.notes?" \u2014 "+esc(a.notes):""}</span><span><b style="text-transform:none;letter-spacing:0;color:var(--ink)">Try this:</b> ${esc(tip)}</span>${BIG.includes(a.kind)?`<div class="fcbox" id="fCards"></div>`:""}${hasAI()&&BIG.includes(a.kind)?`<div class="qz" id="fQuiz"><div class="inline"><input id="qzTopic" maxlength="120" placeholder="What's on it? e.g. ionic compounds, chapters 4\u20136" aria-label="Topics"><button class="mini" id="qzGo" type="button">Quiz me</button></div></div>`:""}</div>`}
 async function runQuizMe(a){
   const box=$("fQuiz");if(!box)return;const top=$("qzTopic").value.trim();
   const sample=await getSample();if(!sample){box.innerHTML=`<p class="ai-note">Quiz me needs Charge open in Claude.</p>`;return}
@@ -2605,6 +2931,32 @@ async function runQuizMe(a){
     $("qzShow").onclick=()=>{box.innerHTML=`<div class="label">Question ${i+1} of ${qs.length}</div><p class="qq"></p><p class="qa"></p><div class="inline"><button class="mini" id="qzR" type="button">I got it</button><button class="mini" id="qzW" type="button">I missed it</button></div>`;box.querySelector(".qq").textContent=String(q.q);box.querySelector(".qa").textContent=String(q.a);
       $("qzR").onclick=()=>{right++;i++;draw()};$("qzW").onclick=()=>{i++;draw()}}};
   draw()}
+// ---------- Flashcards: free practice for any test or quiz (AI can help write them when it's on) ----------
+function cardsOf(id){const src=ctlsItems.find(c=>c.id===id);return src?(src.cards=src.cards||[]):[]}
+function cardsUI(box,id){
+  const src=ctlsItems.find(c=>c.id===id);if(!box||!src)return;const cards=()=>src.cards=src.cards||[];
+  const list=()=>{box.innerHTML=`<div class="fc-head"><b>Flashcards</b><span>${cards().length} card${cards().length===1?"":"s"}</span></div>
+      <ul class="fc-list">${cards().map((c,i)=>`<li><div><b></b><span></span></div><button class="x" data-i="${i}" aria-label="Delete card">\u00d7</button></li>`).join("")}</ul>
+      <form class="fc-add" autocomplete="off"><input class="fcq" maxlength="160" placeholder="Question, e.g. What is a covalent bond?" aria-label="Question"><input class="fca" maxlength="200" placeholder="Answer" aria-label="Answer"><button class="mini" type="submit">Add card</button></form>
+      <div class="inline">${cards().length?`<button class="btn primary fc-go" type="button">Practice ${cards().length} card${cards().length===1?"":"s"}</button>`:""}${hasAI()?`<button class="mini fc-ai" type="button">Make 5 with AI</button>`:""}</div>`;
+    box.querySelectorAll(".fc-list li").forEach((li,i)=>{li.querySelector("b").textContent=cards()[i].q;li.querySelector("span").textContent=cards()[i].a});
+    box.querySelectorAll(".fc-list .x").forEach(b=>b.onclick=()=>{cards().splice(+b.dataset.i,1);saveCtls();list()});
+    box.querySelector(".fc-add").onsubmit=e=>{e.preventDefault();const q=box.querySelector(".fcq").value.trim(),a=box.querySelector(".fca").value.trim();if(!q||!a){(q?box.querySelector(".fca"):box.querySelector(".fcq")).focus();return}cards().push({q,a});saveCtls();list();box.querySelector(".fcq").focus()};
+    const go=box.querySelector(".fc-go");if(go)go.onclick=()=>practice();
+    const ai=box.querySelector(".fc-ai");if(ai)ai.onclick=async()=>{ai.disabled=true;ai.textContent="Writing\u2026";const sm=await getSample();
+      let qs=null;try{qs=await sm.json(`Write 5 short flashcards to help a high school student study for a ${src.kind.toLowerCase()} in ${assignSubject(src)||src.cls}: "${src.title}". ${src.notes?"Notes: "+src.notes+".":""} Existing cards: ${cards().map(c=>c.q).join(" | ")||"none"}. Don't repeat them. Each question under 20 words, each answer under 25 words. Reply with only a JSON array like [{"q":"...","a":"..."}].`,{modelTier:"quick"})}catch(e){}
+      if(Array.isArray(qs)){qs.filter(x=>x&&x.q&&x.a).slice(0,5).forEach(x=>cards().push({q:String(x.q).slice(0,160),a:String(x.a).slice(0,200)}));saveCtls();list()}else{ai.disabled=false;ai.textContent="Try AI again"}}};
+  const practice=()=>{let q=[...cards()].sort(()=>Math.random()-.5),firstMiss=new Set(),done=0;const total=q.length;
+    const show=()=>{if(!q.length){box.innerHTML=`<div class="fc-head"><b>All ${total} done!</b><span>${firstMiss.size?`You missed ${firstMiss.size} the first time`:"No misses"}</span></div><p class="ai-note">${firstMiss.size?"Practice once more tomorrow. Spacing it out helps it stick.":"Nice. Try again tomorrow to lock it in."}</p><div class="inline"><button class="btn primary fc-again" type="button">Again</button><button class="mini fc-back" type="button">Edit cards</button></div>`;box.querySelector(".fc-again").onclick=practice;box.querySelector(".fc-back").onclick=list;return}
+      const c=q[0];box.innerHTML=`<div class="fc-head"><b>Card ${done+1}</b><span>${q.length} left</span></div><div class="fc-card"><p class="qq"></p><p class="qa" hidden></p></div><div class="inline"><button class="btn primary fc-show" type="button">Show answer</button></div>`;
+      box.querySelector(".qq").textContent=c.q;box.querySelector(".qa").textContent=c.a;
+      box.querySelector(".fc-show").onclick=()=>{box.querySelector(".qa").hidden=false;box.querySelector(".inline").innerHTML=`<button class="btn primary fc-r" type="button">I got it</button><button class="btn fc-w" type="button">I missed it</button>`;
+        box.querySelector(".fc-r").onclick=()=>{q.shift();done++;show()};box.querySelector(".fc-w").onclick=()=>{firstMiss.add(c);q.push(q.shift());show()}}};
+    show()};
+  list()}
+function openCards(id){const a=ctlsItems.find(c=>c.id===id);if(!a)return;const pc=$("popCard");
+  pc.innerHTML=`<div class="label">${esc(a.kind)} \u00b7 ${esc(shortDate(a.due))}</div><h2 id="popTitle"></h2><div class="fcbox" id="fcPop"></div><button class="btn" id="fcClose" style="margin-top:6px">Done</button>`;
+  pc.querySelector("h2").textContent=a.title;cardsUI($("fcPop"),id);$("pop").hidden=false;$("fcClose").onclick=()=>{$("pop").hidden=true;render()};$("pop").onkeydown=e=>{if(e.key==="Escape"){$("pop").hidden=true;render()}}}
 function scoreAvg(subj){const L=ctlsItems.filter(a=>a.score!=null&&(!subj||assignSubject(a)===subj||a.cls===subj)&&BIG.includes(a.kind));return L.length?Math.round(L.reduce((t,a)=>t+a.score,0)/L.length):null}
 function renderTestPrep(){
   const box=$("tprep");if(!box)return;const home=key(cur)===key(today)&&viewMode==="day";
@@ -2618,8 +2970,13 @@ function renderTestPrep(){
   const tk=key(today),lim=key(addDays(today,14)),back=key(addDays(today,-14));
   const up=ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due>=tk&&a.due<=lim).sort((a,b)=>a.due.localeCompare(b.due));
   const ask=ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due<tk&&a.due>=back&&a.score==null&&!a.scoreSkip).sort((a,b)=>b.due.localeCompare(a.due)).slice(0,1);
-  box.hidden=!up.length&&!ask.length;if(box.hidden)return;
-  $("tpCount").textContent=up.length?`${up.length} in the next 2 weeks`:"";
+  // homework due in the next 3 days that isn't finished yet
+  const hwDone=a=>a.done||(()=>{const bl=blocksFor(a.id);return bl.length&&bl.every(x=>x.it.done)})();
+  const hw=ctlsItems.filter(a=>!BIG.includes(a.kind)&&a.due>=tk&&a.due<=key(addDays(today,3))&&!hwDone(a)).sort((a,b)=>a.due.localeCompare(b.due));
+  const wkAny=renderWeek7();
+  const nbSoon=ctlsItems.some(a=>BIG.includes(a.kind)&&(a.due===key(addDays(today,1))||a.due===tk));
+  box.hidden=!up.length&&!ask.length&&!hw.length&&!wkAny&&!nbSoon;if(box.hidden)return;
+  $("tpCount").textContent=[up.length?(up.length===1?"1 test or quiz":`${up.length} tests and quizzes`):"",hw.length?`${hw.length} homework`:""].filter(Boolean).join(" \u00b7 ");
   const list=$("tpList");list.innerHTML="";
   ask.forEach(a=>{const c=document.createElement("div");c.className="tp score";const col=subjColor(assignSubject(a));if(col)c.style.setProperty("--c",col);
     c.innerHTML=`<div class="tp-top"><span class="atag big">${esc(a.kind)}</span><em>${esc(shortDate(a.due))}</em></div><b></b><span class="sub2">What did you get? Charge tracks your average per subject.</span><div class="row3"><input type="number" min="0" max="120" inputmode="numeric" placeholder="%" aria-label="Score percent"><button class="mini sv">Save</button><button class="mini sk">Skip</button></div>`;
@@ -2636,9 +2993,88 @@ function renderTestPrep(){
     c.innerHTML=`<div class="tp-top"><span class="atag big">${esc(a.kind)}</span><em>${dd===0?"Today":dd===1?"Tomorrow":"In "+dd+" days"}</em></div><b></b><span class="sub2"></span>${bl.length?`<div class="bar"><i style="width:${Math.round(done/bl.length*100)}%"></i></div>`:""}<div class="tp-foot"><span>${bl.length?`${done} of ${bl.length} study session${bl.length===1?"":"s"} done`:dd===0?"Good luck!":"No study time planned"}</span>${dd===0?"":next?`<button class="mini go">${next.k===tk?"Study now":"Next: "+new Date(next.k+"T12:00:00").toLocaleDateString(undefined,{weekday:"short"})+(next.it.start?" "+to12(next.it.start):"")}</button>`:bl.length?"":`<button class="mini pl">Plan study</button>`}</div>`;
     c.querySelector("b").textContent=a.title;c.querySelector(".sub2").textContent=(assignSubject(a)||a.cls)+" \u00b7 "+shortDate(a.due)+(a.notes?" \u00b7 "+a.notes:"");
     const go=c.querySelector(".go");if(go)go.onclick=()=>{if(next.k===tk)startFocus(next.it,next.k);else{cur=new Date(next.k+"T12:00:00");render()}};
+    const fb=document.createElement("button");fb.className="linkbtn fc-open";fb.type="button";const nC=cardsOf(a.id).length;fb.textContent=nC?`Flashcards (${nC})`:"Make flashcards";fb.onclick=()=>openCards(a.id);c.appendChild(fb);
     const pl=c.querySelector(".pl");if(pl)pl.onclick=()=>{const n=planStudyFor(a);render();toast(n?`Planned ${n} study session${n===1?"":"s"}`:"No days left before it to plan")};
     list.appendChild(c)});
+  hw.forEach(a=>{const dd=Math.round((new Date(a.due+"T12:00:00")-today)/864e5),bl=blocksFor(a.id),next=bl.find(x=>!x.it.done);
+    const c=document.createElement("div");c.className="tp hw"+(dd<=1?" soon":"");const col=subjColor(assignSubject(a));if(col)c.style.setProperty("--c",col);
+    c.innerHTML=`<div class="tp-top"><span class="atag">${esc(a.kind)}</span><em>${dd===0?"Due today":dd===1?"Due tomorrow":"Due in "+dd+" days"}</em></div><b></b><span class="sub2"></span><div class="tp-foot"><span>${next?(next.k===tk?"Today":new Date(next.k+"T12:00:00").toLocaleDateString(undefined,{weekday:"short"}))+(next.it.start?" "+to12(next.it.start):"")+" \u00b7 "+fmt(next.it.mins||a.mins):"Not scheduled yet \u00b7 about "+fmt(a.mins)}</span><button class="mini done">Done</button></div>`;
+    c.querySelector("b").textContent=a.title;c.querySelector(".sub2").textContent=(assignSubject(a)||a.cls)+" \u00b7 "+shortDate(a.due)+(a.notes&&!/^Plan:/.test(a.notes)?" \u00b7 "+a.notes:"");
+    c.querySelector(".done").onclick=()=>{const src=ctlsItems.find(x=>x.id===a.id);if(src)src.done=true;bl.forEach(x=>{x.it.done=true});saveCtls();save();nativePost({type:"haptic"});render();
+      toast(`${a.title} done`,()=>{if(src)src.done=false;bl.forEach(x=>{x.it.done=false});saveCtls();save();render()})};
+    list.appendChild(c)});
+  nightBeforeCard(list);
 }
+
+// ---------- Add from a photo of a handout, planner or whiteboard ----------
+function resizeImage(file,max){return new Promise(res=>{try{const img=new Image();img.onload=()=>{const sc=Math.min(1,max/Math.max(img.width,img.height));const cv=document.createElement("canvas");cv.width=Math.round(img.width*sc);cv.height=Math.round(img.height*sc);cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height);cv.toBlob(b=>res(b||file),"image/jpeg",.85);URL.revokeObjectURL(img.src)};img.onerror=()=>res(file);img.src=URL.createObjectURL(file)}catch(e){res(file)}})}
+function matchSubject(n){n=String(n||"").trim();const L=subjects();const lo=n.toLowerCase();
+  return (L.find(c=>c.name.toLowerCase()===lo)||L.find(c=>lo&&(c.name.toLowerCase().includes(lo)||lo.includes(c.name.toLowerCase())))||{}).name||(n?n.charAt(0).toUpperCase()+n.slice(1):"General")}
+async function photoAdd(file){
+  const pc=$("popCard");pc.innerHTML=`<div class="label">Add from photo</div><h2 id="popTitle">Reading your photo\u2026</h2><p class="ai-note">This takes a few seconds.</p>`;$("pop").hidden=false;
+  const fail=t=>{pc.innerHTML=`<div class="label">Add from photo</div><h2 id="popTitle">Couldn't read that photo</h2><p class="ai-note">${t}</p><button class="btn" id="phClose">Close</button>`;$("phClose").onclick=()=>{$("pop").hidden=true}};
+  try{
+    const sm=await getSample();if(!sm||!hasVision())return fail("Reading photos needs Charge's AI. In Claude it's built in; on the website, add a Claude API key in Settings \u2192 AI helper.");
+    if(IN_CLAUDE&&sm.limits){const lim=await sm.limits().catch(()=>null);if(!lim||!lim.images)return fail("Reading photos isn't allowed on this page yet. Open the page's Permissions menu and allow Claude to see images.")}
+    const img=await resizeImage(file,1600);
+    const subj=subjects().map(c=>c.name).join(", ")||"none set";
+    const prompt=`Today is ${WD[today.getDay()]} ${key(today)}. This is a photo a high school student took of a school handout, planner page, calendar or whiteboard. Find every test, quiz, homework assignment, project, essay or lab that has a due date or test date.
+The student's subjects are: ${subj}. Match each item to one of these when it clearly belongs; otherwise use a short class name.
+Use the year that makes each date upcoming (after ${key(addDays(today,-7))}). If a weekday and a date disagree, use the date and say so in "note". Skip anything without a date. Keep titles short (under 50 characters).
+Reply with only JSON: {"items":[{"kind":"Test|Quiz|Homework|Project|Essay|Lab","subject":"...","title":"...","due":"YYYY-MM-DD","note":""}]}`;
+    const res=await sm.json(prompt,{images:[img],modelTier:"default"});
+    const items=(res&&Array.isArray(res.items)?res.items:[]).filter(x=>x&&x.title&&/^\d{4}-\d{2}-\d{2}$/.test(String(x.due))).slice(0,25).map(x=>({kind:WORK_KINDS.includes(x.kind)?x.kind:(/test|exam/i.test(x.kind)?"Test":/quiz/i.test(x.kind)?"Quiz":"Homework"),subj:matchSubject(x.subject),title:String(x.title).slice(0,60),due:String(x.due),note:String(x.note||"").slice(0,80),dup:ctlsItems.some(c=>c.due===String(x.due)&&(c.cls||"").toLowerCase()===matchSubject(x.subject).toLowerCase()&&c.kind===x.kind)}));
+    if(!items.length)return fail("I couldn't find any tests, quizzes or homework with dates in that photo. Try a closer, brighter photo of just the dates.");
+    pc.innerHTML=`<div class="label">Add from photo</div><h2 id="popTitle">Found ${items.length} thing${items.length===1?"":"s"}</h2><p class="ai-note">Untick anything that's wrong and fix dates if needed. Study time is planned for tests and quizzes.</p>
+      <ul class="ph-list">${items.map((x,i)=>`<li><input type="checkbox" data-i="${i}" ${x.dup?"":"checked"} aria-label="Add this"><div><b></b><span></span></div><input type="date" data-d="${i}" value="${x.due}"></li>`).join("")}</ul>
+      <div class="row2" style="margin-top:8px"><button class="btn primary" id="phAdd">Add selected</button><button class="btn" id="phNo">Cancel</button></div>`;
+    pc.querySelectorAll(".ph-list li").forEach((li,i)=>{const x=items[i];li.querySelector("b").textContent=x.title;li.querySelector("span").textContent=`${x.kind} \u00b7 ${x.subj}${x.dup?" \u00b7 already in Charge":""}${x.note?" \u00b7 "+x.note:""}`});
+    $("phNo").onclick=()=>{$("pop").hidden=true};
+    $("phAdd").onclick=()=>{let n=0;pc.querySelectorAll(".ph-list li").forEach((li,i)=>{if(!li.querySelector("[data-i]").checked)return;const x=items[i];const due=li.querySelector("[data-d]").value||x.due;
+        const it={id:"ctls_"+uid()+uid(),src:"photo",cls:x.subj,title:x.title,kind:x.kind,due,mins:KIND_MINS[x.kind]||45,notes:x.note};ctlsItems.push(it);if(STUDY_PLAN[it.kind])planStudyFor(it);n++});
+      saveCtls();buildAssignments();$("pop").hidden=true;show(currentView,true);render();toast(n?`Added ${n} from your photo`:"Nothing added")};
+  }catch(e){fail(e&&e.code==="rate_limited"?"Claude is busy right now. Try again in a minute.":"Something went wrong reading it. Try again, or take a clearer photo.")}
+}
+if($("subjPhoto")){$("subjPhoto").onclick=()=>$("photoIn").click();$("photoIn").onchange=e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(f)photoAdd(f)}}
+
+// ---------- Grades per class ----------
+function renderGrades(){const p=$("gradesPanel");if(!p)return;
+  const by={};ctlsItems.filter(a=>a.score!=null&&BIG.includes(a.kind)).sort((a,b)=>a.due.localeCompare(b.due)).forEach(a=>{const sj=assignSubject(a)||a.cls;(by[sj]=by[sj]||[]).push(a)});
+  const rows=Object.entries(by).map(([sj,L])=>{const avg=Math.round(L.reduce((t,a)=>t+a.score,0)/L.length),last=L[L.length-1].score,prev=L.length>1?Math.round(L.slice(0,-1).reduce((t,a)=>t+a.score,0)/(L.length-1)):null;return {sj,avg,last,prev,n:L.length}}).sort((a,b)=>a.avg-b.avg);
+  p.hidden=!isStudent()||!!selSubj;if(p.hidden)return;
+  if(!rows.length){$("grList").innerHTML="";$("grLabel").textContent="";$("grNote").textContent="After a test or quiz, Charge asks your score. Your average for each class shows up here, and classes under 80% get extra study time.";return}
+  $("grLabel").textContent=`${rows.reduce((t,r)=>t+r.n,0)} scores`;
+  $("grList").innerHTML=rows.map(r=>{const t=r.prev==null?"":r.last>r.prev+2?" \u2191":r.last<r.prev-2?" \u2193":"";return `<div class="gr${r.avg<80?" low":""}" style="--c:${subjColor(r.sj)||"var(--y)"}"><b><i></i><span></span></b><div class="gbar"><span style="width:${Math.max(4,Math.min(100,r.avg))}%"></span></div><div class="gv"><b style="display:inline">${r.avg}%</b>${t} <em>${r.n} score${r.n===1?"":"s"} \u00b7 last ${r.last}%</em></div></div>`}).join("");
+  $("grList").querySelectorAll(".gr b span").forEach((el,i)=>el.textContent=subjLabel(rows[i].sj));
+  const low=rows[0];$("grNote").textContent=low.avg<80?`${low.sj} needs the most attention right now, so Charge plans an extra study session before each ${low.sj} test.`:rows.length>1?`Lowest right now: ${low.sj} at ${low.avg}%. Nice work.`:"Keep adding scores after each test and quiz.";
+}
+
+// ---------- This week, night-before and test-morning ----------
+function renderWeek7(){const box=$("wk7");if(!box)return "";const tk=key(today);let any=false;
+  const cells=[];for(let i=0;i<7;i++){const d=addDays(today,i),k=key(d),tests=ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due===k),hw=ctlsItems.filter(a=>!BIG.includes(a.kind)&&a.due===k&&!a.done);
+    const mins=((state.days[k]||{}).items||[]).filter(x=>!x.done&&(x.cat==="Study"||x.cat==="School")&&x.start).reduce((t,x)=>t+(x.mins||0),0);
+    if(tests.length||hw.length||mins||dayOff(d))any=true;const heavy=tests.length>=2||mins>=150;
+    cells.push(`<button type="button" data-k="${k}" class="${heavy?"heavy":""}${i===0?" today":""}"><span class="dn">${i===0?"Today":i===1?"Tmrw":d.toLocaleDateString(undefined,{weekday:"short"})} ${d.getDate()}</span>${(o=>o?`<span class="ho">${esc(o.name)}</span>`:"")(dayOff(d))}${heavy?`<span class="hv">Busy</span>`:""}${tests.map(a=>`<span class="ti">${esc(a.kind)}: ${esc(assignSubject(a)||a.cls)}</span>`).join("")}${hw.length?`<span class="ti" style="font-weight:500">${hw.length} homework</span>`:""}<span class="mi">${mins?fmt(mins)+" planned":"\u2014"}</span></button>`)}
+  box.innerHTML=any?cells.join(""):"";box.hidden=!any;
+  box.querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=new Date(b.dataset.k+"T12:00:00");render();window.scrollTo({top:0,behavior:"smooth"})});return any}
+function nightBeforeCard(list){const tk=key(today),tm=key(addDays(today,1)),h=new Date().getHours();
+  const P=profile||{},bed=P.bed||"22:30";
+  const add=(c)=>list.insertBefore(c,list.firstChild);
+  const tomorrow=ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due===tm),todayT=ctlsItems.filter(a=>BIG.includes(a.kind)&&a.due===tk);
+  if(h>=17&&tomorrow.length){const d=day(tk);d.nb=d.nb||{};const mathy=tomorrow.some(a=>/math|alg|geom|calc|chem|phys|stat/i.test(assignSubject(a)||a.cls));
+    const checks=[["review","Quick review: flashcards or notes, 15 minutes"],["pack",`Pack for tomorrow: notes, pencil${mathy?", calculator":""}`],["phone","Phone charged, alarm set"],["bed",`In bed by ${to12(bed)}`]];
+    const c=document.createElement("div");c.className="tp nb soon";
+    c.innerHTML=`<div class="tp-top"><span class="atag big">Tomorrow</span><em>Night before</em></div><b></b><ul>${checks.map(([k,t])=>`<li><label class="${d.nb[k]?"ok":""}"><input type="checkbox" data-k="${k}" ${d.nb[k]?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul>`;
+    c.querySelector("b").textContent=tomorrow.map(a=>`${assignSubject(a)||a.cls} ${a.kind.toLowerCase()}`).join(" + ");
+    c.querySelectorAll("input").forEach(x=>x.onchange=()=>{d.nb[x.dataset.k]=x.checked;x.closest("label").classList.toggle("ok",x.checked);save()});
+    const fc=tomorrow.find(a=>cardsOf(a.id).length);if(fc){const bt=document.createElement("button");bt.className="mini";bt.textContent="Practice flashcards";bt.onclick=()=>openCards(fc.id);c.appendChild(bt)}
+    add(c)}
+  const se=toMin(P.schoolEnd||"15:00");
+  if(todayT.length&&(se==null||new Date().getHours()*60+new Date().getMinutes()<se)){const c=document.createElement("div");c.className="tp nb soon";
+    const fc=todayT.find(a=>cardsOf(a.id).length);
+    c.innerHTML=`<div class="tp-top"><span class="atag big">Today</span><em>Test day</em></div><b></b><span class="sub2">${fc?"A 5-minute flashcard warm-up before class wakes your memory up.":"Look over your notes for 5 minutes before class. Eat breakfast and bring water."}</span>${fc?`<button class="btn primary wu" style="align-self:flex-start">5-minute warm-up</button>`:""}`;
+    c.querySelector("b").textContent=todayT.map(a=>`${assignSubject(a)||a.cls} ${a.kind.toLowerCase()}`).join(" + ")+". You've got this.";
+    const wu=c.querySelector(".wu");if(wu)wu.onclick=()=>openCards(fc.id);add(c)}}
 
 // ---------- Adding tests, quizzes and homework ----------
 const WORK_KINDS=["Test","Quiz","Homework","Project","Essay","Lab"];
@@ -2652,7 +3088,7 @@ function studyDays(due,kind,subj){const P=studyPlan(kind,subj);if(!P)return [];c
   for(let i=1;i<=P.n;i++){const d=addDays(new Date(due+"T12:00:00"),-i);if(key(d)>=tk)out.unshift(d)}return out}
 // Pick a sensible study time: after school (or late morning on days off), clear of anything already booked, done 30 min before bed.
 function studyStart(d,mins){try{
-  const [w,b]=dayBounds(),P=profile||{},wd=d.getDay(),school=!P.noHours&&wd>=1&&wd<=5&&toMin(P.schoolEnd)!=null;
+  const [w,b]=dayBounds(),P=profile||{},wd=d.getDay(),school=!P.noHours&&wd>=1&&wd<=5&&toMin(P.schoolEnd)!=null&&!noSchool(d);
   const pref=school?toMin(P.schoolEnd)+45:600,cap=b-30;
   const ex=[];if(school&&toMin(P.schoolStart)!=null)ex.push([toMin(P.schoolStart),toMin(P.schoolEnd)]);
   Object.values(P.regular||{}).forEach(r=>{const s0=toMin(r.start);if(r&&Array.isArray(r.days)&&r.days.includes(wd)&&s0!=null)ex.push([s0,s0+(+r.mins||60)])});
@@ -2835,6 +3271,7 @@ function renderGate(){
 // ---------- Settings (controls) ----------
 function rangeRow(id,label,help,min,max,stepv,unit){return `<div class="setrow"><div class="lab"><b>${label}</b><span>${help}</span></div><div class="ctl"><output id="o_${id}">${settings[id]}${unit}</output><input type="range" id="s_${id}" min="${min}" max="${max}" step="${stepv}" value="${settings[id]}" aria-label="${label}"></div></div>`}
 function renderSettings(){
+  renderLook();
   $("setEnergyRows").innerHTML=
     rangeRow("budget","Daily energy","Points you start each day with",60,160,5," pts")+
     rangeRow("great","Great sleep bonus","Added after a great night",0,30,5," pts")+
@@ -2845,11 +3282,13 @@ function renderSettings(){
     rangeRow("aiCount","Suggestions","How many blocks Charge plans",4,14,1," items"))+
     `<div class="setrow"><div class="lab"><b>Test and quiz pop-ups</b><span>Remind me when one is coming up</span></div><div class="ctl"><button class="switch" id="s_popups" role="switch" aria-checked="${settings.popups}" aria-label="Test and quiz pop-ups"></button></div></div>`+
     rangeRow("warnDays","Remind me","Days before a test or quiz",1,7,1," days")+
-    (IN_CLAUDE?"":`<div class="setrow"><div class="lab"><b>AI helper</b><span id="aiNote">${aiKey()?"On. The planner and Quiz me use Claude with your key. The key stays on this device.":"Optional. Add a Claude API key to turn on the AI planner and Quiz me. An adult needs to make the account at platform.claude.com; it costs a few cents a week."}</span></div><div class="ctl" style="flex-direction:column;align-items:stretch;gap:6px"><input type="password" id="aiKeyIn" placeholder="${aiKey()?"Key saved":"Paste key (sk-ant-...)"}" autocomplete="off" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2);min-width:200px"><div class="inline"><button class="mini" id="aiSave">Save and test</button>${aiKey()?`<button class="mini" id="aiDel">Remove</button>`:""}</div></div></div>`)+
+    (IN_CLAUDE||aiKey()||AI_PROXY||chromeAI||!(chromeAIState==="downloadable"||chromeAIState==="downloading")?"":`<div class="setrow"><div class="lab"><b>Free AI (Chrome)</b><span id="cAiNote">This computer's Chrome can run a small AI for free. It downloads once (a few GB). Works offline after that.</span></div><div class="ctl"><button class="btn primary" id="cAiGo">Turn on free AI</button></div></div>`)+
+    (IN_CLAUDE?"":`<div class="setrow"><div class="lab"><b>AI helper</b><span id="aiNote">${aiKey()?"On. The planner and Quiz me use Claude with your key. The key stays on this device.":AI_PROXY?"On for everyone, using Charge's free AI. You don't need to do anything. (For smarter answers and photo reading, you can add your own Claude API key here.)":chromeAI?"On, using the free AI built into Chrome on this computer. For better answers, add a Claude API key.":"Optional. Add a Claude API key to turn on the AI planner and Quiz me. An adult needs to make the account at platform.claude.com; it costs a few cents a week."}</span></div><div class="ctl" style="flex-direction:column;align-items:stretch;gap:6px"><input type="password" id="aiKeyIn" placeholder="${aiKey()?"Key saved":"Paste key (sk-ant-...)"}" autocomplete="off" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2);width:100%;min-width:0;box-sizing:border-box"><div class="inline"><button class="mini" id="aiSave">Save and test</button>${aiKey()?`<button class="mini" id="aiDel">Remove</button>`:""}</div></div></div>`)+
     `<div class="setrow"><div class="lab"><b>Notifications</b><span id="nfNote">${settings.notify&&notifyState()==="granted"?"On. A notification before each block and about tests, while Charge is open in a tab.":notifyState()==="denied"?"Blocked in this browser. Allow notifications for this site in your browser's settings.":"Get a notification before each study block and about tests, even in another tab."}</span></div><div class="ctl"><button class="switch" id="s_notify" role="switch" aria-checked="${!!(settings.notify&&notifyState()==="granted")}" aria-label="Notifications"></button></div></div>`+
     `<div class="setrow"><div class="lab"><b>Activity reminders</b><span>A heads-up before each activity while the app is open</span></div><div class="ctl"><button class="switch" id="s_reminders" role="switch" aria-checked="${settings.reminders}" aria-label="Activity reminders"></button></div></div>`+
     rangeRow("remind","Remind me before","Minutes before an activity starts",5,30,5," min")+
     `<div class="setrow"><div class="lab"><b>Ask how drained I feel</b><span>After you check something off, so energy points learn from you</span></div><div class="ctl"><button class="switch" id="s_rate" role="switch" aria-checked="${settings.rateAfter}" aria-label="Ask how drained I feel"></button></div></div>`;
+  if($("cAiGo"))$("cAiGo").onclick=e=>enableChromeAI($("cAiNote"),e.currentTarget);
   if($("aiSave"))$("aiSave").onclick=async()=>{const v=$("aiKeyIn").value.trim(),note=$("aiNote");if(!v){$("aiKeyIn").focus();return}
     if(!/^sk-ant-/.test(v)){note.textContent="That doesn't look like a Claude API key. It starts with sk-ant-.";return}
     try{localStorage.setItem(AI_KEY_LS,v)}catch(e){}note.textContent="Testing\u2026";
@@ -2873,8 +3312,20 @@ function renderSettings(){
     <div class="setrow"><div class="lab"><b>Access</b><span>${esc(stat)}</span></div><div class="ctl"></div></div>
     <div class="setrow"><div class="lab"><b>Import a calendar</b><span>Export your Google, Apple or school calendar as an .ics file and import it. Weekly events become routines, one-offs go on the right days.</span></div><div class="ctl"><label class="mini" style="cursor:pointer">Choose .ics file<input type="file" id="aIcs" accept=".ics,text/calendar" hidden></label></div></div>
     <div class="setrow"><div class="lab"><b>Backup</b><span>Download everything as a file, or restore from one</span></div><div class="ctl" style="flex-direction:row;gap:6px"><button class="mini" id="aExport">Download</button><label class="mini" style="cursor:pointer">Restore<input type="file" id="aImport" accept="application/json,.json" hidden></label></div></div>
+    ${cloudOn()?(acct.id?`<div class="setrow"><div class="lab"><b>Account</b><span>Signed in as ${esc(maskEmail(acct.email))}. Your plans are saved to your account and work on any device you sign in on.</span></div><div class="ctl"><button class="mini" id="cloudOut">Sign out</button></div></div>`:`<div class="setrow"><div class="lab"><b>Save to an account</b><span id="cloudNote">Sign in with your email to keep your plans if you change phones, and use Charge on more than one device. We email you a link, so there's no password to remember or steal.</span></div><div class="ctl" style="flex-direction:column;align-items:stretch;gap:6px"><input type="email" id="cloudEmail" autocomplete="email" inputmode="email" maxlength="120" placeholder="you@example.com" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2);width:100%;min-width:0;box-sizing:border-box"><button class="btn primary" id="cloudSend">Email me a sign-in link</button></div></div>`):""}
+    <div class="setrow"><div class="lab"><b>Country</b><span>For public holidays. On holidays and your days off, Charge treats it like a weekend: no school block, and study moves to the daytime.</span></div><div class="ctl"><select id="aCountry" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2)"><option value="">None</option>${HOLIDAY_COUNTRIES.map(([c,n])=>`<option value="${c}" ${country()===c?"selected":""}>${esc(n)}</option>`).join("")}</select><span class="ai-note" id="holNext" style="margin:4px 0 0"></span></div></div>
+    <div class="setrow"><div class="lab"><b>Days off from school</b><span>Breaks, teacher work days and other days with no school</span><ul class="doff" id="doffList"></ul><form class="doff-add" id="doffForm" autocomplete="off"><input id="doffName" maxlength="40" placeholder="e.g. Thanksgiving break"><input type="date" id="doffFrom" aria-label="From"><input type="date" id="doffTo" aria-label="To (optional)"><button class="mini" type="submit">Add</button></form></div><div class="ctl"></div></div>
     <div class="setrow"><div class="lab"><b>More about me</b><span>${profile&&profile.setupDone?"Sleep, school hours, what drains and recharges you":"Optional: sleep, school hours, what drains and recharges you. Plans get better with these."}</span></div><div class="ctl"><button class="mini" id="aEdit">${profile&&profile.setupDone?"Edit":"Answer"}</button></div></div>
     ${isTeacher()?"":`<div class="setrow"><div class="lab"><b>Planner data</b><span>Delete every day you've logged in this browser</span></div><div class="ctl"><button class="mini" id="aClear">Clear data</button></div></div>`}`;
+  if($("cloudSend")){$("cloudSend").onclick=e=>sendSignInLink($("cloudEmail").value,$("cloudNote"),e.currentTarget);$("cloudEmail").onkeydown=e=>{if(e.key==="Enter")$("cloudSend").click()}}
+  if($("cloudOut"))$("cloudOut").onclick=async()=>{try{await supa.auth.signOut()}catch(e){}acct.db=null;acct.id=null;acct.email="";syncReady=false;renderSettings();toast("Signed out. Your plans stay on this device.")};
+  if($("aCountry")){const nx=()=>{const cc=country(),el=$("holNext");if(!el)return;if(!cc){el.textContent="";return}const tk=key(today),y=today.getFullYear();const n=[...holidaysFor(cc,y),...holidaysFor(cc,y+1)].find(h=>h[0]>=tk);el.textContent=n?`Next: ${n[1]}, ${shortDate(n[0])}`:""};nx();
+    $("aCountry").onchange=e=>{profile.country=e.target.value;saveProfile();nx();render();toast(e.target.value?"Holidays added for "+e.target.selectedOptions[0].textContent:"Holidays off")}}
+  const drawOff=()=>{const ul=$("doffList");if(!ul)return;const L=(profile.daysOff=profile.daysOff||[]).sort((a,b)=>a.from.localeCompare(b.from));ul.innerHTML=L.map((o,i)=>`<li><span></span><button class="x" data-i="${i}" aria-label="Remove">\u00d7</button></li>`).join("");
+    ul.querySelectorAll("li span").forEach((el,i)=>{const o=L[i];el.textContent=`${o.name||"Day off"}: ${shortDate(o.from)}${o.to&&o.to!==o.from?" \u2013 "+shortDate(o.to):""}`});
+    ul.querySelectorAll(".x").forEach(b=>b.onclick=()=>{L.splice(+b.dataset.i,1);saveProfile();drawOff();render()})};drawOff();
+  if($("doffForm"))$("doffForm").onsubmit=e=>{e.preventDefault();const f=$("doffFrom").value,t=$("doffTo").value||f,n=$("doffName").value.trim()||"Day off";if(!f){$("doffFrom").focus();return}
+    (profile.daysOff=profile.daysOff||[]).push({name:n,from:f<=t?f:t,to:f<=t?t:f});saveProfile();$("doffName").value="";$("doffFrom").value="";$("doffTo").value="";drawOff();render();toast("Day off added")};
   $("aRole").onclick=()=>openSetup(true,true);$("aEdit").onclick=()=>openSetup(true,false,3);
   if($("aSchool")){fillSchools();$("aSchool").onchange=e=>{profile.school=e.target.value.trim();saveProfile();renderGlance()}}
   if($("aShare"))$("aShare").onclick=async e=>{profile.shareEnergy=!profile.shareEnergy;saveProfile();e.target.setAttribute("aria-checked",String(profile.shareEnergy));renderSettings();if(profile.shareEnergy)pushEnergy();else if(acct.db&&acct.id){try{await acct.db.doc("energy/"+acct.id).delete()}catch(err){dbErr(err)}}};
@@ -2908,6 +3359,28 @@ function renderGlance(){
   ];
   $("glance").innerHTML=groups.map(([h,rows])=>`<section><h3>${h}</h3>${rows.map(([k,v])=>`<div class="gi"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</section>`).join("");
 }
+document.querySelectorAll(".brand").forEach(br=>{br.setAttribute("role","button");br.tabIndex=0;br.title="Go to Today";br.setAttribute("aria-label","Charge, go to Today");
+  const go=()=>{const h=homeView(),same=currentView===h&&(h!=="home"||key(cur)===key(today));if(h==="home")cur=new Date(today);const near=window.scrollY<window.innerHeight*1.5;
+    if(!same)show._anim=true;
+    if(near||same){window.scrollTo({top:0,behavior:"smooth"});if(!same)show(h)}else{window.scrollTo({top:0});show(h)}};
+  br.onclick=go;br.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
+// Scroll reveal: cards below the screen slide up into view as you scroll.
+(function(){const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)");
+  const SEL=".panel,.kpi,.tp,.scard,.gr,.czrow,.setrow,.gs";const seen=new WeakSet();let batch=0,bt=null;
+  const off=()=>(rm&&rm.matches)||look().scrollAnim===false;const tracked=new Set();
+  // Checked on every scroll frame (works inside Claude's frame too, where IntersectionObserver can't tell where the screen ends).
+  function check(){const h=window.innerHeight,line=h*.94;if(off())return;
+    tracked.forEach(el=>{if(!el.isConnected){tracked.delete(el);return}const r=el.getBoundingClientRect();if(!r.height)return;
+      const isSr=el.classList.contains("sr"),isIn=el.classList.contains("sr-in");
+      if(r.top>=h){if(!isSr||isIn){el.classList.remove("sr-in");el.classList.add("sr");el.style.removeProperty("--srd")}}
+      else if(isSr&&!isIn&&r.top<line&&r.bottom>0){el.style.setProperty("--srd",Math.min(batch++,5)*100+"ms");clearTimeout(bt);bt=setTimeout(()=>batch=0,160);requestAnimationFrame(()=>el.classList.add("sr-in"))}})}
+  let sq=false;const onScroll=()=>{if(sq)return;sq=true;requestAnimationFrame(()=>{sq=false;check()})};
+  let st=null;window.addEventListener("scroll",()=>{onScroll();clearTimeout(st);st=setTimeout(onScroll,250)},{passive:true});document.addEventListener("transitionend",e=>{if(e.target.classList&&e.target.classList.contains("sr-in"))onScroll()});window.addEventListener("resize",onScroll);document.addEventListener("scroll",onScroll,{passive:true,capture:true});
+  function scan(){if(off()){document.querySelectorAll(".sr").forEach(el=>el.classList.remove("sr","sr-in"));return}const h=window.innerHeight;document.querySelectorAll(SEL).forEach(el=>{if(seen.has(el)||el.closest(".sheet,#pop"))return;
+    const r=el.getBoundingClientRect();if(!r.height)return;seen.add(el);if(r.top>=h)el.classList.add("sr");tracked.add(el)});check()}
+  let q=false;new MutationObserver(()=>{if(q)return;q=true;requestAnimationFrame(()=>{q=false;scan()})}).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:["hidden"]});
+  scan()})();
+$("czGo").onclick=()=>{show("settings");setTimeout(()=>{const p=$("setLook");if(p)p.scrollIntoView({behavior:"smooth",block:"start"})},60)};
 $("setReset").onclick=()=>{settings=Object.assign({},DEF_SET);saveSettings();renderSettings()};
 
 // ---------- Admin (owner only) ----------
@@ -2963,6 +3436,7 @@ function show(v,soft){
   if(v==="admin"&&!acct.owner)v=homeView();
   const changed=v!==currentView;currentView=v;
   Object.entries(VIEWS).forEach(([k,id])=>$(id).hidden=k!==v);
+  if(!soft&&(changed||show._anim)){const el=$(VIEWS[v]);show._anim=false;if(el){el.classList.remove("v-enter");void el.offsetWidth;el.classList.add("v-enter");el.addEventListener("animationend",()=>el.classList.remove("v-enter"),{once:true})}}
   $("topbar").hidden=v==="setup";document.querySelector(".foot").hidden=v==="setup";
   if(v!=="setup")buildTabs(v);
   if(v==="home"){render();maybePopup()}

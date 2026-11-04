@@ -74,7 +74,7 @@ button{cursor:pointer}
 .battery{display:flex;flex-direction:column;gap:10px;min-width:0}
 .cells{height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden;position:relative}
 .cells .fill{height:100%;border-radius:999px;transition:width .3s}
-.ecurve svg{width:100%;height:66px;display:block;overflow:visible;margin-top:4px}
+.ecurve svg{width:100%;height:58px;display:block;overflow:visible;margin-top:4px}
 .ecurve .ln{fill:none;stroke:var(--accent);stroke-width:2.2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
 .ecurve .area{fill:var(--accent);opacity:.12}
 .ecurve .lowl{stroke:var(--low);stroke-dasharray:4 4;stroke-width:1;vector-effect:non-scaling-stroke}
@@ -85,6 +85,7 @@ button{cursor:pointer}
 .ebed{font-size:13px;color:var(--muted)}.ebed b{color:var(--ink);font-family:var(--f-mono)}
 .ewarn{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;background:var(--tint);border-radius:10px;padding:8px 10px}
 .ewarn b{font-weight:600}
+.egoal{font-size:12px;border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap}.egoal.ok{background:var(--tint);color:var(--ink)}.egoal.bad{background:var(--debt);color:var(--surface)}
 .cells .fill.ok{background:var(--ok)}.cells .fill.low{background:var(--low)}.cells .fill.debt{background:var(--debt)}
 .cell{border-radius:2px;background:var(--surface-2)}
 .cell.on{background:var(--ok)}
@@ -429,6 +430,16 @@ form.add .full{grid-column:1/-1}
 .welcome h2{font-size:40px;font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .welcome .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--y-line)}
 .welcome p{margin:0;font-size:17px;color:var(--muted);max-width:44ch}
+.obsign{width:100%;text-align:left;border-top:1px solid var(--line);padding-top:14px;font-size:14px}.obsign span{color:var(--muted)}
+.demo{width:100%;text-align:left;border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--surface);box-shadow:0 10px 30px rgba(24,24,27,.08);display:flex;flex-direction:column;gap:8px}
+.dm-head{display:flex;justify-content:space-between;align-items:flex-end}.dm-head b{font-size:14px}
+.dm-big{font-family:var(--f-display);font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}.dm-big small{font-size:13px;color:var(--muted);margin-left:2px}
+.dm-curve{width:100%;height:62px;overflow:visible}.dm-curve .ln{fill:none;stroke:var(--accent);stroke-width:2.2;vector-effect:non-scaling-stroke}.dm-curve .area{fill:var(--accent);opacity:.12}.dm-curve .lowl{stroke:var(--low);stroke-dasharray:4 4;vector-effect:non-scaling-stroke}.dm-curve text{fill:var(--muted);font-family:var(--f-mono);font-size:9px}
+.dm-rows{display:flex;flex-direction:column;gap:2px}
+.dm-row{display:grid;grid-template-columns:62px 1fr 40px 30px;gap:8px;align-items:center;font-size:13px;padding:4px 6px;border-radius:8px;transition:opacity .3s,background .3s}
+.dm-row.pre{opacity:.35}.dm-row.on{background:var(--surface-2)}
+.dm-t{font-family:var(--f-mono);font-size:12px;color:var(--muted)}.dm-p{font-family:var(--f-mono);font-weight:700;text-align:right}.dm-p.up{color:#15803D}.dm-e{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:right}
+.dm-tip{font-size:13px;background:var(--tint);border-radius:10px;padding:8px 10px}
 .wvals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;text-align:left}
 .wvals div{border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:4px}
 .wvals b{font-size:14px}.wvals span{font-size:12px;color:var(--muted)}
@@ -846,6 +857,43 @@ body{zoom:var(--zoom,1)}
 :root[data-density="roomy"] .panel{padding:24px;gap:18px}
 :root[data-density="roomy"] .kpi{padding:20px}
 .cz-off{display:none!important}
+.warn.slim{padding:8px 12px;font-size:13px;align-items:center;gap:10px}
+.debt-tag.why{cursor:pointer;border:0;font:inherit;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.emptycta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#viewHome .kpi-next{order:-1;border-left-width:5px;grid-column:1/-1}
+#viewHome .kpi-energy{grid-column:1/-1}
+@media (min-width:900px){#viewHome .kpi-energy{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:28px;row-gap:6px;grid-auto-flow:dense;align-content:start}
+ #viewHome .kpi-energy>*{grid-column:1}
+ #viewHome .kpi-energy>.eright{grid-column:2;grid-row:1 / span 12;align-self:start;padding-top:18px}}
+.eright{display:flex;flex-direction:column;gap:10px}
+.ecx{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:-2px}
+#viewHome .kpi-next .kname{font-size:24px;line-height:1.2}
+#viewHome .kpi-next #kNextL{color:var(--ink)}
+.qs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0 10px}.qs .label{margin-right:2px}
+body{padding-bottom:84px}
+@media (max-width:760px){
+ .mini,.btn,.linkbtn,.opt,.seg button,.vtoggle button,.typeseg button,.setnav button,.chatsugg button,.sugg button,.qs .mini{min-height:44px}
+ .mini{padding:6px 12px}.linkbtn{display:inline-flex;align-items:center}
+ .sleephrs .mini{width:44px}.sleephrs input{min-height:44px}
+ .switch{min-width:52px;min-height:32px}
+ .tabs button{min-height:52px}
+ .daynav button{min-width:44px;min-height:44px}
+ .lt-row{padding:12px 0}.lt-row input{width:22px;height:22px}
+ .chatform textarea{min-height:44px}
+ .seg button,#viewSettings .seg button{min-height:44px!important;height:auto}
+ .swatches button{width:40px;height:40px}.swatches input[type=color]{width:40px;height:40px}
+ .czrow .mini{min-width:40px}}
+.feelrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.feelrow .label{margin-right:2px}
+.lt-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.lt-row:last-child{border-bottom:0}.lt-row input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
+.lt-row b{display:block;font-weight:600}.lt-row span{font-size:13px;color:var(--muted)}
+.setnav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 0;background:var(--bg);scrollbar-width:none}
+.setnav::-webkit-scrollbar{display:none}
+.setnav button{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.setnav button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--y-line);font-weight:600}
+.rtpl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.footmove{display:block;margin:4px auto 0;font-size:13px}
 /* ---- Ask Charge (chat) ---- */
 .chatfab{position:fixed;right:20px;bottom:20px;z-index:46;display:flex;align-items:center;gap:8px;border:1px solid var(--y-line);background:var(--accent);color:var(--on-accent);border-radius:999px;padding:12px 18px;font:inherit;font-weight:700;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer;transition:transform .15s}
 .chatfab:hover{transform:translateY(-2px)}.chatfab:active{transform:scale(.95)}
@@ -954,6 +1002,7 @@ body{zoom:var(--zoom,1)}
 
   <main class="view" id="viewSettings" hidden>
     <div class="home-head"><div><div class="label">Settings</div><h2 class="greet">Controls</h2></div></div>
+    <nav class="setnav" id="setNav" aria-label="Settings sections"></nav>
     <section class="panel" aria-labelledby="glTitle"><div class="panel-head"><h2 id="glTitle">Everything at a glance</h2><span class="label">Updates as you change settings</span></div><dl class="glance" id="glance"></dl></section>
     <section class="panel" id="setLook" aria-labelledby="lookTitle"><div class="panel-head"><h2 id="lookTitle">Make it yours</h2><button class="mini" id="lookReset">Reset look</button></div><div id="lookRows"></div></section>
     <datalist id="schoolList"></datalist>
@@ -968,30 +1017,13 @@ body{zoom:var(--zoom,1)}
         <section class="panel"><div class="panel-head"><h2>Account</h2></div><div id="acctRows"></div></section>
         <section class="panel"><div class="panel-head"><h2>Invite friends</h2></div>
           <div class="share"><textarea id="invText" readonly aria-label="Invite message"></textarea><div class="inline"><button class="btn primary" id="invCopy">Copy message</button></div></div></section>
-        <section class="panel"><div class="panel-head"><h2>Help</h2></div><p class="ai-note">Your plans are saved on this device only. Use Backup in Settings to move them to a new phone. <a href="privacy.html">Privacy</a></p><textarea id="fbText" hidden></textarea><div class="inline"><button id="fbSend" hidden></button><button class="mini" id="tourAgain">Show the welcome tour</button></div>
+        <section class="panel"><div class="panel-head"><h2>Help</h2></div><p class="ai-note">Built by a high school student, for high school students. Free, no ads, no account needed.</p><p class="ai-note"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p><textarea id="fbText" hidden></textarea><div class="inline"><button id="fbSend" hidden></button><button class="mini" id="tourAgain">Show the welcome tour</button></div>
           <p class="status" id="fbMsg" hidden></p></section>
       </div>
     </div>
   </main>
 
-  <main class="view" id="viewAdmin" hidden>
-    <div class="home-head"><div><div class="label">Owner only</div><h2 class="greet">Admin</h2></div></div>
-    <div class="sgrid">
-      <section class="panel"><div class="panel-head"><h2>Adult pricing</h2></div>
-        <form class="formgrid" id="cfgForm" autocomplete="off">
-          <div class="field"><label class="label" for="cfgPrice">Price shown to adults</label><input id="cfgPrice" maxlength="30" placeholder="$4.99 / month"></div>
-          <div class="field"><label class="label" for="cfgDays">Days of access per payment</label><input id="cfgDays" type="number" min="1" max="400" value="31"></div>
-          <div class="field full"><label class="label" for="cfgApp">App link people use to open Charge (for invites)</label><input id="cfgApp" type="url" placeholder="https://claude.ai/artifact/..."></div>
-          <div class="field full"><label class="label" for="cfgLink">Payment link (Stripe, PayPal, etc.)</label><input id="cfgLink" type="url" placeholder="https://buy.stripe.com/..."></div>
-          <button class="btn primary full" type="submit">Save pricing</button>
-        </form>
-        <p class="status" id="cfgMsg" hidden></p>
-      </section>
-      <section class="panel"><div class="panel-head"><h2>Requests</h2><span class="label" id="reqCount"></span></div><ul class="list" id="reqList"></ul></section>
-      <section class="panel" style="grid-column:1/-1"><div class="panel-head"><h2>Feedback from testers</h2><span class="label" id="fbCount"></span></div><ul class="list" id="fbList"></ul></section>
-      <section class="panel" style="grid-column:1/-1"><div class="panel-head"><h2>Approved accounts</h2></div><ul class="list" id="apprList"></ul></section>
-    </div>
-  </main>
+  
 
   <div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-labelledby="popTitle"><div class="pop-card" id="popCard"></div></div>
 
@@ -1014,25 +1046,28 @@ body{zoom:var(--zoom,1)}
   <div class="appbanner" id="appBanner" hidden></div>
   <div class="gs" id="gsCard" hidden><div class="panel-head"><h2>Get started</h2><button class="mini" id="gsHide">Hide</button></div><ol id="gsList"></ol></div>
 
-  <div class="warn" id="ctlsWarn" hidden role="status"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><div style="flex:1"><strong>The CTLS check didn't work</strong><p id="ctlsWarnText" style="margin:2px 0 8px"></p><button class="btn" id="ctlsWarnOk">Got it</button></div></div>
+  <div class="warn slim" id="ctlsWarn" hidden role="status"><div style="flex:1"><b>Today's CTLS check didn't finish.</b> Your tests and homework may be missing something new. <details style="display:inline"><summary class="linkbtn" style="display:inline;cursor:pointer">What to do</summary><p id="ctlsWarnText" style="margin:4px 0 0"></p></details></div><button class="mini" id="ctlsWarnOk">Dismiss</button></div>
   <div class="warn" id="rescue" hidden role="status"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 11h-2V6h2v7zm0 4h-2v-2h2v2z"/></svg><div style="flex:1"><strong id="rsTitle"></strong><p id="rsText" style="margin:2px 0 8px"></p><div class="inline"><button class="btn primary" id="rsMove">Move them</button><button class="btn" id="rsSkip">Not now</button></div></div></div>
   <section class="tprep" id="tprep" hidden aria-labelledby="tpTitle"><div class="tprep-head"><h2 id="tpTitle">Coming up</h2><span class="label" id="tpCount"></span></div><div class="wk7" id="wk7"></div><div class="tps" id="tpList"></div></section>
   <div class="kpis" aria-label="Today at a glance">
     <section class="kpi kpi-energy" aria-label="Energy">
       <div class="label" id="eLeftL">Energy left</div>
-      <div class="kv"><span class="big" id="bal">0<small>pts</small></span><span class="debt-tag" id="debtTag" hidden>In debt</span></div>
+      <div class="kv"><span class="big" id="bal">0<small>pts</small></span><button type="button" class="debt-tag why" id="debtTag" hidden title="Why am I in debt?">In debt · why?</button></div>
       <div class="cells" id="cells" aria-hidden="true"></div>
       <div class="ks" id="eWord"></div>
       <div class="ebed" id="eBed"></div>
       <div class="ecurve" id="eCurve"></div>
       <div class="ewarn" id="eWarn" hidden></div>
       <details class="numbers"><summary>Numbers</summary><div class="math" id="math"></div></details>
+      <div class="eright">
       <div class="sleep"><span class="label">Sleep</span>
         <div class="seg" id="sleepSeg"><button data-v="great">Great +10</button><button data-v="ok">Okay +0</button><button data-v="bad">Bad &minus;20</button></div></div>
+      <div class="feelrow"><span class="label">Right now</span><button type="button" class="mini" id="feelBtn">How I feel</button><button type="button" class="btn primary" id="tiredBtn" style="padding:6px 12px;font-size:13px">I'm exhausted, lighten my day</button><button type="button" class="linkbtn" id="howEnergy">How energy works</button><button type="button" class="linkbtn" id="shareDay">Share my plan</button></div>
       <div class="sleephrs"><span class="label">Hours slept</span><button type="button" class="mini" id="slMinus" aria-label="Less sleep">&minus;</button><input id="sleepHrs" type="number" inputmode="decimal" min="0" max="16" step="0.5" placeholder="&mdash;" aria-label="Hours of sleep last night"><button type="button" class="mini" id="slPlus" aria-label="More sleep">+</button><span class="ks" id="sleepNote"></span></div>
+          </div>
     </section>
     <span id="kFree" hidden></span><span id="kFreeS" hidden></span><span id="kDue" hidden></span><span id="kDueS" hidden></span>
-    <section class="kpi kpi-next" aria-label="Up next"><div class="label" id="kNextL">Up next</div><div class="kv kname" id="kNext">&mdash;</div><div class="ks"><span id="kNextS"></span><button class="mini" id="kFocus" hidden>Start focus</button></div></section>
+    <section class="kpi kpi-next" aria-label="Up next"><div class="label" id="kNextL">What to do next</div><div class="kv kname" id="kNext">&mdash;</div><div class="ks"><span id="kNextS"></span><button class="mini" id="kFocus" hidden>Start focus</button></div></section>
   </div>
 
   <div class="today">
@@ -1040,7 +1075,7 @@ body{zoom:var(--zoom,1)}
       <div class="panel-head"><h2 id="tlTitle">Schedule</h2><div class="inline" style="align-items:center;gap:10px"><span class="label" id="count"></span><div class="vtoggle" role="group" aria-label="View"><button id="vDay" aria-pressed="true">Day</button><button id="vWeek" aria-pressed="false">Week</button><button id="vMonth" aria-pressed="false">Month</button></div></div></div>
       <div id="wkHead" class="wk-head" hidden></div>
       <p class="status" id="warnToday" hidden></p>
-      <div class="starter" id="starter" hidden><b>Nothing planned yet</b><div class="inline"><button class="btn primary" id="stPlan">Plan today</button><button class="btn" id="stAdd">Add something</button><button class="btn" id="stHours" hidden>Set my school hours</button></div></div>
+      <div class="starter" id="starter" hidden><b>Nothing planned yet</b><div class="qs" id="qsChips"><span class="label">Quick start</span><button class="mini" type="button" data-qs="school">Typical school day</button><button class="mini" type="button" data-qs="exam">Test coming up</button><button class="mini" type="button" data-qs="light">Light day</button></div><div class="inline"><button class="btn primary" id="stPlan">Plan today</button><button class="btn" id="stAdd">Add something</button><button class="btn" id="stHours" hidden>Set my school hours</button></div></div>
       <div class="tg" id="timeline"></div>
       <div class="legend2" id="catLegend"></div>
 <div id="calWrap" hidden class="view">
@@ -1109,7 +1144,7 @@ body{zoom:var(--zoom,1)}
   </main>
 
   <main class="view" id="viewRoutine" hidden>
-    <div class="home-head"><div><div class="label">Routines</div><h2 class="greet">Your routines</h2></div><div class="inline"><button class="btn" id="rPaste">Paste a share code</button><button class="btn primary" id="rNew">New routine</button></div></div>
+    <div class="home-head"><div><div class="label">Routines</div><h2 class="greet">Your routines</h2></div><div class="inline"><button class="btn" id="rPaste" title="Add a routine a friend shared with you">Add a friend's routine</button><button class="btn primary" id="rNew">New routine</button></div></div>
     <div class="rgrid" id="rGrid"></div>
     <section class="panel" id="rEditor" hidden>
       <div class="panel-head"><div class="shead" style="gap:8px"><input class="ed big" id="rName" maxlength="40" aria-label="Routine name"></div><div class="inline"><button class="btn" id="rStartBtn">Start</button><button class="btn" id="rClose">Done editing</button></div></div>
@@ -1121,7 +1156,7 @@ body{zoom:var(--zoom,1)}
       <ol class="steps2" id="rSteps"></ol>
       <form class="qadd" id="rStepForm" autocomplete="off"><input id="rStepText" maxlength="60" placeholder="Add a step and press Enter, e.g. Pack bag 5 min" aria-label="Add step"><button class="btn primary" type="submit">Add step</button></form>
       <div class="sugg" id="rStepSugg"></div>
-      <div class="inline" style="justify-content:space-between"><div class="inline"><button class="btn" id="rShare">Copy share code</button><span class="ai-note">Send the code to a friend. They paste it on their Routines page.</span></div><button class="btn danger" id="rDelete">Delete routine</button></div>
+      <div class="inline" style="justify-content:space-between"><div class="inline"><button class="btn" id="rShare">Share this routine</button><span class="ai-note">Copies a short code with just the steps and times (none of your plans). Your friend taps "Add a friend's routine" and pastes it.</span></div><button class="btn danger" id="rDelete">Delete routine</button></div>
     </section>
   </main>
 
@@ -1190,14 +1225,14 @@ body{zoom:var(--zoom,1)}
     <div class="report" id="report"></div>
   </main>
 
-  <p class="foot" id="footNote">Your planner is saved on this device.</p>
+  <p class="foot" id="footNote">Your planner is saved on this device.</p><div id="footMoveWrap"></div>
 </div>
 
 <script>
 (function(){
 const KEY="charge-planner-v1";
 const SKEY="charge-settings-v1";
-const DEF_SET={budget:100,great:10,bad:20,lowAt:30,streak:3,intensity:"Balanced",aiCount:8,popups:true,warnDays:3,reminders:true,notify:false,remind:10,rateAfter:true};
+const DEF_SET={minTarget:20,budget:100,great:10,bad:20,lowAt:30,streak:3,intensity:"Balanced",aiCount:8,popups:true,warnDays:3,reminders:true,notify:false,remind:10,rateAfter:true};
 let settings=Object.assign({},DEF_SET);
 try{Object.assign(settings,JSON.parse(localStorage.getItem(SKEY))||{})}catch(e){}
 setTimeout(()=>{try{applyLook()}catch(e){}},0);
@@ -1205,7 +1240,7 @@ setTimeout(()=>{try{applyLook()}catch(e){}},0);
 const ACCENTS={yellow:["#F5C400","#1A1500","#C79C00","Yellow"],orange:["#F97316","#1F0A00","#C2570C","Orange"],red:["#EF4444","#FFFFFF","#B91C1C","Red"],pink:["#EC4899","#FFFFFF","#BE185D","Pink"],purple:["#8B5CF6","#FFFFFF","#6D28D9","Purple"],blue:["#3B82F6","#FFFFFF","#1D4ED8","Blue"],teal:["#14B8A6","#04201C","#0F766E","Teal"],green:["#22C55E","#052E13","#15803D","Green"]};
 const FONTS={plex:["IBM Plex Sans","Plex (default)",""],system:["","Phone's own font",""],rounded:["Nunito","Rounded","Nunito:wght@400;500;600;700"],easy:["Atkinson Hyperlegible","Easy to read","Atkinson+Hyperlegible:wght@400;700"],serif:["Lora","Classic","Lora:wght@400;500;600;700"],mono:["IBM Plex Mono","Typewriter",""]};
 const ZOOM={s:.9,m:1,l:1.12,xl:1.25};
-const DEF_LOOK={theme:"light",accent:"yellow",custom:"",bg:"plain",text:"m",font:"plex",density:"comfy",words:{energy:"Energy",drain:"Drains me",charge:"Recharges me",unit:"pts"},order:["tests","glance","main"],side:["plan","routines","homework","suggest"],off:[]};
+const DEF_LOOK={theme:"light",accent:"yellow",custom:"",bg:"plain",text:"m",font:"plex",density:"comfy",words:{energy:"Energy",drain:"Drains me",charge:"Recharges me",unit:"pts"},order:["tests","glance","main"],side:["plan","routines","homework","suggest"],off:["suggest"]};
 function look(){const l=settings.look||{};return Object.assign({},DEF_LOOK,l,{words:Object.assign({},DEF_LOOK.words,l.words||{})})}
 function lookWord(k){const w=look().words[k];return (w&&String(w).trim())||DEF_LOOK.words[k]}
 function setLook(patch){settings.look=Object.assign({},settings.look||{},patch);saveSettings();applyLook()}
@@ -1236,6 +1271,7 @@ function applyLayout(){const L=look(),off=new Set(L.off||[]);
   const g=czOf("glance").el();if(g&&off.has("energy")&&off.has("next"))g.classList.add("cz-off");
   let anchor=$("rescue");if(anchor)fullOrder(L.order,"top").forEach(k=>{const el=czOf(k).el();if(el&&anchor.parentNode===el.parentNode){anchor.after(el);anchor=el}});
   const side=document.querySelector("#viewHome .side");if(side)fullOrder(L.side,"side").forEach(k=>{const el=czOf(k).el();if(el&&el.parentNode===side)side.appendChild(el)});
+  {const ci=$("checkin"),gl=czOf("glance").el();if(ci&&gl&&ci.nextElementSibling!==gl.nextElementSibling)gl.after(ci)}
   const sd=side&&[...side.children].some(x=>!x.classList.contains("cz-off"));if(side)side.classList.toggle("cz-off",!sd)}
 const SUBJ_ICONS=["","\u{1F4D6}","\u{1F4D8}","\u{1F4D7}","\u{1F4D5}","\u{1F4D9}","\u{1F4DA}","\u270F\uFE0F","\u{1F4DD}","\u{1F9EA}","\u2697\uFE0F","\u{1F9EC}","\u{1F52C}","\u{1F52D}","\u2797","\u{1F4D0}","\u{1F4CA}","\u{1F4BB}","\u{1F30E}","\u{1F3DB}\uFE0F","\u{1F5F3}\uFE0F","\u{1F5E3}\uFE0F","\u{1F3A8}","\u{1F3B5}","\u{1F3AD}","\u{1F3AC}","\u26BD","\u{1F3C0}","\u{1F3C3}","\u{1F4BC}","\u{1F9E0}","\u{1F4B0}","\u2B50","\u{1F525}","\u26A1"];
 function subjIcon(name){const x=subjects().find(c=>c.name===name);return x&&x.icon?x.icon:""}
@@ -1337,20 +1373,24 @@ function dayKeyOf(d){for(const k in state.days)if(state.days[k]===d)return k;ret
 // Tiredness carries over: ending yesterday in energy debt takes up to 20 off today.
 function carryOver(k){if(!k||settings.carry===false)return 0;const y=state.days[key(addDays(new Date(k+"T12:00:00"),-1))];if(!y||!y.items||!y.items.length)return 0;
   const yl=settings.budget+sleepAdj(y)-y.items.reduce((t,i)=>t+(i.type==="drain"?i.pts:-i.pts),0);return yl<0?-Math.min(20,Math.round(-yl/2)):0}
+// Your regular schedule (school, practice, a job) is shown on the day even if you never added it, so it counts too.
+function withFixed(d,k){if(!k||!profile)return d.items;let fx=[];try{fx=fixedBlocks(new Date(k+"T12:00:00")).filter(f=>f.pts&&!d.items.some(i=>i.name===f.name)).map(f=>Object.assign({},f,{id:"fx_"+f.name,fixed:true,done:false}))}catch(e){}return d.items.concat(fx)}
+const FEEL={exhausted:[-20,"Exhausted"],tired:[-10,"A bit tired"],good:[10,"Full of energy"]};
+const feelAdj=d=>d&&FEEL[d.feel]?FEEL[d.feel][0]:0;
 function calc(d,k){if(k===undefined)k=dayKeyOf(d);
-  const sAdj=sleepAdj(d),carry=carryOver(k),budget=settings.budget+sAdj+carry;
+  const sAdj=sleepAdj(d),carry=carryOver(k),fAdj=feelAdj(d),budget=settings.budget+sAdj+carry+fAdj;
   let spent=0,gained=0,mins=0,drainMins=0,chargeMins=0,nowSpent=0,nowGained=0;
   const isToday=k===key(today),n=new Date(),nowM=n.getHours()*60+n.getMinutes();
-  d.items.forEach(i=>{mins+=i.mins||0;const st=hm(i.start),past=i.done||(isToday?(st!=null&&st+(i.mins||0)<=nowM):k<key(today));
+  withFixed(d,k).forEach(i=>{mins+=i.mins||0;const st=hm(i.start),past=i.done||(isToday?(st!=null&&st+(i.mins||0)<=nowM):k<key(today));
     if(i.type==="drain"){spent+=i.pts;drainMins+=i.mins||0;if(past)nowSpent+=i.pts}else{gained+=i.pts;chargeMins+=i.mins||0;if(past)nowGained+=i.pts}});
-  return {budget,sAdj,carry,spent,gained,left:budget-spent+gained,now:budget-nowSpent+nowGained,isToday,mins,drainMins,chargeMins};
+  return {budget,sAdj,carry,fAdj,spent,gained,left:budget-spent+gained,now:budget-nowSpent+nowGained,isToday,mins,drainMins,chargeMins};
 }
 // Energy through the day: starts at your budget when you wake up, then each timed activity drains or recharges across its length.
-function energyCurve(d,c,from){const w=hm(profile&&profile.wake)??420;let b=hm(profile&&profile.bed)??1350;if(b<=w)b+=1440;
-  const timed=d.items.filter(i=>hm(i.start)!=null&&i.mins).map(i=>({s:hm(i.start),e:hm(i.start)+i.mins,v:(i.type==="drain"?-1:1)*i.pts,it:i})).sort((a,b)=>a.s-b.s);
+function energyCurve(d,c,from,k){const w=hm(profile&&profile.wake)??420;let b=hm(profile&&profile.bed)??1350;if(b<=w)b+=1440;
+  const timed=withFixed(d,k===undefined?dayKeyOf(d):k).filter(i=>hm(i.start)!=null&&i.mins).map(i=>({s:hm(i.start),e:hm(i.start)+i.mins,v:(i.type==="drain"?-1:1)*i.pts,it:i})).sort((a,b)=>a.s-b.s);
   const pts=[],at=t=>c.budget+timed.reduce((sum,x)=>sum+(t>=x.e?x.v:t>x.s?x.v*(t-x.s)/(x.e-x.s):0),0);
   for(let t=w;t<=b;t+=10)pts.push([t,at(t)]);
-  let low=null;for(const x of timed){if(x.v>=0||x.it.done||(from!=null&&x.s<from))continue;if(timed.some(y=>y.v>0&&y.e<=x.s+5&&y.e>=x.s-30))continue;const v=at(x.e);if(v<settings.lowAt){const a0=at(x.s);low={t:a0<settings.lowAt?x.s:x.s+Math.max(0,Math.min(x.e-x.s,(a0-settings.lowAt)/(-x.v)*(x.e-x.s))),item:x.it,debt:v<0,already:a0<settings.lowAt};break}}
+  let low=null;for(const x of timed){if(x.v>=0||x.it.done||x.it.fixed||(from!=null&&x.s<from))continue;if(timed.some(y=>y.v>0&&y.e<=x.s+5&&y.e>=x.s-30))continue;const v=at(x.e);if(v<settings.lowAt){const a0=at(x.s);low={t:a0<settings.lowAt?x.s:x.s+Math.max(0,Math.min(x.e-x.s,(a0-settings.lowAt)/(-x.v)*(x.e-x.s))),item:x.it,debt:v<0,already:a0<settings.lowAt};break}}
   return {w,b,pts,low,untimed:d.items.filter(i=>hm(i.start)==null).length,at}}
 function drawCurve(el,cv,c,isToday){if(!el)return;if(!cv.pts.length){el.innerHTML="";return}
   const W=300,H=54,vals=cv.pts.map(p=>p[1]),mx=Math.max(c.budget,...vals,settings.lowAt+10),mn=Math.min(0,...vals);
@@ -1358,14 +1398,71 @@ function drawCurve(el,cv,c,isToday){if(!el)return;if(!cv.pts.length){el.innerHTM
   const line=cv.pts.map(([t,v],i)=>(i?"L":"M")+X(t).toFixed(1)+" "+Y(v).toFixed(1)).join(" ");
   const n=new Date(),nm=n.getHours()*60+n.getMinutes();const showNow=isToday&&nm>=cv.w&&nm<=cv.b;
   const lbl=t=>{t=((t%1440)+1440)%1440;let h=Math.floor(t/60);const ap=h>=12?"p":"a";h=h%12||12;return h+ap};
-  el.innerHTML=`<svg viewBox="0 0 ${W} ${H+12}" preserveAspectRatio="none" role="img" aria-label="Energy through the day"><line x1="0" x2="${W}" y1="${Y(settings.lowAt)}" y2="${Y(settings.lowAt)}" class="lowl"/>${mn<0?`<line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="zerol"/>`:""}<path d="${line} L${W} ${H} L0 ${H}Z" class="area"/><path d="${line}" class="ln"/>${showNow?`<line x1="${X(nm)}" x2="${X(nm)}" y1="0" y2="${H}" class="nowl"/><path d="M${X(nm)} ${Y(cv.at(nm))}h0" class="nowd"/>`:""}<text x="0" y="${H+11}">${lbl(cv.w)}</text><text x="${W/2}" y="${H+11}" text-anchor="middle">${lbl((cv.w+cv.b)/2)}</text><text x="${W}" y="${H+11}" text-anchor="end">${lbl(cv.b)}</text></svg>`}
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Energy through the day"><line x1="0" x2="${W}" y1="${Y(settings.lowAt)}" y2="${Y(settings.lowAt)}" class="lowl"/>${mn<0?`<line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="zerol"/>`:""}<path d="${line} L${W} ${H} L0 ${H}Z" class="area"/><path d="${line}" class="ln"/>${showNow?`<line x1="${X(nm)}" x2="${X(nm)}" y1="0" y2="${H}" class="nowl"/><path d="M${X(nm)} ${Y(cv.at(nm))}h0" class="nowd"/>`:""}</svg><div class="ecx"><span>${lbl(cv.w)}</span><span>${lbl((cv.w+cv.b)/2)}</span><span>${lbl(cv.b)}</span></div>`}
+// Quick-start day shapes: fill the free time after school with a sensible plan the student can then edit.
+function quickStart(k,kind){const d=day(k),dt=new Date(k+"T12:00:00"),wd=dt.getDay()>=1&&dt.getDay()<=5&&!noSchool(dt);
+  const n=new Date(),nowM=k===key(today)?n.getHours()*60+n.getMinutes():0;let t=Math.max(wd?(hm(profile&&profile.schoolEnd)??900)+30:600,Math.ceil((nowM+10)/15)*15);
+  const subs=subjects().map(x=>x.name),up=assignments.filter(a=>a.due>=key(today)).sort((a,b)=>a.due.localeCompare(b.due)),test=up.find(a=>BIG.includes(a.kind));
+  const ts=test?(assignSubject(test)||test.cls):(subs[0]||"");const s1=subs[0]||"",s2=subs[1]||subs[0]||"";
+  const P={school:[["Snack and a break","Rest",10,"charge",20],[`${s1?s1+": ":""}homework`,"School",15,"drain",45,s1],[`${s2?s2+": ":""}review`,"Study",12,"drain",30,s2],["Dinner","Rest",10,"charge",45],["Free time","Fun",8,"charge",45]],
+    exam:[["Snack and a break","Rest",10,"charge",20],[`${ts?ts+": ":""}test review`,"Study",18,"drain",45,ts],["Walk or stretch","Rest",8,"charge",15],[`${ts?ts+": ":""}practice questions`,"Study",15,"drain",30,ts],["Dinner","Rest",10,"charge",45],[`${ts?ts+": ":""}flashcards`,"Study",8,"drain",20,ts]],
+    light:[["Snack and a walk","Rest",12,"charge",30],[`${s1?s1+": ":""}homework`,"School",12,"drain",30,s1],["Dinner","Rest",10,"charge",45],["Something fun","Fun",10,"charge",60]]}[kind]||[];
+  const bed=(hm(profile&&profile.bed)??1350)-30,added=[];
+  P.forEach(([name,cat,pts,type,mins,subj])=>{if(t+mins>bed)return;if(name==="Dinner"&&t<17*60+45)t=Math.max(t,18*60);const it={id:uid(),name,subj:subjects().some(x=>x.name===subj)?subj:"",cat,pts,type,mins,start:String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0"),done:false};d.items.push(it);added.push(it.id);t+=mins+10});
+  save();render();toast(added.length?`Added a ${kind==="school"?"typical school day":kind==="exam"?"test-prep day":"light day"}. Drag or tap anything to change it.`:"Not enough time left today",added.length?()=>{d.items=d.items.filter(x=>!added.includes(x.id));save();render()}:null)}
+// Share today's plan as plain text (no notes, no school, nothing private beyond the plan itself).
+async function shareToday(k){const d=peek(k),c=calc(d,k),U=lookWord("unit");const its=[...d.items].sort((a,b)=>(hm(a.start)??9999)-(hm(b.start)??9999));
+  const txt=`My Charge plan for ${new Date(k+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"})}\n`+its.map(i=>`${i.start?to12(i.start)+"  ":""}${i.name} (${i.type==="charge"?"+":"\u2212"}${i.pts})${i.done?" \u2713":""}`).join("\n")+`\nEnergy at bedtime: ${c.left} of ${c.budget} ${U}`;
+  try{if(navigator.share&&/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){await navigator.share({title:"My plan for today",text:txt});return}await navigator.clipboard.writeText(txt);toast("Today's plan copied. Paste it anywhere.")}catch(e){if(!(e&&e.name==="AbortError"))toast("Couldn't share right now")}}
+function openFeel(k){const d=day(k),pc=$("popCard");
+  pc.innerHTML=`<div class="label">Check in</div><h2 id="popTitle">How do you feel right now?</h2><p class="ai-note">The numbers are only estimates. Tell Charge how you really feel and it adjusts today.</p>
+   <div class="opts" style="display:flex;flex-direction:column;gap:8px">${Object.entries(FEEL).map(([v,[n,t]])=>`<button class="opt" type="button" data-f="${v}" aria-pressed="${d.feel===v}">${t} <span style="color:var(--muted)">(${n>0?"+":"\u2212"}${Math.abs(n)} ${esc(lookWord("unit"))})</span></button>`).join("")}<button class="opt" type="button" data-f="" aria-pressed="${!d.feel}">About what Charge says</button></div>
+   <div class="inline" style="margin-top:12px"><button class="btn" id="feelClose">Close</button></div>`;
+  $("pop").hidden=false;$("feelClose").onclick=()=>{$("pop").hidden=true};
+  pc.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{const v=b.dataset.f;if(v)d.feel=v;else delete d.feel;save();render();if(v==="exhausted"||v==="tired")openLighten(k,v);else{$("pop").hidden=true;toast(v?"Got it. Today has a bit more energy.":"Back to Charge's estimate")}})}
+function openHowEnergy(){const pc=$("popCard"),U=esc(lookWord("unit"));
+  pc.innerHTML=`<div class="label">How energy works</div><h2 id="popTitle">The numbers are planning estimates</h2>
+   <p>Charge can't measure your energy. The points are a simple way to plan so you don't pile too much into one day.</p>
+   <div class="ewarn" style="display:block;margin:4px 0 10px"><b>Example:</b> ${settings.budget} to start, +${settings.great} for a great night = <b>${settings.budget+settings.great}</b>. School \u221230, practice \u221225, homework \u221215, a walk +10 \u2192 <b>${settings.budget+settings.great-60}</b> left at bedtime. Your goal is to end above ${settings.minTarget??20}.</div>
+   <ul style="margin:0;padding-left:20px;line-height:1.6"><li>Every day starts with <b>${settings.budget} ${U}</b>.</li><li>Things that tire you out <b>drain</b> points, like school, practice and homework. Breaks, walks and fun things <b>recharge</b> them.</li><li><b>Sleep</b> changes your start: a great night adds about ${settings.great}, a bad one takes about ${settings.bad}. These are rough guesses based on how much harder a short night makes the next day.</li><li>After you finish something, Charge can ask how drained you felt and <b>learns your real costs</b>.</li><li>If you feel more tired than the numbers say, tap <b>I'm exhausted</b> and Charge lightens your day.</li></ul>
+   <p class="ai-note">You can change all of these in Settings \u2192 Energy. This isn't medical advice: if you're exhausted a lot, talk to a parent, counsellor or doctor.</p>
+   <div class="inline"><button class="btn primary" id="heOk">Got it</button><button class="btn" id="heSet">Change the numbers</button></div>`;
+  $("pop").hidden=false;$("heOk").onclick=()=>{$("pop").hidden=true};$("heSet").onclick=()=>{$("pop").hidden=true;show("settings");setTimeout(()=>{try{setSection("energy")}catch(e){}},50)}}
+// "I'm exhausted": suggest a lighter rest of the day, explain each change, and only apply what the student approves.
+function lightenPlan(k){const d=day(k),isT=k===key(today),n=new Date(),nowM=n.getHours()*60+n.getMinutes(),tom=key(addDays(new Date(k+"T12:00:00"),1));
+  const due=it=>{const a=it.aid&&assignments.find(x=>x.id===it.aid);return a?a.due:null};
+  const left=d.items.filter(it=>!it.done&&it.type==="drain"&&(!isT||hm(it.start)==null||hm(it.start)+(it.mins||0)>nowM));
+  const ch=[];
+  left.forEach(it=>{const du=due(it),urgent=du&&du<=tom;
+    if(!urgent&&(it.cat!=="School"||!du)){ch.push({kind:"move",it,why:du?`Due ${new Date(du+"T12:00:00").toLocaleDateString(undefined,{weekday:"long"})}, so it can wait until tomorrow.`:"Nothing says it has to be today."})}
+    else if((it.mins||0)>40){const nm=Math.max(25,Math.round(it.mins*0.6/5)*5);ch.push({kind:"short",it,to:nm,why:`Due ${du===k?"today":"tomorrow"}, so keep it, but do a shorter, focused session.`})}});
+  let bs=isT?Math.ceil((nowM+5)/15)*15:16*60;const fut=left.filter(i=>hm(i.start)!=null).map(i=>hm(i.start)).sort((a,b)=>a-b)[0];if(fut!=null&&fut>bs)bs=Math.min(bs,fut-20);
+  if(bs<23*60)ch.push({kind:"break",start:String(Math.floor(bs/60)).padStart(2,"0")+":"+String(bs%60).padStart(2,"0"),why:"A real break first: no phone, get some food, water or fresh air."});
+  ch.push({kind:"bed",why:"Aim to be in bed 30 minutes earlier tonight."});
+  return {ch,tom}}
+function openLighten(k,feel){const d=day(k);if(feel&&d.feel!==feel){d.feel=feel;save();render()}
+  const {ch,tom}=lightenPlan(k),pc=$("popCard");
+  const label=c=>c.kind==="move"?`Move "${esc(c.it.name)}" to tomorrow`:c.kind==="short"?`Shorten "${esc(c.it.name)}" to ${c.to} min`:c.kind==="break"?`Add a 20-minute recharge break at ${to12(c.start)}`:"Go to bed a bit earlier";
+  pc.innerHTML=`<div class="label">Lighten my day</div><h2 id="popTitle">${feel?"Here's an easier plan":"Here's a more balanced plan"}</h2><p class="ai-note">Untick anything you'd rather keep. Nothing changes until you tap Use this plan.</p>
+   <div>${ch.map((c,i)=>`<label class="lt-row"><input type="checkbox" data-i="${i}" ${c.kind==="bed"?"disabled checked":"checked"}><span><b>${label(c)}</b><span>${c.why}</span></span></label>`).join("")}</div>
+   ${ch.length<=2?`<p class="ai-note">There isn't much left to move today, so the best thing is to rest.</p>`:""}
+   <div class="inline" style="margin-top:12px"><button class="btn primary" id="ltYes">Use this plan</button><button class="btn" id="ltNo">Keep my day as it is</button></div>`;
+  $("pop").hidden=false;$("ltNo").onclick=()=>{$("pop").hidden=true};
+  $("ltYes").onclick=()=>{const keep=new Set([...pc.querySelectorAll("input[data-i]:checked")].map(x=>+x.dataset.i));
+    const snap=JSON.stringify({a:state.days[k]||null,b:state.days[tom]||null});let moved=0,short=0,brk=0;
+    ch.forEach((c,i)=>{if(!keep.has(i))return;
+      if(c.kind==="move"){d.items=d.items.filter(x=>x!==c.it);day(tom).items.push(Object.assign({},c.it,{id:uid()}));moved++}
+      else if(c.kind==="short"){c.it.mins=c.to;c.it.pts=Math.max(5,Math.round(c.it.pts*0.6));short++}
+      else if(c.kind==="break"){d.items.push({id:uid(),name:"Recharge break",cat:"Rest",pts:15,type:"charge",mins:20,start:c.start,done:false});brk++}});
+    save();render();$("pop").hidden=true;
+    toast(`Lighter day: ${[moved?moved+" moved to tomorrow":"",short?short+" shortened":"",brk?"break added":""].filter(Boolean).join(", ")||"no changes"}`,()=>{const o=JSON.parse(snap);if(o.a)state.days[k]=o.a;else delete state.days[k];if(o.b)state.days[tom]=o.b;else delete state.days[tom];save();render()})}}
 function addBreakBefore(k,item){const d=day(k),st=hm(item.start);if(st==null)return;const t=Math.max(0,st-15);
   d.items.push({id:uid(),name:"Recharge break",cat:"Rest",pts:10,type:"charge",mins:15,start:String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0"),done:false});save();render();toast("Added a 15-minute break before "+item.name)}
 function tone(left){return left<0?"debt":left<settings.lowAt?"low":"ok"}
 
 function render(){
   applyLearned(peek(key(cur)).items);
-  const k=key(cur), d=peek(k), c=calc(d);
+  const k=key(cur), d=peek(k), c=calc(d,k);
   const diff=Math.round((cur-today)/864e5);
   $("dayLabel").textContent=diff===0?"Today":diff===-1?"Yesterday":diff===1?"Tomorrow":cur.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
 
@@ -1381,13 +1478,16 @@ function render(){
   const t=tone(shown),pct=shown<0?100:Math.max(0,Math.min(100,shown/Math.max(1,c.budget)*100));
   $("cells").innerHTML=`<div class="fill ${t}" style="width:${pct}%"></div>`;
   $("eWord").textContent=(shown<0?`Running on empty \u00b7 ${Math.abs(shown)} over`:shown<settings.lowAt?"Running low":shown>=c.budget*.7?"Fresh":"Doing fine");
-  $("eBed").innerHTML=c.isToday?`By bedtime: <b>${c.left<0?"\u2212":""}${Math.abs(c.left)} ${U}</b>${c.left<0?" \u00b7 in debt":c.left<settings.lowAt?" \u00b7 low":""}`:"";
-  {const nowM=new Date().getHours()*60+new Date().getMinutes(),cv=energyCurve(d,c,c.isToday?nowM:k<key(today)?99999:null);drawCurve($("eCurve"),cv,c,c.isToday);const ew=$("eWarn");
-    if(cv.low){const tt=Math.round(cv.low.t);ew.hidden=false;
+  {const goal=settings.minTarget??20,ok=c.left>=goal;$("eBed").innerHTML=(k>=key(today))?`By bedtime: <b>${c.left<0?"\u2212":""}${Math.abs(c.left)} ${U}</b> <span class="egoal ${ok?"ok":"bad"}">${ok?"\u2713 above":"below"} your goal of ${goal}</span>`:""}
+  {const nowM=new Date().getHours()*60+new Date().getMinutes(),cv=energyCurve(d,c,c.isToday?nowM:k<key(today)?99999:null,k);drawCurve($("eCurve"),cv,c,c.isToday);const ew=$("eWarn");
+    const goal=settings.minTarget??20,belowGoal=k>=key(today)&&d.items.length&&c.left<goal;
+    if(!cv.low&&belowGoal){ew.hidden=false;ew.innerHTML=`<span>Your day is heading for <b>${c.left} ${U}</b> by bedtime, below your goal of ${goal}.</span><button class="mini" id="ewFix" type="button">Rebalance my day</button>`;$("ewFix").onclick=()=>openLighten(k)}
+    else if(cv.low){const tt=Math.round(cv.low.t);ew.hidden=false;
       ew.innerHTML=cv.low.already?`<span>You're already low, and ${esc(cv.low.item.name)} at <b>${to12(cv.low.item.start)}</b> will ${cv.low.debt?"put you in energy debt":"drain you more"}.</span><button class="mini" id="ewFix" type="button">Add a break before it</button>`:`<span>You'll ${cv.low.debt?"run out of energy":"run low"} around <b>${to12(String(Math.floor(tt/60)%24).padStart(2,"0")+":"+String(tt%60).padStart(2,"0"))}</b>, during ${esc(cv.low.item.name)}.</span><button class="mini" id="ewFix" type="button">Add a break before it</button>`;
-      $("ewFix").onclick=()=>addBreakBefore(k,cv.low.item)}else ew.hidden=true}
+      $("ewFix").onclick=()=>addBreakBefore(k,cv.low.item);
+      if(belowGoal){ew.insertAdjacentHTML("beforeend",`<button class="linkbtn" id="ewReb" type="button">Or rebalance the whole day</button>`);$("ewReb").onclick=()=>openLighten(k)}}else ew.hidden=true}
 
-  $("math").innerHTML=`<span>Daily energy <b class="mono">${settings.budget}</b></span><span>Sleep <b class="mono">${c.sAdj>=0?"+":"\u2212"}${Math.abs(c.sAdj)}</b></span>${c.carry?`<span>Tired from yesterday <b class="mono">\u2212${-c.carry}</b></span>`:""}<span>Start of day <b class="mono">${c.budget}</b></span><span>Drains <b class="mono">\u2212${c.spent}</b></span><span>Recharges <b class="mono">+${c.gained}</b></span><span>By bedtime <b class="mono">${c.left<0?"\u2212":""}${Math.abs(c.left)}</b></span>${c.isToday?`<span>Used so far <b class="mono">${c.budget-c.now}</b></span>`:""}<span>Time planned <b class="mono">${fmt(c.mins)}</b></span>`;
+  $("math").innerHTML=`<span>Daily energy <b class="mono">${settings.budget}</b></span><span>Sleep <b class="mono">${c.sAdj>=0?"+":"\u2212"}${Math.abs(c.sAdj)}</b></span>${c.carry?`<span>Tired from yesterday <b class="mono">\u2212${-c.carry}</b></span>`:""}${c.fAdj?`<span>How you feel <b class="mono">${c.fAdj>0?"+":"\u2212"}${Math.abs(c.fAdj)}</b></span>`:""}<span>Start of day <b class="mono">${c.budget}</b></span><span>Drains <b class="mono">\u2212${c.spent}</b></span><span>Recharges <b class="mono">+${c.gained}</b></span><span>By bedtime <b class="mono">${c.left<0?"\u2212":""}${Math.abs(c.left)}</b></span>${c.isToday?`<span>Used so far <b class="mono">${c.budget-c.now}</b></span>`:""}<span>Time planned <b class="mono">${fmt(c.mins)}</b></span>`;
   {const hi=$("sleepHrs");if(hi&&document.activeElement!==hi)hi.value=d.sleepHrs!=null?d.sleepHrs:"";const sn=$("sleepNote");if(sn){const avg=sleepAvg(key(cur));
     sn.textContent=(d.sleepSrc==="health"?"From Apple Health. ":"")+(d.sleepHrs!=null?(d.sleepHrs>=8?"Nice. Teens need 8\u201310 hours.":d.sleepHrs>=6.5?"A bit short. Teens need 8\u201310 hours.":"Not much sleep. Go easy today and try for an earlier night.")+(avg?` 7-day average: ${avg}h.`:""):"How long did you sleep last night?"+(avg?` 7-day average: ${avg}h.`:""))}}
   document.querySelectorAll("#sleepSeg button").forEach(b=>{b.setAttribute("aria-pressed",String(b.dataset.v===(d.sleep||"ok")));b.textContent=b.dataset.v==="great"?`Great +${settings.great}`:b.dataset.v==="bad"?`Bad \u2212${settings.bad}`:"Okay +0"});
@@ -1398,6 +1498,7 @@ function render(){
   renderRoutineHome();
   renderTimeline(k,d,c);
   const st=$("starter");st.hidden=!!d.items.length||viewMode!=="day"||key(cur)<key(today);
+  if(!st.hidden){st.querySelectorAll("[data-qs]").forEach(b=>b.onclick=()=>quickStart(k,b.dataset.qs));const fx=withFixed(d,k).filter(i=>i.fixed),sc=fx.find(i=>/school/i.test(i.name));st.querySelector("b").textContent=sc?`${sc.name} is on your schedule and counts toward your energy. Nothing planned after it yet.`:fx.length?"Your usual schedule is here. Nothing else planned yet.":"Nothing planned yet"}
   if(!st.hidden){$("stHours").hidden=!!(profile&&profile.setupDone)||isAdult();$("stPlan").onclick=()=>$("aiBtn").click();$("stAdd").onclick=()=>$("addText").focus();$("stHours").onclick=()=>openSetup(true,false,3)}
   addIdeas();
   renderDueSoon();
@@ -1589,13 +1690,13 @@ function renderTimeline(k,d,c){
   if(nowM>=0){
     const cand=ev.filter(x=>x.e>nowM&&!(x.it&&x.it.done)).sort((a2,b2)=>a2.s-b2.s);
     const curE=cand.find(x=>x.s<=nowM),nx=cand.find(x=>x.s>nowM);
-    const fb=$("kFocus");fb.hidden=true;
+    const fb=$("kFocus");fb.hidden=true;fb.className="mini";
     if(curE){kc.classList.add("now");$("kNextL").textContent="Right now";$("kNext").textContent=nm(curE);$("kNextS").textContent=`Until ${to12(toHM(curE.e))}`+(nx?` \u00b7 then ${nm(nx)}`:"");if(curE.it){fb.hidden=false;fb.textContent="Start focus";fb.onclick=()=>startFocus(curE.it,k)}}
-    else if(nx){$("kNextL").textContent="Up next";$("kNext").textContent=nm(nx);$("kNextS").textContent=`${to12(toHM(nx.s))} \u00b7 in ${fmt(nx.s-nowM)}`;if(nx.it){fb.hidden=false;fb.textContent="Start early";fb.onclick=()=>startFocus(nx.it,k)}}
-    else{$("kNextL").textContent="Up next";$("kNext").textContent="Nothing else today";$("kNextS").textContent="Add something or make a plan"}
+    else if(nx){$("kNextL").textContent="What to do next";$("kNext").textContent=nm(nx);$("kNextS").textContent=`${to12(toHM(nx.s))} \u00b7 in ${fmt(nx.s-nowM)}`;if(nx.it){fb.hidden=false;fb.textContent="Start early";fb.onclick=()=>startFocus(nx.it,k)}}
+    else{$("kNextL").textContent="What to do next";$("kNext").textContent=d.items.length?"You're done for today":"Make a plan for today";$("kNextS").textContent=d.items.length?"Rest up. Plan tomorrow when you're ready.":"Charge fits homework, studying and breaks into your free time.";if(!d.items.length){fb.hidden=false;fb.className="btn primary";fb.textContent="Plan my day";fb.onclick=()=>$("aiBtn").click()}}
   }else{const first=ev.filter(x=>!(x.it&&x.it.done))[0];$("kNextL").textContent=k<key(today)?"Day finished":"First up";$("kNext").textContent=first?nm(first):"Nothing planned";$("kNextS").textContent=first?to12(toHM(first.s)):""}
   const free=freeSlots(dt).reduce((a,[x,y])=>a+y-x,0);
-  $("count").textContent=`${d.items.length} item${d.items.length===1?"":"s"} \u00b7 ${fmt(free)} free`;
+  {const nf=withFixed(d,k).length-d.items.length;$("count").textContent=(d.items.length?`${d.items.length} planned`:nf?"Just your usual schedule":"Nothing planned")+` \u00b7 ${fmt(free)} free`}
   $("kFree").textContent=fmt(free);$("kFreeS").textContent=free?`Between now and ${to12(toHM(b))}`.replace("now",nowM>=0?"now":to12(toHM(w))):"No free time left";
   const wkDue=upcoming(today,7).filter(a2=>a2.due>=key(today));$("kDue").textContent=String(wkDue.length);
   $("kDueS").textContent=wkDue.length?`${(n2=>n2===1?"1 test or quiz":n2+" tests or quizzes")(wkDue.filter(a2=>BIG.includes(a2.kind)).length)} \u00b7 about ${fmt(wkDue.reduce((t2,a2)=>t2+a2.mins,0))}`:(isStudent()?"Nothing due":"No assignments");
@@ -1606,7 +1707,7 @@ function renderTimeline(k,d,c){
 function renderWkStrip(){
   const el=$("wkStrip");if(!el)return;const start=addDays(today,-((today.getDay()+6)%7));let done=0,planned=0,debt=0;
   for(let i=0;i<7;i++){const k=key(addDays(start,i)),dd=state.days[k];if(!dd||!dd.items.length||k>key(today))continue;const c=calc(dd);if(c.left<0)debt++;dd.items.forEach(x=>{if(x.type!=="drain")return;planned+=x.mins||0;if(x.done)done+=x.mins||0})}
-  el.innerHTML=planned?`<span>This week: <b>${fmt(done)}</b> of ${fmt(planned)} done${debt?` \u00b7 <b>${debt}</b> day${debt===1?"":"s"} in energy debt`:""}</span><button class="linkbtn" id="seeReview">See review</button>`:`<span>Your week's review appears here once you've planned a day.</span>`;
+  el.innerHTML=planned?`<span>This week: <b>${fmt(done)}</b> of ${fmt(planned)} done${debt?` \u00b7 <b>${debt}</b> day${debt===1?"":"s"} in energy debt`:""}</span><button class="linkbtn" id="seeReview">See review</button>`:`<span class="emptycta"><span>Plan your first day and your week's review shows up here.</span><button class="mini" type="button" id="wkPlanFirst">Plan today</button></span>`;
   const b=$("seeReview");if(b)b.onclick=()=>show("stats");
 }
 
@@ -1702,6 +1803,9 @@ function rForDay(dt){const off=noSchool(dt);return routines().filter(rt=>rt.days
 function ring(pct,size){const r2=(size/2)-4,c=2*Math.PI*r2;return `<svg class="ring" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle class="bg" cx="${size/2}" cy="${size/2}" r="${r2}"/><circle class="fg" cx="${size/2}" cy="${size/2}" r="${r2}" stroke-dasharray="${c*pct} ${c}" transform="rotate(-90 ${size/2} ${size/2})"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle">${Math.round(pct*100)}%</text></svg>`}
 function dots7(rt){let h="";for(let i=6;i>=0;i--){const d=addDays(today,-i),on=rt.days.includes(d.getDay()),k=key(d),full=rt.steps.length&&rDone(k,rt)===rt.steps.length;h+=`<i class="${full?"on":""}${i===0?" today":""}" title="${SH[d.getDay()]}" style="${on?"":"opacity:.3"}"></i>`}return `<span class="dots">${h}</span>`}
 let rSel="",rRun=null;
+const R_READY=[{label:"Morning",t:0},{label:"After school",t:1},{label:"Bedtime",t:2,name:"Bedtime"}];
+function addReadyRoutine(i){const R=R_READY[i],t=R_TEMPLATES[R.t];if(!t)return;const rt={id:uid()+uid(),name:R.name||t.name,start:t.start,days:[...t.days],steps:t.steps.map(([n,m])=>({id:uid(),name:n,mins:m}))};
+  profile.routines=profile.routines||[];profile.routines.push(rt);saveProfile();renderRoutine();toast(`Added your ${rt.name} routine. Tap it to change the steps.`)}
 function renderRoutine(){
   seedRoutines();
   const list=routines(),g=$("rGrid"),ed=$("rEditor");
@@ -1712,7 +1816,12 @@ function renderRoutine(){
   if(!list.length){g.innerHTML=`<section class="panel rstart"><h2>Make your first routine</h2><p class="ai-note">A routine is a list of things you do in order, like getting ready in the morning or winding down at night. Give it a name to start.</p>
     <form class="qadd" id="rFirst" autocomplete="off"><input id="rFirstName" maxlength="40" placeholder="Name it, e.g. Morning" aria-label="Routine name"><button class="btn primary" type="submit">Create</button></form></section>
     <div class="rhow"><div><i>1</i><b>Name it</b><span>Pick when it happens: before school, after practice, or before bed.</span></div><div><i>2</i><b>Add your steps</b><span>Type each step with how long it takes, like "Pack bag 5 min". Set the days and a start time.</span></div><div><i>3</i><b>Tap Start</b><span>Charge walks you through one step at a time with a timer, and it shows up on your schedule.</span></div></div>`;
-    $("rFirst").onsubmit=e=>{e.preventDefault();const v=$("rFirstName").value.trim();if(!v){$("rFirstName").focus();return}newRoutine(v)};return}
+    $("rFirst").onsubmit=e=>{e.preventDefault();const v=$("rFirstName").value.trim();if(!v){$("rFirstName").focus();return}newRoutine(v)};
+    g.querySelector(".rstart").insertAdjacentHTML("beforeend",`<div class="rtpl"><span class="ai-note" style="margin:0">Or start from a ready-made one:</span>${R_READY.map((t,i)=>`<button class="mini" type="button" data-tpl="${i}">+ ${t.label}</button>`).join("")}</div>`);
+    g.querySelectorAll("[data-tpl]").forEach(b=>b.onclick=()=>addReadyRoutine(+b.dataset.tpl));return}
+  setTimeout(()=>{const miss=R_READY.map((t,i)=>[t,i]).filter(([t])=>!list.some(x=>x.name.toLowerCase()===(t.name||R_TEMPLATES[t.t].name).toLowerCase()));if(!miss.length||g.querySelector(".rtpl"))return;
+    g.insertAdjacentHTML("beforeend",`<div class="rtpl" style="grid-column:1/-1"><span class="ai-note" style="margin:0">Ready-made:</span>${miss.map(([t,i])=>`<button class="mini" type="button" data-tpl="${i}">+ ${t.label}</button>`).join("")}</div>`);
+    g.querySelectorAll("[data-tpl]").forEach(b=>b.onclick=()=>addReadyRoutine(+b.dataset.tpl))},0);
   [...list].sort((a,b)=>(toMin(a.start)??1e9)-(toMin(b.start)??1e9)).forEach(rt=>{
     const n=rt.steps.length,d=rDone(tk,rt),pct=n?d/n:0,todayOn=rt.days.includes(today.getDay());
     const card=document.createElement("div");card.className="rcard"+(todayOn&&rIsNow(rt)&&d<n?" now":"");
@@ -1749,7 +1858,7 @@ function renderREditor(rt){
   $("rStepSugg").innerHTML="";R_STEP_SUGG.filter(x=>!have.has(x.toLowerCase().replace(/\s*\d+\s*min$/,""))).slice(0,10).forEach(x=>{const b=document.createElement("button");b.type="button";b.textContent="+ "+x;b.onclick=()=>{addStep(rt,x);renderREditor(rt)};$("rStepSugg").appendChild(b)});
   $("rStepForm").onsubmit=e=>{e.preventDefault();const v=$("rStepText").value.trim();if(!v)return;addStep(rt,v);$("rStepText").value="";renderREditor(rt);$("rStepText").focus()};
   $("rStartBtn").onclick=()=>startRun(rt,key(today));
-  $("rShare").onclick=async e=>{const code=routineCode(rt);try{await navigator.clipboard.writeText(code);e.target.textContent="Copied";setTimeout(()=>e.target.textContent="Copy share code",2000)}catch(err){const pc=$("popCard");pc.innerHTML=`<div class="label">Share code</div><h2 id="popTitle">${esc(rt.name)}</h2><div class="field"><textarea readonly style="min-height:80px">${esc(code)}</textarea></div><button class="btn" id="popOk">Close</button>`;$("pop").hidden=false;$("popOk").onclick=()=>$("pop").hidden=true}};$("rClose").onclick=()=>{if(!rt.name.trim()){rt.name=($("rName").value.trim())||"My routine";saveProfile()}rSel="";renderRoutine();render()};
+  $("rShare").onclick=async e=>{const code=routineCode(rt);try{await navigator.clipboard.writeText(code);e.target.textContent="Code copied. Send it to your friend";setTimeout(()=>e.target.textContent="Share this routine",2000)}catch(err){const pc=$("popCard");pc.innerHTML=`<div class="label">Share code</div><h2 id="popTitle">${esc(rt.name)}</h2><div class="field"><textarea readonly style="min-height:80px">${esc(code)}</textarea></div><button class="btn" id="popOk">Close</button>`;$("pop").hidden=false;$("popOk").onclick=()=>$("pop").hidden=true}};$("rClose").onclick=()=>{if(!rt.name.trim()){rt.name=($("rName").value.trim())||"My routine";saveProfile()}rSel="";renderRoutine();render()};
   $("rDelete").onclick=()=>{const b=$("rDelete");if(b.dataset.arm!=="1"){b.dataset.arm="1";b.textContent="Really delete?";return}const i=routines().indexOf(rt);routines().splice(i,1);saveProfile();rSel="";renderRoutine();render();toast("Deleted "+rt.name,()=>{routines().splice(i,0,rt);saveProfile();renderRoutine();render()})};
 }
 function addStep(rt,text){const m=text.match(/\s*(\d+)\s*(m|min|mins|minutes)\s*$/i);const mins=m?+m[1]:0;const name=(m?text.slice(0,m.index):text).trim().replace(/^(.)/,c=>c.toUpperCase());if(!name)return;rt.steps.push({id:uid(),name,mins});saveProfile();render()}
@@ -2001,6 +2110,7 @@ function renderReview(){
 
 // ---------- Backup and restore ----------
 function bindBackup(){
+document.addEventListener("click",e=>{if(e.target&&e.target.id==="aMove"){setLS("ch-backup",key(today));sendToDevice()}});
 $("aExport").onclick=async()=>{setLS("ch-backup",key(today));
   if(IS_NATIVE){nativePost({type:"share",name:`charge-backup-${key(today)}.json`,text:JSON.stringify({app:"Charge",version:1,exported:new Date().toISOString(),profile,settings,state,ctls:ctlsItems},null,2)});return}
   const data={app:"Charge",version:1,exported:new Date().toISOString(),profile,settings,state,ctls:ctlsItems};
@@ -2359,7 +2469,7 @@ function renderWeek(){
   // burnout streak ending at current day
   let streak=0;for(let i=6;i>=0;i--){if(days[i].d.items.length&&days[i].c.left<0)streak++;else break}
   const w=$("warn");w.hidden=streak<settings.streak;
-  if(!weekEnd){const wt=$("warnToday");wt.hidden=streak<settings.streak;wt.textContent=streak>=settings.streak?`Burnout warning: ${streak} days in a row in energy debt. Keep today lighter and add a recharge.`:""}
+  if(!weekEnd){const wt=$("warnToday");wt.hidden=streak<settings.streak;wt.innerHTML=streak>=settings.streak?`<b>Burnout warning:</b> ${streak} days in a row in energy debt. Keep today lighter and add a recharge. <button class="mini" type="button" id="wtFix">Lighten today</button>`:"";const wf=$("wtFix");if(wf)wf.onclick=()=>openLighten(key(today))}
   if(streak>=settings.streak){
     const fix=tc?`${tc[0]} has helped you most this week.`:"Try adding something from the recharge menu.";
     $("warnText").textContent=`You've been in energy debt ${streak} days in a row. Plan a lighter day tomorrow and add a recharge. ${fix}`;
@@ -2382,6 +2492,11 @@ function resetAI(){aiPlan=[];$("aiOut").innerHTML=""}
 $("prev").onclick=()=>{cur=addDays(cur,-1);render();resetAI()};
 $("next").onclick=()=>{cur=addDays(cur,1);render();resetAI()};
 document.querySelectorAll("#sleepSeg button").forEach(b=>b.onclick=()=>{const d=day(key(cur));d.sleep=b.dataset.v;d.sleepBy="rating";save();render()});
+$("debtTag").onclick=()=>{const nb=document.querySelector("#viewHome details.numbers");if(nb){nb.open=true;nb.scrollIntoView({behavior:"smooth",block:"center"})}toast("Your drains add up to more than your energy for the day. Tap I'm exhausted to lighten it.")};
+$("tiredBtn").onclick=()=>openLighten(key(cur),"exhausted");
+$("feelBtn").onclick=()=>openFeel(key(cur));
+$("howEnergy").onclick=()=>openHowEnergy();
+$("shareDay").onclick=()=>shareToday(key(cur));
 $("sleepHrs").onchange=e=>{const v=e.target.value.trim();setSleepHours(key(cur),v===""?null:+v)};
 $("sleepHrs").onkeydown=e=>{if(e.key==="Enter")e.target.blur()};
 $("slMinus").onclick=()=>{const d=day(key(cur));setSleepHours(key(cur),d.sleepHrs!=null?d.sleepHrs-.5:7.5)};
@@ -2473,20 +2588,42 @@ const LOGO_SVG=`<svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradi
 function esc(v){return String(v??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function optBtn(label,on){return `<button type="button" class="opt" data-v="${esc(label)}" aria-pressed="${on}">${esc(label)}</button>`}
 
+const QUICK_NAV=["Your name","School and grade","Your classes"];
+// A finished example day, so people see the payoff before answering anything.
+const DEMO=[["8:00am","School",-30,"School"],["3:30pm","Practice",-25,"Sports"],["5:15pm","Snack and a walk",10,"Rest"],["6:30pm","Chemistry: test review",-15,"Study"],["7:30pm","Math homework",-15,"School"],["8:15pm","Break: music",5,"Fun"]];
+function demoDay(){let e=100;const rows=DEMO.map(([t,n,p,c])=>{e+=p;return `<div class="dm-row"><span class="dm-t">${t}</span><span class="dm-n">${n}</span><span class="dm-p ${p>0?"up":""}">${p>0?"+":"\u2212"}${Math.abs(p)}</span><span class="dm-e">${e}</span></div>`}).join("");
+  // energy across the day for the little chart (wake 7am, bed 10:30pm)
+  const W=300,H=60,pts=[[7,100],[8,100],[15,70],[15.5,70],[17,45],[17.25,45],[17.75,55],[18.5,55],[19.25,40],[19.5,40],[20.25,25],[20.5,30],[22.5,30]];
+  const X=h=>(h-7)/(22.5-7)*W,Y=v=>H-4-v/100*(H-8),d=pts.map(([h,v],i)=>(i?"L":"M")+X(h).toFixed(1)+" "+Y(v).toFixed(1)).join(" ");
+  return `<div class="demo" aria-label="Example day in Charge"><div class="dm-head"><div><div class="label">Example day</div><b>Sam, 10th grade \u00b7 Tuesday</b></div><div class="dm-big"><span id="dmNum">100</span><small>pts</small></div></div>
+   <div class="cells"><div class="fill ok" id="dmFill" style="width:100%"></div></div>
+   <svg class="dm-curve" viewBox="0 0 ${W} ${H+12}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${W}" y1="${Y(30)}" y2="${Y(30)}" class="lowl"/><path d="${d} L${W} ${H} L0 ${H}Z" class="area"/><path d="${d}" class="ln" id="dmLine"/><text x="0" y="${H+11}">7am</text><text x="${W/2}" y="${H+11}" text-anchor="middle">3pm</text><text x="${W}" y="${H+11}" text-anchor="end">10pm</text></svg>
+   <div class="dm-rows">${rows}</div>
+   <div class="dm-tip"><b>Charge noticed:</b> Sam was running low after math homework, so it added a music break before bed. Sam goes to sleep with energy left instead of in debt.</div></div>`}
+function animDemo(){const n=$("dmNum"),f=$("dmFill"),ln=$("dmLine");if(!n)return;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){n.textContent=30;f.style.width="30%";return}
+  const cv=document.querySelector(".dm-curve");if(cv){cv.style.clipPath="inset(0 100% 0 0)";cv.getBoundingClientRect();cv.style.transition="clip-path 2.6s linear";cv.style.clipPath="inset(0 0 0 0)"}
+  const rows=[...document.querySelectorAll(".dm-row")];rows.forEach(x=>x.classList.add("pre"));let e=100,i=0;
+  const tick=()=>{if(!document.body.contains(n))return;if(i>=DEMO.length)return;e+=DEMO[i][2];rows[i].classList.remove("pre");rows[i].classList.add("on");n.textContent=e;f.style.width=e+"%";f.className="fill "+(e<30?"low":"ok");i++;setTimeout(tick,430)};setTimeout(tick,350)}
 function openSetup(isEdit,toRole,at){editing=!!isEdit;draft=Object.assign(blankProfile(),JSON.parse(JSON.stringify(profile&&!profile.skipped?profile:{})));step=(!profile&&!isEdit)?-2:(!draft.role||toRole)?-1:(at||0);show("setup");drawStep()}
 const val=v=>typeof v==="function"?v():v;
 function drawStep(err){
   const c=$("obCard");
   if(step<-1){
-    $("stepList").innerHTML=STEPS.map(x=>`<li>${val(x.nav)}</li>`).join("");
+    $("stepList").innerHTML=QUICK_NAV.map(t=>`<li>${t}</li>`).join("")+`<li class="more">Everything else is optional</li>`;
     c.innerHTML=`<div class="welcome"><div class="bolt" aria-hidden="true">${LOGO_SVG}</div><div><div class="tag">Charge</div><h2 id="obTitle">Plan your day by energy, not just time.</h2></div>
-      <p>Every day starts with 100 energy points. Charge fits your classes, homework, practice and breaks into the time you actually have, learns what drains you, and keeps you from running on empty.</p>
-      <div class="wvals"><div><b>A plan in one tap</b><span>Your homework, test studying and breaks placed into real free time.</span></div><div><b>Energy that fits you</b><span>Rate how drained you feel and Charge learns your real costs.</span></div><div><b>Routines that stick</b><span>Morning, after school and evening routines you run step by step.</span></div></div>
-      <button class="btn primary" id="obNext">Get started</button><span class="wnote">About 1 minute to set up. Free for students.</span></div>`;
-    $("obNext").onclick=()=>{step=-1;drawStep()};$("obNext").focus();return;
+      <p>You start each day with 100 energy points. Classes, practice and homework drain them; breaks and sleep recharge them. Charge plans your day so you don't run out.</p>
+      ${demoDay()}
+      <div class="wvals"><div><b>A plan in one tap</b><span>Homework, test studying and breaks placed into the free time you actually have.</span></div><div><b>Warns you before you crash</b><span>See when you'll run low and add a break with one tap.</span></div><div><b>Ask Charge</b><span>Type "plan my evening" or "I slept 6 hours" and it sorts it out.</span></div></div>
+      <button class="btn primary" id="obNext">Make my plan</button><span class="wnote">3 quick questions. ${IS_PUBLIC?"Free for everyone, no account needed.":"Free for students."}</span>
+      ${IS_PUBLIC?`<button class="linkbtn" id="obAdult" type="button">Not in high school? Use Charge for work and life</button>`:""}
+      ${cloudOn()?`<div class="obsign"><b>Already use Charge?</b> <span>Sign in to bring your plans here.</span><div class="inline" style="margin-top:6px"><input type="email" id="obEmail" autocomplete="email" maxlength="120" placeholder="you@example.com" style="border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface-2);color:var(--ink);min-width:0;flex:1"><button class="btn" id="obSignIn" type="button">Email me a link</button></div><p class="ai-note" id="obSignNote" style="margin:4px 0 0"></p></div>`:""}</div>`;
+    animDemo();
+    $("obNext").onclick=()=>{if(IS_PUBLIC){if(!draft.role)draft.role="student";step=0}else step=-1;drawStep()};$("obNext").focus();
+    if($("obAdult"))$("obAdult").onclick=()=>{draft.role="adult";step=0;drawStep()};
+    if($("obSignIn"))$("obSignIn").onclick=e=>sendSignInLink($("obEmail").value,$("obSignNote"),e.currentTarget);return;
   }
   if(step<0){
-    $("stepList").innerHTML=STEPS.map(x=>`<li>${val(x.nav)}</li>`).join("");
+    $("stepList").innerHTML=QUICK_NAV.map(t=>`<li>${t}</li>`).join("")+`<li class="more">Everything else is optional</li>`;
     c.innerHTML=`<div class="q-count">Before you begin</div><h2 id="obTitle">Who will be using Charge?</h2><p class="ob-sub">Your answer decides which version of the app you get.</p>
     <div class="roles">
       <button type="button" class="role" data-role="student" aria-pressed="${draft.role==="student"}"><span class="tag">Free</span><b>High school student</b><p>Plan your days by energy, keep subjects and routines in one place, get test reminders.</p></button>
@@ -2515,7 +2652,7 @@ function drawStep(err){
   st.after&&st.after();
   const first=c.querySelector("input:not([type=checkbox]),.opt");if(first)first.focus();
   c.querySelector("input[type=text],input[type=number]")?.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("obNext").click()}});
-  $("obBack").onclick=()=>{st.read&&st.read();step--;drawStep()};
+  $("obBack").onclick=()=>{st.read&&st.read();step--;if(IS_PUBLIC&&step===-1&&!editing)step=-2;drawStep()};
   $("obNext").onclick=()=>{st.read&&st.read();const e=st.check&&st.check();if(e){drawStep(e);return}if(quick){finishSetup(false);return}if(!last){step++;drawStep();return}finishSetup(true)};
 
 }
@@ -2675,8 +2812,8 @@ function gsFlags(){if(!profile.flags)profile.flags={};return profile.flags}
 function renderGS(){
   const c=$("gsCard");if(!c||!profile||!profile.role||isTeacher()||profile.gsHidden){if(c)c.hidden=true;return}
   const f=gsFlags(),hasItem=Object.values(state.days).some(d=>d.items&&d.items.length),planned=!!f.planned,joined=isStudent()?ctlsItems.length>0:true,done=hasItem&&(f.done||Object.values(state.days).some(d=>d.items.some(i=>i.done)));
-  const rows=[["Add something to today",hasItem,()=>$("addText").focus()],["Make a plan",planned,()=>$("aiBtn").click()],isStudent()?["Add a test or homework",joined,()=>{selSubj="";show("subjects");openAddWork({kind:"Test"})}]:["Set your day: sleep and work hours",!!profile.setupDone,()=>openSetup(true,false,3)],["Check something off",done,null]];
-  const all=rows.filter(x=>x[1]).length>=3;c.hidden=all;if(all)return;
+  const rows=[["Add something to today",hasItem,()=>$("addText").focus()],["Make a plan",planned,()=>$("aiBtn").click()],isStudent()?["Add a test or homework",joined,()=>{selSubj="";show("subjects");openAddWork({kind:"Test"})}]:["Set your day: sleep and work hours",!!profile.setupDone,()=>openSetup(true,false,3)]];
+  const all=rows.filter(x=>x[1]).length>=2;c.hidden=all;if(all)return;
   const ol=$("gsList");ol.innerHTML="";
   rows.forEach(([t,ok,fn],i)=>{const li=document.createElement("li");li.className=ok?"ok":"";li.innerHTML=`<i>${ok?"\u2713":i+1}</i><span></span>${!ok&&fn?`<button class="mini">Go</button>`:""}`;li.querySelector("span").textContent=t;if(!ok&&fn)li.querySelector("button").onclick=fn;ol.appendChild(li)});
 }
@@ -2767,7 +2904,7 @@ async function renderFeedback(){
 
 // ---------- Accounts, access and shared data ----------
 const acct={db:null,user:null,id:null,owner:false,ready:false};
-let cfg={price:"$4.99 / month",payLink:"",days:31};
+let cfg={price:"",payLink:"",days:31};
 let approvals={},myReq=null,membership={joined:[]},requests=[];
 let access={ok:false,reason:"loading"};
 let currentView="";
@@ -2808,7 +2945,7 @@ function mergeRemote(d){
   return changed}
 function replaceFromRemote(d){
   if(d.state&&d.state.days){state={example:false,v:3,days:JSON.parse(JSON.stringify(d.state.days)),learn:d.state.learn?JSON.parse(JSON.stringify(d.state.learn)):undefined};setLS(KEY,JSON.stringify(state))}
-  if(d.profile){profile=JSON.parse(JSON.stringify(d.profile));setLS(PKEY,JSON.stringify(profile))}
+  if(d.profile){profile=Object.assign(blankProfile(),JSON.parse(JSON.stringify(d.profile)));setLS(PKEY,JSON.stringify(profile))}
   if(d.settings){settings=Object.assign({},DEF_SET,d.settings);setLS(SKEY,JSON.stringify(settings));try{applyLook()}catch(e){}}
   if(Array.isArray(d.ctls)){ctlsItems=JSON.parse(JSON.stringify(d.ctls));setLS(CKEY,JSON.stringify(ctlsItems))}
   markSynced(String(d.updatedAt||""))}
@@ -2835,7 +2972,15 @@ function applyRemote(d){
   if(dirty||!getLS("eb-synced")&&localStamp()){mergeRemote(d);setLS("eb-synced",String(d.updatedAt||""));queueSync()}
   else replaceFromRemote(d);
   return true}
-function setFoot(t){const f=$("footNote");if(f)f.textContent=t}
+document.addEventListener("click",e=>{if(e.target&&e.target.id==="wkPlanFirst"){cur=new Date(today);show("home");setTimeout(()=>$("aiBtn").click(),60)}});
+window.addEventListener("offline",()=>{try{toast("You're offline. Charge keeps working and saves on this device. Ask Charge needs internet.")}catch(e){}});
+window.addEventListener("online",()=>{try{toast("You're back online")}catch(e){}});
+// Anonymous usage count: once a day, a random id for this device (no name, email or plans) so the owner can see how many people use Charge.
+function usagePing(){try{if(!AI_PROXY||!/^https:/.test(location.protocol)||navigator.onLine===false)return;const tk=key(today);if(getLS("ch-ping")===tk)return;
+  let id=getLS("ch-dev");if(!id||id.length<16){const a=new Uint8Array(12);crypto.getRandomValues(a);id=[...a].map(x=>x.toString(16).padStart(2,"0")).join("");setLS("ch-dev",id)}
+  fetch(AI_PROXY.replace(/\/$/,"")+"/ping",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id,signedIn:!!(acct&&acct.id)}),keepalive:true}).then(r=>{if(r.ok)setLS("ch-ping",tk)}).catch(()=>{})}catch(e){}}
+function setFoot(t){const f=$("footNote");if(f)f.textContent=t;try{footMove()}catch(e){}}
+function footMove(){const w=$("footMoveWrap");if(!w)return;const local=!IN_CLAUDE&&!(acct&&acct.id);w.innerHTML=local?`<button class="linkbtn footmove" type="button" id="footMoveBtn">Your planner is only saved on this device. Send it to your phone or another computer</button>`:"";const fn=$("footNote");if(fn)fn.classList.toggle("cz-off",local);const b=$("footMoveBtn");if(b)b.onclick=()=>{setLS("ch-backup",key(today));sendToDevice()}}
 async function pullSync(){
   const ref=syncRef();if(!ref)return false;
   try{
@@ -2859,7 +3004,7 @@ function cloudDoc(uid){return {
   set:async doc=>{const {error}=await supa.from("planners").upsert({user_id:uid,data:doc,updated_at:new Date().toISOString()});if(error)throw error},
   onSnapshot:cb=>{try{const ch=supa.channel("planner-"+uid).on("postgres_changes",{event:"*",schema:"public",table:"planners",filter:"user_id=eq."+uid},p=>{if(p&&p.new&&p.new.data)cb({exists:true,data:()=>p.new.data})}).subscribe();return()=>{try{supa.removeChannel(ch)}catch(e){}}}catch(e){return()=>{}}}}}
 async function useCloud(user){acct.id=user.id;acct.email=user.email||"";acct.db={doc:()=>cloudDoc(user.id)};
-  await pullSync();syncReady=true;
+  await pullSync();syncReady=true;if(profile&&profile.role&&currentView==="setup"){show(homeView());toast("Welcome back"+(profile.name?", "+profile.name:"")+". Your plans are here.")}
   try{syncRef().onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(!d||pushing)return;if(applyRemote(d)){buildAssignments();show(currentView||homeView(),true);toast("Updated from your account")}})}catch(e){}
   if(localStamp()>getLS("eb-synced"))queueSync();buildAssignments();show(currentView||homeView(),true)}
 async function initCloud(){if(!cloudOn()||!/^https:/.test(location.protocol))return;
@@ -2897,6 +3042,9 @@ async function initAccounts(){
     try{syncRef().onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(!d||pushing)return;if(applyRemote(d)){buildAssignments();refreshAccess();show(currentView||homeView(),true);toast("Updated from your account")}},dbErr)}catch(e){}}
   acct.ready=true;buildAssignments();refreshAccess();
   route();
+  if(!IN_CLAUDE)checkTransferLink();
+  if(!IN_CLAUDE)setTimeout(usagePing,2500);
+  try{footMove()}catch(e){}
   if(cloudOn())initCloud();
 }
 function refreshAccess(){access={ok:true};return;
@@ -2910,7 +3058,10 @@ function refreshAccess(){access={ok:true};return;
   else access={ok:true};
 }
 function homeView(){if(!profile||!profile.role)return "setup";if(!access.ok)return "gate";return "home"}
-function route(){if(!profile||!profile.role){openSetup(false);return}show(location.hash==="#calendar"&&access.ok?"calendar":homeView())}
+const VIEW_HASH={home:"today",routine:"routines",subjects:"subjects",settings:"settings",stats:"week"};
+function viewFromHash(){const h=location.hash.replace(/^#/,"");if(h==="calendar")return "calendar";const v=Object.keys(VIEW_HASH).find(k=>VIEW_HASH[k]===h);return v||null}
+function route(){if(!profile||!profile.role){openSetup(false);return}const v=viewFromHash();show(v&&access.ok?v:homeView())}
+window.addEventListener("hashchange",()=>{if(!profile||!profile.role||/^#move=/.test(location.hash))return;const v=viewFromHash();if(v&&v!==currentView&&access.ok)show(v)});
 function onData(){
   if(!acct.ready)return;
   const was=access.ok;refreshAccess();
@@ -2997,11 +3148,33 @@ function renderAppBanner(){const el=$("appBanner");if(!el)return;el.hidden=true;
     el.hidden=false;$("abNo").onclick=()=>dismiss("ch-inst-hide");if($("abGo"))$("abGo").onclick=async()=>{installEvt.prompt();try{await installEvt.userChoice}catch(e){}installEvt=null;el.hidden=true};return}
   const days=Object.values(state.days).filter(d=>d.items&&d.items.length).length,last=getLS("ch-backup"),hid=getLS("ch-bk-hide");
   const old=!last||(today-new Date(last+"T12:00:00"))/864e5>30,snoozed=hid&&(today-new Date(hid+"T12:00:00"))/864e5<14;
-  if(days>=7&&old&&!snoozed){el.innerHTML=`<img src="icon-192.png" alt=""><div><b>Back up your planner</b><span>Your plans are only on this device. A backup lets you move them to a new phone.</span></div><button class="btn primary" id="abGo">Back up</button><button class="mini" id="abNo">Later</button>`;
-    el.hidden=false;$("abNo").onclick=()=>dismiss("ch-bk-hide");$("abGo").onclick=()=>{show("settings");setTimeout(()=>{const b=$("aExport");if(b){b.scrollIntoView({block:"center"});b.click()}},150)}}}
+  if(days>=1&&old&&!snoozed){el.innerHTML=`<img src="icon-192.png" alt=""><div><b>Use Charge on your phone too?</b><span>Your plans are only on this device. Send them to your other device so you don't lose them.</span></div><button class="btn primary" id="abGo">Send to my other device</button><button class="mini" id="abNo">Later</button>`;
+    el.hidden=false;$("abNo").onclick=()=>dismiss("ch-bk-hide");$("abGo").onclick=()=>{setLS("ch-backup",key(today));el.hidden=true;sendToDevice()}}}
+// ---------- Move to another device with a link ----------
+// Everything goes after the # in the link, which browsers never send to any server.
+async function packTransfer(){const cutoff=key(addDays(today,-45)),days={};Object.entries(state.days).forEach(([k,v])=>{if(k>=cutoff&&v.items&&(v.items.length||v.sleepHrs!=null))days[k]=v});
+  const json=JSON.stringify({app:"Charge",version:1,exported:new Date().toISOString(),profile,settings,state:{example:false,v:3,days,learn:state.learn||null},ctls:ctlsItems.filter(c=>c.due>=cutoff)});
+  let bytes=new TextEncoder().encode(json),z="r";
+  if(window.CompressionStream){try{bytes=new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"))).arrayBuffer());z="g"}catch(e){}}
+  let b="";for(let i=0;i<bytes.length;i+=8192)b+=String.fromCharCode.apply(null,bytes.subarray(i,i+8192));
+  return location.href.split("#")[0]+"#move="+z+btoa(b).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+async function unpackTransfer(code){const z=code[0];let b=code.slice(1).replace(/-/g,"+").replace(/_/g,"/");while(b.length%4)b+="=";
+  const bin=atob(b),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+  const raw=z==="g"?new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer()):bytes;
+  return JSON.parse(new TextDecoder().decode(raw))}
+async function sendToDevice(){try{const link=await packTransfer();
+    if(navigator.share&&/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){try{await navigator.share({title:"My Charge planner",text:"Open this on your other device to move your Charge plans there.",url:link});return}catch(e){if(e&&e.name==="AbortError")return}}
+    await navigator.clipboard.writeText(link);toast("Link copied. Send it to yourself (email, AirDrop or Notes) and open it on your other device.")}
+  catch(e){toast("Couldn't make the link. Use Download backup instead.")}}
+async function checkTransferLink(){const m=location.hash.match(/^#move=([rg][A-Za-z0-9_-]+)$/);if(!m)return false;history.replaceState(null,"",location.pathname+location.search);
+  let d=null;try{d=await unpackTransfer(m[1])}catch(e){}if(!d||d.app!=="Charge"||!d.state){toast("That move link didn't work. Try making a new one.");return false}
+  const pc=$("popCard"),has=profile&&profile.role&&Object.keys(state.days||{}).length;
+  pc.innerHTML=`<div class="label">Move your plans here</div><h2 id="popTitle">Load the planner from your other device?</h2><p class="ai-note">${esc((d.profile&&d.profile.name)||"Your")}'s plans from ${new Date(d.exported).toLocaleDateString()}: ${Object.keys(d.state.days||{}).length} days, ${(d.ctls||[]).length} tests and homework.${has?" This replaces what's on this device now.":""}</p><div class="inline"><button class="btn primary" id="mvYes">Load my plans</button><button class="btn" id="mvNo">Cancel</button></div>`;
+  $("pop").hidden=false;$("mvNo").onclick=()=>{$("pop").hidden=true};
+  $("mvYes").onclick=()=>{state=d.state;profile=d.profile||profile;settings=Object.assign({},DEF_SET,d.settings||{});try{applyLook()}catch(e){};ctlsItems=Array.isArray(d.ctls)?d.ctls:[];save();saveProfile();saveSettings();saveCtls();setLS("ch-backup",key(today));$("pop").hidden=true;buildAssignments();refreshAccess();show(homeView());toast("Your plans are here")};return true}
 let ctlsStatus=null;
 function renderCtlsWarn(){const el=$("ctlsWarn");if(!el)return;const st=ctlsStatus;
-  const show_=IN_CLAUDE&&st&&st.ok===false&&st.at&&(Date.now()-new Date(st.at).getTime())<3*864e5&&getLS("ch-ctls-ack")!==st.at;
+  const show_=IN_CLAUDE&&st&&st.ok===false&&st.at&&(Date.now()-new Date(st.at).getTime())<864e5&&getLS("ch-ctls-ack")!==st.at;
   el.hidden=!show_;if(!show_)return;
   $("ctlsWarnText").textContent=`${st.reason||"It couldn't read CTLS."} (${new Date(st.at).toLocaleString(undefined,{weekday:"short",hour:"numeric",minute:"2-digit"})}). Sign in to CTLS in Claude's browser, close CTLS in other tabs, then ask Claude to "check CTLS".`;
   $("ctlsWarnOk").onclick=()=>{setLS("ch-ctls-ack",st.at);el.hidden=true}}
@@ -3357,28 +3530,18 @@ function maybePopup(){
   $("pop").hidden=false;$("popOk").focus();
 }
 // ---------- Access page ----------
-function renderGate(){
-  const g=$("gateCard"),R=access.reason,change=`<button class="linkbtn" id="gChange">Not you? Change who's using the app</button>`;
-  let h="";
-  if(R==="loading")h=`<h2>Checking your account\u2026</h2>`;
-  else if(R==="signin")h=`<div class="label">Sign in required</div><h2>Open Charge in Claude to continue</h2><p>Open this page while signed in to Claude so your plan can be saved to your account.</p>${change}`;
-  else if(R==="pay"||R==="expired"){
-    const link=/^https:\/\//.test(cfg.payLink||"")?cfg.payLink:"";
-    h=`<div class="label">Adults \u00b7 Paid plan</div><h2>${R==="expired"?"Your plan has ended":"Unlock Charge"}</h2>
-    <div class="price">${esc(cfg.price||"")} <small>\u00b7 ${cfg.days||31} days of access per payment</small></div>
-    <p>Includes the full planner, routine learning, the day planner, calendar and all controls.</p>
-    ${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener noreferrer" style="text-align:center;text-decoration:none">Pay now</a>`:`<p class="status">Payments aren't open yet. Check back soon.</p>`}
-    <div class="field"><label class="label" for="payNote">After paying, enter your receipt number or the email you paid with</label><textarea id="payNote" maxlength="200"></textarea></div>
-    <button class="btn" id="gPaid">I've paid, request access</button>
-    ${myReq&&myReq.role==="adult"?`<p class="status">Request sent ${new Date(myReq.at).toLocaleDateString()}. You'll get access as soon as your payment is confirmed. This page updates by itself.</p>`:""}${change}`;
-  }
-  g.innerHTML=h;
-  if($("gChange"))$("gChange").onclick=()=>openSetup(true,true);
-  if($("gPaid"))$("gPaid").onclick=async()=>{const n=$("payNote").value.trim();if(!n){$("payNote").focus();return}await sendRequest({role:"adult",note:n})};
-}
-
+function renderGate(){}
 // ---------- Settings (controls) ----------
 function rangeRow(id,label,help,min,max,stepv,unit){return `<div class="setrow"><div class="lab"><b>${label}</b><span>${help}</span></div><div class="ctl"><output id="o_${id}">${settings[id]}${unit}</output><input type="range" id="s_${id}" min="${min}" max="${max}" step="${stepv}" value="${settings[id]}" aria-label="${label}"></div></div>`}
+const SET_SECS=[["all","Everything"],["look","Look"],["energy","Energy"],["planner","Planner and alerts"],["subjects","Subjects"],["data","Account and data"],["help","Help"]];
+let setSec="all";
+function tagSettings(){const v=$("viewSettings");if(!v)return;const tag=(el,sec)=>{if(el&&!el.dataset.sec)el.dataset.sec=sec};
+  tag($("glTitle")&&$("glTitle").closest("section"),"all");tag($("setLook"),"look");tag($("setEnergy"),"energy");tag($("setAiRows")&&$("setAiRows").closest("section"),"planner");tag($("setSubjects"),"subjects");tag($("acctRows")&&$("acctRows").closest("section"),"data");
+  v.querySelectorAll("section.panel").forEach(p=>{if(!p.dataset.sec)p.dataset.sec="help"})}
+function setSection(sec){setSec=sec;tagSettings();const v=$("viewSettings");
+  v.querySelectorAll("section.panel[data-sec]").forEach(p=>{p.classList.toggle("cz-off",sec!=="all"&&p.dataset.sec!==sec&&!(sec==="all"))});
+  const gl=v.querySelector('section.panel[data-sec="all"]');if(gl)gl.classList.toggle("cz-off",sec!=="all");
+  const nav=$("setNav");if(nav){nav.innerHTML=SET_SECS.map(([k,t])=>`<button type="button" data-s="${k}" aria-pressed="${k===sec}">${t}</button>`).join("");nav.querySelectorAll("button").forEach(b=>b.onclick=()=>{setSection(b.dataset.s);window.scrollTo({top:0})})}}
 function renderSettings(){
   renderLook();
   $("setEnergyRows").innerHTML=
@@ -3386,6 +3549,7 @@ function renderSettings(){
     rangeRow("great","Great sleep bonus","Added after a great night",0,30,5," pts")+
     rangeRow("bad","Bad sleep penalty","Taken away after a bad night",0,40,5," pts")+
     rangeRow("lowAt","Running low at","Below this, the battery turns pale",10,60,5," pts")+
+    rangeRow("minTarget","Bedtime energy goal","Charge warns you when your day is heading below this",0,60,5," pts")+
     rangeRow("streak","Burnout warning after","Days in a row in energy debt",2,7,1," days")+
     `<div class="setrow"><div class="lab"><b>Tiredness carries over</b><span>Ending a day in energy debt takes up to 20 off the next day</span></div><div class="ctl"><button class="switch" id="s_carry" role="switch" aria-checked="${settings.carry!==false}" aria-label="Tiredness carries over"></button></div></div>`;
   $("setAiRows").innerHTML=(`<div class="setrow"><div class="lab"><b>Planning style</b><span>How packed Charge makes your day</span></div><div class="ctl"><select id="s_intensity">${["Light","Balanced","Intense"].map(v=>`<option${settings.intensity===v?" selected":""}>${v}</option>`).join("")}</select></div></div>`+
@@ -3413,7 +3577,7 @@ function renderSettings(){
   if($("hlOff"))$("hlOff").onclick=()=>{settings.health=false;saveSettings();renderSettings();toast("Apple Health is off. Your past sleep stays.")};
   if($("s_carry"))$("s_carry").onclick=e=>{settings.carry=settings.carry===false;e.target.setAttribute("aria-checked",String(settings.carry!==false));saveSettings();try{render()}catch(x){}};
   if($("s_rate"))$("s_rate").onclick=e=>{settings.rateAfter=!settings.rateAfter;e.target.setAttribute("aria-checked",String(settings.rateAfter));saveSettings()};
-  ["budget","great","bad","lowAt","streak","aiCount","warnDays","remind"].forEach(id=>{const el=$("s_"+id);if(!el)return;const unit=$("o_"+id).textContent.replace(/^[\d.]+/,"");
+  ["minTarget","budget","great","bad","lowAt","streak","aiCount","warnDays","remind"].forEach(id=>{const el=$("s_"+id);if(!el)return;const unit=$("o_"+id).textContent.replace(/^[\d.]+/,"");
     el.oninput=()=>{settings[id]=+el.value;$("o_"+id).textContent=el.value+unit;renderGlance()};el.onchange=()=>saveSettings()});
   if($("s_intensity"))$("s_intensity").onchange=e=>{settings.intensity=e.target.value;saveSettings();renderGlance()};
   $("s_popups").onclick=e=>{settings.popups=!settings.popups;e.target.setAttribute("aria-checked",String(settings.popups));saveSettings();renderGlance()};
@@ -3425,6 +3589,7 @@ function renderSettings(){
     ${isAdult()?"":`<div class="setrow"><div class="lab"><b>My school</b><span>Used by the planner</span></div><div class="ctl"><input type="text" id="aSchool" maxlength="80" list="schoolList" value="${esc(profile&&profile.school||"")}" aria-label="My school"></div></div>`}
     <div class="setrow"><div class="lab"><b>Access</b><span>${esc(stat)}</span></div><div class="ctl"></div></div>
     <div class="setrow"><div class="lab"><b>Import a calendar</b><span>Export your Google, Apple or school calendar as an .ics file and import it. Weekly events become routines, one-offs go on the right days.</span></div><div class="ctl"><label class="mini" style="cursor:pointer">Choose .ics file<input type="file" id="aIcs" accept=".ics,text/calendar" hidden></label></div></div>
+    ${IN_CLAUDE?"":`<div class="setrow"><div class="lab"><b>Use on another device</b><span>Your plans are saved on this device only. Make a link, send it to yourself, and open it on your phone or Chromebook to bring everything over. Nothing goes through a server.</span></div><div class="ctl"><button class="btn primary" id="aMove" type="button">Send to my other device</button></div></div>`}
     <div class="setrow"><div class="lab"><b>Backup</b><span>Download everything as a file, or restore from one</span></div><div class="ctl" style="flex-direction:row;gap:6px"><button class="mini" id="aExport">Download</button><label class="mini" style="cursor:pointer">Restore<input type="file" id="aImport" accept="application/json,.json" hidden></label></div></div>
     ${cloudOn()?(acct.id?`<div class="setrow"><div class="lab"><b>Account</b><span>Signed in as ${esc(maskEmail(acct.email))}. Your plans are saved to your account and work on any device you sign in on.</span></div><div class="ctl"><button class="mini" id="cloudOut">Sign out</button></div></div>`:`<div class="setrow"><div class="lab"><b>Save to an account</b><span id="cloudNote">Sign in with your email to keep your plans if you change phones, and use Charge on more than one device. We email you a link, so there's no password to remember or steal.</span></div><div class="ctl" style="flex-direction:column;align-items:stretch;gap:6px"><input type="email" id="cloudEmail" autocomplete="email" inputmode="email" maxlength="120" placeholder="you@example.com" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2);width:100%;min-width:0;box-sizing:border-box"><button class="btn primary" id="cloudSend">Email me a sign-in link</button></div></div>`):""}
     <div class="setrow"><div class="lab"><b>Country</b><span>For public holidays. On holidays and your days off, Charge treats it like a weekend: no school block, and study moves to the daytime.</span></div><div class="ctl"><select id="aCountry" style="border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface-2)"><option value="">None</option>${HOLIDAY_COUNTRIES.map(([c,n])=>`<option value="${c}" ${country()===c?"selected":""}>${esc(n)}</option>`).join("")}</select><span class="ai-note" id="holNext" style="margin:4px 0 0"></span></div></div>
@@ -3538,6 +3703,8 @@ function cleanAdd(a){if(!a||typeof a.name!=="string"||!a.name.trim())return null
 function chatSleep(text){if(/\b(tonight|will|going to|gonna|plan|want|should|need|tomorrow)\b/i.test(text)&&!/\bslept\b|last night/i.test(text))return null;if(!/sle+p|slept|last night/i.test(text)||/\b(add|plan|schedule|study|homework|practice)\b/i.test(text)&&!/slept|sleep (?:was|for)|of sleep/i.test(text))return null;const m=text.match(/\b(?:slept|sleep|got|had)\b[^0-9.]{0,25}(\d{1,2}(?:[.,]\d)?|half an?|an?)\s*(?:and a half\s*)?(h|hrs?|hours?)\b/i)||text.match(/\b(\d{1,2}(?:[.,]\d)?)\s*(h|hrs?|hours?)\s*(?:of\s*)?sleep/i);
   if(!m)return null;let h=/^an?$/i.test(m[1])?1:/^half/i.test(m[1])?.5:parseFloat(m[1].replace(",","."));if(/and a half/i.test(m[0]))h+=.5;return h>0&&h<=16?h:null}
 async function chatSend(text){text=String(text||"").trim().slice(0,600);if(!text||chatBusy)return;
+  if(!IN_CLAUDE&&navigator.onLine===false&&!chatSleep(text)&&!/\b(exhausted|so tired|lighten)\b/i.test(text)){chatLog.push({role:"me",text});chatLog.push({role:"ai",text:"You're offline right now. The rest of Charge still works and saves on this device, but I need internet to answer. Try again when you're connected."});chatDraw();return}
+  if(/\b(exhausted|so tired|really tired|wiped|burnt? out|burned out|no energy|lighten my day|too much today)\b/i.test(text)){chatLog.push({role:"me",text});chatLog.push({role:"ai",text:"That sounds rough. I made an easier plan for the rest of today: check it and tap Use this plan if it looks right. Getting some food, water and a proper break helps too."});chatDraw();closeChat();openLighten(key(today),"exhausted");return}
   const sh=chatSleep(text);if(sh!=null){setSleepHours(key(today),sh);const rt=sleepRating(sh);chatLog.push({role:"me",text});
     chatLog.push({role:"ai",text:`Got it: ${sh} hours of sleep last night. ${rt==="great"?`That's great. I set today's sleep to Great (+${settings.great} energy).`:rt==="ok"?"That's a bit under the 8\u201310 hours teens need, so I set today's sleep to Okay.":`That's well under the 8\u201310 hours teens need, so I set today's sleep to Bad (\u2212${settings.bad} energy). Take it easy today and try for an earlier bedtime.`}`});
     chatDraw();return}
@@ -3558,7 +3725,7 @@ function openChat(){if($("chatBox")){$("chatIn").focus();return}const fab=$("cha
   const b=document.createElement("div");b.className="chatbox";b.id="chatBox";b.setAttribute("role","dialog");b.setAttribute("aria-label","Ask Charge");
   b.innerHTML=`<div class="chathead"><b>Ask Charge</b><button class="mini" id="chatClear" type="button">New chat</button><button class="mini" id="chatClose" type="button" aria-label="Close">\u2715</button></div>
    <div class="chatlog" id="chatLog" aria-live="polite"></div>
-   <div class="chatsugg" id="chatSugg">${["I slept 7 hours","What should I do first today?","Help me study for my next test","Plan my evening","Quiz me on something"].map(t=>`<button type="button">${t}</button>`).join("")}</div>
+   <div class="chatsugg" id="chatSugg">${["I'm exhausted","I slept 7 hours","What should I do first today?","Help me study for my next test","Plan my evening","Quiz me on something"].map(t=>`<button type="button">${t}</button>`).join("")}</div>
    <form class="chatform" id="chatForm" autocomplete="off"><textarea id="chatIn" rows="1" maxlength="600" placeholder="Type to Charge\u2026" aria-label="Message"></textarea><button class="btn primary" type="submit">Send</button></form>`;
   document.body.appendChild(b);chatDraw();
   b.querySelectorAll("#chatSugg button").forEach(x=>x.onclick=()=>chatSend(x.textContent));
@@ -3571,46 +3738,15 @@ function closeChat(){const b=$("chatBox");if(b)b.remove();updateChatFab()}
 function updateChatFab(){let f=$("chatFab");if(!f){f=document.createElement("button");f.id="chatFab";f.className="chatfab";f.type="button";f.setAttribute("aria-label","Ask Charge");
     f.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Ask Charge`;f.onclick=openChat;document.body.appendChild(f)}
   f.hidden=!!$("chatBox")||["setup","gate"].includes(currentView)||look().chat===false}
-$("czGo").onclick=()=>{show("settings");setTimeout(()=>{const p=$("setLook");if(p)p.scrollIntoView({behavior:"smooth",block:"start"})},60)};
+$("czGo").onclick=()=>{show("settings");setTimeout(()=>{setSection("look")},30)};
 $("setReset").onclick=()=>{settings=Object.assign({},DEF_SET);saveSettings();renderSettings()};
 
-// ---------- Admin (owner only) ----------
-async function renderAdmin(){
-  if(!acct.owner)return;
-  if(document.activeElement&&document.activeElement.closest&&!document.activeElement.closest("#cfgForm")){$("cfgPrice").value=cfg.price||"";$("cfgApp").value=cfg.appLink||"";$("cfgLink").value=cfg.payLink||"";$("cfgDays").value=cfg.days||31}
-  const ids=[...new Set(requests.map(r=>r.id).concat(Object.keys(approvals)))];
-  let ps={};try{ps=acct.user&&ids.length?await acct.user.profiles(ids):{}}catch(e){}
-  const nm=id=>(ps[id]&&ps[id].name)||"Unnamed user";
-  const rl=$("reqList");rl.innerHTML="";$("reqCount").textContent=requests.length+" waiting";
-  if(!requests.length)rl.innerHTML=`<li><span class="sub">No requests right now.</span></li>`;
-  requests.forEach(q=>{const li=document.createElement("li");
-    li.innerHTML=`<div><b></b><div class="sub"></div></div><div style="display:flex;gap:8px"><button class="btn primary ok">Approve</button><button class="btn no">Deny</button></div>`;
-    li.querySelector("b").textContent=nm(q.id)+" \u00b7 Adult (paid)";
-    li.querySelector(".sub").textContent=`Payment: ${q.note||"no details"} \u00b7 sent `+new Date(q.at).toLocaleDateString();
-    li.querySelector(".ok").onclick=async()=>{try{await acct.db.doc("approvals/"+q.id).set({role:q.role,status:"active",school:q.school||"",approvedAt:new Date().toISOString(),until:q.role==="adult"?key(addDays(today,+cfg.days||31)):""});await acct.db.doc("requests/"+q.id).delete()}catch(e){dbErr(e)}};
-    li.querySelector(".no").onclick=async()=>{try{await acct.db.doc("requests/"+q.id).delete()}catch(e){dbErr(e)}};
-    rl.appendChild(li)});
-  const al=$("apprList");al.innerHTML="";const ap=Object.entries(approvals);
-  if(!ap.length)al.innerHTML=`<li><span class="sub">No approved accounts yet.</span></li>`;
-  ap.forEach(([id,a])=>{const li=document.createElement("li");
-    li.innerHTML=`<div><b></b><div class="sub">Adult \u00b7 ${(a.until>=key(today)?"active until ":"ended ")+esc(a.until)}</div></div><div style="display:flex;gap:8px"><button class="mini ext">Add ${cfg.days||31} days</button><button class="mini rev">Revoke</button></div>`;
-    li.querySelector("b").textContent=nm(id);
-    if(li.querySelector(".ext"))li.querySelector(".ext").onclick=async()=>{const base=a.until&&a.until>key(today)?new Date(a.until+"T12:00:00"):today;try{await acct.db.doc("approvals/"+id).update({until:key(addDays(base,+cfg.days||31)),status:"active"})}catch(e){dbErr(e)}};
-    const rv=li.querySelector(".rev");rv.onclick=async()=>{if(rv.dataset.arm!=="1"){rv.dataset.arm="1";rv.textContent="Confirm revoke";return}try{await acct.db.doc("approvals/"+id).delete()}catch(e){dbErr(e)}};
-    al.appendChild(li)});
-}
-$("cfgForm").addEventListener("submit",async e=>{
-  e.preventDefault();const link=$("cfgLink").value.trim(),m=$("cfgMsg");m.hidden=false;
-  if(link&&!/^https:\/\//.test(link)){m.textContent="The payment link must start with https://";return}
-  try{await acct.db.doc("config/settings").set({price:$("cfgPrice").value.trim()||"$4.99 / month",payLink:link,appLink:/^https:\/\//.test($("cfgApp").value.trim())?$("cfgApp").value.trim():"",days:Math.max(1,Math.min(400,parseInt($("cfgDays").value,10)||31))});m.textContent="Saved. Adults now see this price and link."}
-  catch(err){dbErr(err);m.textContent="Couldn't save. Try again."}
-});
-
+async function renderAdmin(){}
 // ---------- Pages ----------
-const VIEWS={routine:"viewRoutine",subjects:"viewSubj",stats:"viewStats",home:"viewHome",gate:"viewGate",settings:"viewSettings",admin:"viewAdmin",setup:"viewSetup"};
+const VIEWS={routine:"viewRoutine",subjects:"viewSubj",stats:"viewStats",home:"viewHome",gate:"viewGate",settings:"viewSettings",setup:"viewSetup"};
 function buildTabs(v){
   let t=!access.ok?[["gate","Access"],["settings","Settings"]]:(isStudent()?[["home","Today"],["routine","Routines"],["subjects","Subjects"],["settings","Settings"]]:[["home","Today"],["routine","Routines"],["subjects","Projects"],["settings","Settings"]]);
-  if(acct.owner)t.push(["admin","Admin"]);
+  
   const IC={routine:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M3 12h2M19 12h2"/>',subjects:'<path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14M8 7h8M8 11h5"/>',home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',assign:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',stats:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',teach:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',gate:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',admin:'<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>'};
   const moreOn=t.slice(4).some(([k])=>k===v);
   $("tabs").innerHTML=t.map(([k,l])=>`<button data-view="${k}" aria-current="${k===v?"page":"false"}"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]||""}</svg><span>${l}</span></button>`).join("")+(t.length>4?`<button class="tb-more" aria-current="${moreOn?"page":"false"}" aria-label="More pages"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>`:"");
@@ -3626,11 +3762,13 @@ function show(v,soft){
   if(v==="assign"&&!isStudent())v=homeView();
   if(v==="admin"&&!acct.owner)v=homeView();
   const changed=v!==currentView;currentView=v;
+  if(!IN_CLAUDE&&VIEW_HASH[v]&&!/^#move=/.test(location.hash)&&location.hash!=="#"+VIEW_HASH[v]){try{history.replaceState(null,"","#"+VIEW_HASH[v])}catch(e){}}
   Object.entries(VIEWS).forEach(([k,id])=>$(id).hidden=k!==v);try{updateChatFab()}catch(e){}
   if(!soft&&(changed||show._anim)){const el=$(VIEWS[v]);show._anim=false;if(el){el.classList.remove("v-enter");void el.offsetWidth;el.classList.add("v-enter");el.addEventListener("animationend",()=>el.classList.remove("v-enter"),{once:true})}}
   $("topbar").hidden=v==="setup";document.querySelector(".foot").hidden=v==="setup";
   if(v!=="setup")buildTabs(v);
   if(v==="home"){render();maybePopup()}
+  if(v==="settings"){try{setSection(soft?setSec:"all")}catch(e){}}
   if(v==="subjects")renderSubjects();
   if(v==="routine")renderRoutine();
   if(v==="stats"){if(!soft)weekEnd=null;renderWeek()}

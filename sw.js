@@ -1,6 +1,6 @@
 // Charge service worker: makes the app open offline and lets it show notifications.
 // Bump VERSION whenever you upload a new index.html so phones pick up the update.
-const VERSION = "charge-v10";
+const VERSION = "charge-v16";
 const FILES = ["./", "index.html", "manifest.webmanifest", "privacy.html",
   "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png", "favicon.png"];
 
